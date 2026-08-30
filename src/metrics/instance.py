@@ -28,6 +28,16 @@ def iou_matrix(pred: np.ndarray, gt: np.ndarray) -> np.ndarray:
         N e M excluem o fundo. Se um dos lados não tiver objetos, a shape correspondente
         é zero.
     """
+    pred_unq = np.unique(pred[pred != 0])
+    gt_unq = np.unique(gt[gt != 0])
+    len_pred, len_gt = len(pred_unq), len(gt_unq)
+    matrix = np.zeros((len_pred, len_gt))
+
+    for indice, label_pred in enumerate(pred_unq):
+        for label_gt in gt_unq:
+            intersec = ((pred == label_pred) & (gt == label_gt)).sum()
+            union = np.abs((pred == label_pred).sum()) + np.abs((gt == label_gt).sum()) - intersec
+            iou = intersec / union
     # Para um par (i, j):
     #     interseção = pixels onde pred == label_i  E  gt == label_j
     #     união      = |pred == label_i| + |gt == label_j| - interseção
