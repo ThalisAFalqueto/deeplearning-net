@@ -11,24 +11,36 @@ def confusion(pred: np.ndarray, gt: np.ndarray):
 
     Args:
         pred: máscara binária prevista.
-        gt: máscara binária verdadeira.
+        gt: máscara binária verdadeira. (ground truth)
 
     Returns:
         Tupla (tp, fp, fn) de inteiros.
     """
-    raise NotImplementedError
+    pred, gt = pred.astype(bool), gt.astype(bool)
+    tp = (pred & gt).sum()
+    fp = (pred & ~gt).sum()
+    fn = (~pred & gt).sum()
+    return (tp, fp, fn)
 
 
 def iou(pred: np.ndarray, gt: np.ndarray) -> float:
     """Intersection over Union: TP / (TP + FP + FN), em pixels."""
-    raise NotImplementedError
+    tp, fp, fn = confusion(pred, gt)
+    denominador = tp + fp + fn
+    if denominador == 0:  # significa que tudo é fundo
+        return 1
+    return tp / denominador
 
 
 def dice(pred: np.ndarray, gt: np.ndarray) -> float:
     """Coeficiente de Dice: 2·TP / (2·TP + FP + FN), em pixels."""
-    raise NotImplementedError
+    tp, fp, fn = confusion(pred, gt)
+    denominador = 2 * tp + fp + fn
+    if denominador == 0:  # significa que tudo é fundo
+        return 1
+    return 2 * tp / denominador
 
 
 def to_binary(labels: np.ndarray) -> np.ndarray:
     """Converte um label map de instâncias em máscara binária."""
-    raise NotImplementedError
+    return labels > 0

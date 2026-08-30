@@ -28,6 +28,18 @@ def iou_matrix(pred: np.ndarray, gt: np.ndarray) -> np.ndarray:
         N e M excluem o fundo. Se um dos lados não tiver objetos, a shape correspondente
         é zero.
     """
+    # Para um par (i, j):
+    #     interseção = pixels onde pred == label_i  E  gt == label_j
+    #     união      = |pred == label_i| + |gt == label_j| - interseção
+    #     IoU        = interseção / união
+    #
+    # Dois laços aninhados bastam aqui. Se ficar lento no dataset real, vetorizar
+    # depois com np.bincount sobre pred_idx * M + gt_idx.
+    #
+    # Atenção:
+    #   - o fundo (0) NÃO é objeto: não pode virar linha nem coluna;
+    #   - labels podem não ser contíguos (1, 5, 9) -> np.unique e descartar o 0;
+    #   - sem objetos de um lado, devolver shape (0, M) ou (N, 0).
     raise NotImplementedError
 
 
@@ -41,6 +53,12 @@ def match_greedy(iou: np.ndarray, threshold: float) -> list[tuple[int, int]]:
     Returns:
         Lista de pares (i, j). Cada índice aparece no máximo uma vez de cada lado.
     """
+    # Ordenar todos os pares (i, j) por IoU decrescente e percorrer de cima para
+    # baixo: ao encontrar IoU < threshold, parar (os seguintes são menores). Casar
+    # o par só se nem i nem j já tiverem sido usados.
+    #
+    # Subótimo por construção: pode gastar um objeto real num par bom e deixar um
+    # par melhor órfão. É o que test_guloso_e_hungaro_divergem verifica.
     raise NotImplementedError
 
 
@@ -54,6 +72,9 @@ def match_hungarian(iou: np.ndarray, threshold: float) -> list[tuple[int, int]]:
     Returns:
         Lista de pares (i, j). Cada índice aparece no máximo uma vez de cada lado.
     """
+    # scipy.optimize.linear_sum_assignment resolve atribuição ótima, mas MINIMIZA
+    # custo -> passar -iou. Ele casa tudo que puder ignorando o threshold, então
+    # filtrar os pares depois, descartando os que ficaram abaixo do limiar.
     raise NotImplementedError
 
 
@@ -68,11 +89,18 @@ def counts_at_threshold(iou: np.ndarray, threshold: float, matcher=match_greedy)
     Returns:
         Tupla (tp, fp, fn) de inteiros.
     """
+    # tp = número de pares casados
+    # fp = N - tp   (objetos previstos que sobraram: inventados)
+    # fn = M - tp   (objetos reais que sobraram: perdidos)
+    #
+    # Um objeto com contorno ruim conta duas vezes contra: como fp (não casou) e
+    # como fn (o real correspondente ficou órfão).
     raise NotImplementedError
 
 
 def average_precision(iou: np.ndarray, threshold: float, matcher=match_greedy) -> float:
     """Precisão média num único limiar: TP / (TP + FP + FN)."""
+    # Se tp, fp e fn forem todos 0 (nada previsto, nada real), devolver 1.0.
     raise NotImplementedError
 
 
@@ -87,9 +115,13 @@ def mean_average_precision(pred: np.ndarray, gt: np.ndarray, matcher=match_greed
     Returns:
         Tupla (mAP, por_limiar), onde por_limiar é um dict {t: AP(t)}.
     """
+    # Calcular a matriz de IoU UMA vez e reutilizar nos 10 limiares.
+    # O dict por limiar serve para depurar e para mostrar em quais limiares o
+    # modelo desaba.
     raise NotImplementedError
 
 
 def count_error(pred: np.ndarray, gt: np.ndarray) -> int:
     """Erro absoluto de contagem de objetos entre predição e gabarito."""
+    # abs(nº de labels != 0 em pred - nº de labels != 0 em gt)
     raise NotImplementedError

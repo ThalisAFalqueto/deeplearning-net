@@ -46,6 +46,36 @@ def object_with_exact_iou(target_iou: float, canvas=(20, 20)):
 
 # ------------------------------------------------------------------ IoU e Dice (pixels)
 
+def test_to_binary_separa_fundo_de_objeto():
+    labels = np.array([[0, 1],
+                       [2, 0]])
+    esperado = np.array([[False, True],
+                         [True, False]])
+    np.testing.assert_array_equal(semantic.to_binary(labels), esperado)
+
+
+def test_to_binary_tudo_fundo():
+    vazio = np.zeros((3, 3), dtype=int)
+    assert not semantic.to_binary(vazio).any()
+
+
+def test_to_binary_labels_nao_contiguos():
+    """Labels 1, 5, 9 são todos objeto — só o 0 é fundo."""
+    labels = np.array([[1, 5],
+                       [9, 0]])
+    esperado = np.array([[True, True],
+                         [True, False]])
+    np.testing.assert_array_equal(semantic.to_binary(labels), esperado)
+
+
+def test_to_binary_preserva_forma_e_devolve_bool():
+    labels = np.array([[0, 1, 2],
+                       [3, 0, 4]])
+    r = semantic.to_binary(labels)
+    assert r.shape == labels.shape
+    assert r.dtype == bool
+
+
 def test_iou_dice_identicos():
     gt = three_touching_blocks()
     mask = semantic.to_binary(gt)
