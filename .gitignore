@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Ambiente
+.venv/
+venv/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Dados e saídas (pesados demais para o git)
+data/
+outputs/
+*.pth
+*.pt
+*.ckpt
+
+# Sistema
+.DS_Store
