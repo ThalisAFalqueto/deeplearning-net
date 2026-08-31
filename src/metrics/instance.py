@@ -33,24 +33,14 @@ def iou_matrix(pred: np.ndarray, gt: np.ndarray) -> np.ndarray:
     len_pred, len_gt = len(pred_unq), len(gt_unq)
     matrix = np.zeros((len_pred, len_gt))
 
-    for indice, label_pred in enumerate(pred_unq):
-        for label_gt in gt_unq:
+    for indice_pred, label_pred in enumerate(pred_unq):
+        for indice_gt, label_gt in enumerate(gt_unq):
             intersec = ((pred == label_pred) & (gt == label_gt)).sum()
             union = np.abs((pred == label_pred).sum()) + np.abs((gt == label_gt).sum()) - intersec
             iou = intersec / union
-    # Para um par (i, j):
-    #     interseção = pixels onde pred == label_i  E  gt == label_j
-    #     união      = |pred == label_i| + |gt == label_j| - interseção
-    #     IoU        = interseção / união
-    #
-    # Dois laços aninhados bastam aqui. Se ficar lento no dataset real, vetorizar
-    # depois com np.bincount sobre pred_idx * M + gt_idx.
-    #
-    # Atenção:
-    #   - o fundo (0) NÃO é objeto: não pode virar linha nem coluna;
-    #   - labels podem não ser contíguos (1, 5, 9) -> np.unique e descartar o 0;
-    #   - sem objetos de um lado, devolver shape (0, M) ou (N, 0).
-    raise NotImplementedError
+            matrix[indice_pred, indice_gt] = iou
+
+    return matrix
 
 
 def match_greedy(iou: np.ndarray, threshold: float) -> list[tuple[int, int]]:
@@ -69,7 +59,22 @@ def match_greedy(iou: np.ndarray, threshold: float) -> list[tuple[int, int]]:
     #
     # Subótimo por construção: pode gastar um objeto real num par bom e deixar um
     # par melhor órfão. É o que test_guloso_e_hungaro_divergem verifica.
-    raise NotImplementedError
+    pred_used = {label: False for label in range(iou.shape[0])}
+    gt_used = {label: False for label in range(iou.shape[1])}
+
+    flat = iou.flatten()  # transforma num vetor
+    order = np.argsort(flat)[::-1]  # ordena do maior pro menor, pegando o índice
+    pares = []
+    for indice_iou in order:
+        i, j = np.unravel_index(indice_iou, iou.shape)
+        if (pred_used[i] is True) or (gt_used[j] is True):
+            continue
+        value = iou[i, j]
+        if value < threshold:
+            break
+        pares.append((i, j))
+        pred_used[i], gt_used[j] = True, True
+    return pares
 
 
 def match_hungarian(iou: np.ndarray, threshold: float) -> list[tuple[int, int]]:
