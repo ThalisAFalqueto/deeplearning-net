@@ -12,6 +12,8 @@ Definição adotada:
 """
 
 import numpy as np
+from scipy.optimize import linear_sum_assignment
+
 
 THRESHOLDS = np.round(np.arange(0.50, 1.00, 0.05), 2)
 
@@ -53,12 +55,6 @@ def match_greedy(iou: np.ndarray, threshold: float) -> list[tuple[int, int]]:
     Returns:
         Lista de pares (i, j). Cada índice aparece no máximo uma vez de cada lado.
     """
-    # Ordenar todos os pares (i, j) por IoU decrescente e percorrer de cima para
-    # baixo: ao encontrar IoU < threshold, parar (os seguintes são menores). Casar
-    # o par só se nem i nem j já tiverem sido usados.
-    #
-    # Subótimo por construção: pode gastar um objeto real num par bom e deixar um
-    # par melhor órfão. É o que test_guloso_e_hungaro_divergem verifica.
     pred_used = {label: False for label in range(iou.shape[0])}
     gt_used = {label: False for label in range(iou.shape[1])}
 
@@ -87,10 +83,17 @@ def match_hungarian(iou: np.ndarray, threshold: float) -> list[tuple[int, int]]:
     Returns:
         Lista de pares (i, j). Cada índice aparece no máximo uma vez de cada lado.
     """
-    # scipy.optimize.linear_sum_assignment resolve atribuição ótima, mas MINIMIZA
-    # custo -> passar -iou. Ele casa tudo que puder ignorando o threshold, então
-    # filtrar os pares depois, descartando os que ficaram abaixo do limiar.
-    raise NotImplementedError
+    # retorna o menor custo, por isso passamos o iou negativo. devolve uma tupla de array (linha, coluna)
+    best_match = linear_sum_assignment(-iou)
+    pares = []
+    rows, columns = best_match[0], best_match[1]
+    for indice in range(len(best_match[0])):
+        i, j = rows[indice], columns[indice]
+        value = iou[i, j]
+        if value >= threshold:
+            pares.append((i, j))
+
+    return pares
 
 
 def counts_at_threshold(iou: np.ndarray, threshold: float, matcher=match_greedy):
@@ -104,19 +107,21 @@ def counts_at_threshold(iou: np.ndarray, threshold: float, matcher=match_greedy)
     Returns:
         Tupla (tp, fp, fn) de inteiros.
     """
-    # tp = número de pares casados
-    # fp = N - tp   (objetos previstos que sobraram: inventados)
-    # fn = M - tp   (objetos reais que sobraram: perdidos)
-    #
-    # Um objeto com contorno ruim conta duas vezes contra: como fp (não casou) e
-    # como fn (o real correspondente ficou órfão).
-    raise NotImplementedError
+    pares = matcher(iou, threshold)
+    tp = len(pares)
+    len_rows, len_columns = iou.shape[0], iou.shape[1]
+    fp = len_rows - tp
+    fn = len_columns - tp
+    return (tp, fp, fn)
 
 
 def average_precision(iou: np.ndarray, threshold: float, matcher=match_greedy) -> float:
     """Precisão média num único limiar: TP / (TP + FP + FN)."""
-    # Se tp, fp e fn forem todos 0 (nada previsto, nada real), devolver 1.0.
-    raise NotImplementedError
+    tp, fp, fn = counts_at_threshold(iou, threshold, matcher)
+    denominator = tp + fp + fn
+    if denominator == 0:
+        return 1
+    return tp / denominator
 
 
 def mean_average_precision(pred: np.ndarray, gt: np.ndarray, matcher=match_greedy):
@@ -130,13 +135,19 @@ def mean_average_precision(pred: np.ndarray, gt: np.ndarray, matcher=match_greed
     Returns:
         Tupla (mAP, por_limiar), onde por_limiar é um dict {t: AP(t)}.
     """
-    # Calcular a matriz de IoU UMA vez e reutilizar nos 10 limiares.
-    # O dict por limiar serve para depurar e para mostrar em quais limiares o
-    # modelo desaba.
-    raise NotImplementedError
+    iou = iou_matrix(pred, gt)
+    dict_thresholds = {}
+    for th in THRESHOLDS:
+        ap = average_precision(iou, th, matcher)
+        dict_thresholds[th] = ap
+
+    map = np.array(list(dict_thresholds.values())).mean()
+    return (map, dict_thresholds)
 
 
 def count_error(pred: np.ndarray, gt: np.ndarray) -> int:
     """Erro absoluto de contagem de objetos entre predição e gabarito."""
     # abs(nº de labels != 0 em pred - nº de labels != 0 em gt)
-    raise NotImplementedError
+    pred_unq = np.unique(pred[pred != 0])
+    gt_unq = np.unique(gt[gt != 0])
+    return abs(len(pred_unq) - len(gt_unq))
