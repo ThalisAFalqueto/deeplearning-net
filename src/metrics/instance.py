@@ -147,7 +147,6 @@ def mean_average_precision(pred: np.ndarray, gt: np.ndarray, matcher=match_greed
 
 def count_error(pred: np.ndarray, gt: np.ndarray) -> int:
     """Erro absoluto de contagem de objetos entre predição e gabarito."""
-    # abs(nº de labels != 0 em pred - nº de labels != 0 em gt)
     pred_unq = np.unique(pred[pred != 0])
     gt_unq = np.unique(gt[gt != 0])
     return abs(len(pred_unq) - len(gt_unq))

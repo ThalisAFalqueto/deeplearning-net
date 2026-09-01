@@ -1,0 +1,28 @@
+# Parte 0 — teste unitário sintético.
+# Alvo: treinar em menos de 5 minutos em CPU.
+name: p0_synthetic
+seed: 0
+
+data:
+  kind: synthetic
+  size: 128
+  n_train: 240
+  n_val: 60
+  min_obj: 5
+  max_obj: 20
+
+model:
+  base: 16
+  depth: 3
+  out_channels: 1        # 1 logit de foreground (baseline binário)
+
+train:
+  epochs: 15
+  batch_size: 8
+  lr: 0.001
+  num_workers: 0         # dataset já está em memória
+
+decode:
+  threshold: 0.5         # limiar aplicado à probabilidade antes dos componentes conexos
+
+output_dir: outputs/p0
