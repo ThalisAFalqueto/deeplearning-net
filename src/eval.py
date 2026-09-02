@@ -23,8 +23,8 @@ from torch.utils.data import DataLoader
 
 from src.data.synthetic import SyntheticEllipses
 from src.decode.connected import labels_from_probability
-from src.metrics.instance import count_error, mean_average_precision
-from src.metrics.semantic import dice, iou, to_binary
+from src.metrics.instance import MeanAveragePrecision, CountError
+from src.metrics.semantic import IoU, Dice, ToBinary
 from src.models.unet import UNet
 
 
@@ -60,22 +60,39 @@ def run(cfg: dict, checkpoint: Path, out_dir: Path, n_figuras: int = 6):
     model.load_state_dict(torch.load(checkpoint, map_location=device)["model"])
     model.eval()
 
+    to_binary = ToBinary()
+    iou_metric = IoU()
+    dice_metric = Dice()
+    map_metric = MeanAveragePrecision()
+    count_error_metric = CountError()
+
     por_imagem, exemplos = [], []
     for images, gts in loader:
-        probs = torch.sigmoid(model(images.to(device))).cpu().numpy()[:, 0]
-        for prob, gt in zip(probs, gts.numpy()):
-            pred_labels = labels_from_probability(prob, threshold)
-            m_ap, _ = mean_average_precision(pred_labels, gt)
+        probs = torch.sigmoid(model(images.to(device))).cpu()[:, 0]
+        for prob, gt in zip(probs, gts):
+            prob_np = prob.numpy()
+            gt_np = gt.numpy()
+
+            pred_labels_np = labels_from_probability(prob_np, threshold)
+            pred_labels = torch.tensor(pred_labels_np)
+            gt_tensor = gt.long()
+
+            m_ap, _ = map_metric(pred_labels, gt_tensor)
+            binary_gt = to_binary(gt_tensor)
+            iou_val = iou_metric(prob > threshold, binary_gt)
+            dice_val = dice_metric(prob > threshold, binary_gt)
+            count_err = count_error_metric(pred_labels, gt_tensor)
+
             por_imagem.append({
-                "n_gt": int(len(np.unique(gt)) - 1),
-                "n_pred": int(len(np.unique(pred_labels)) - 1),
-                "iou": iou(prob > threshold, to_binary(gt)),
-                "dice": dice(prob > threshold, to_binary(gt)),
+                "n_gt": int(len(torch.unique(gt_tensor)) - 1),
+                "n_pred": int(len(torch.unique(pred_labels)) - 1),
+                "iou": iou_val,
+                "dice": dice_val,
                 "map": float(m_ap),
-                "count_error": int(count_error(pred_labels, gt)),
+                "count_error": int(count_err),
             })
             if len(exemplos) < n_figuras:
-                exemplos.append((prob, gt, pred_labels))
+                exemplos.append((prob_np, gt_np, pred_labels_np))
 
     resumo = {k: float(np.mean([p[k] for p in por_imagem]))
               for k in ("iou", "dice", "map", "count_error")}
@@ -84,7 +101,6 @@ def run(cfg: dict, checkpoint: Path, out_dir: Path, n_figuras: int = 6):
     (out_dir / "per_image.json").write_text(json.dumps(por_imagem, indent=2))
     (out_dir / "summary.json").write_text(json.dumps(resumo, indent=2))
 
-    # figura: imagem, gabarito, predição — lado a lado
     fig, axes = plt.subplots(3, len(exemplos), figsize=(2.4 * len(exemplos), 7.4))
     for col, (prob, gt, pred_labels) in enumerate(exemplos):
         axes[0, col].imshow(prob, cmap="gray", vmin=0, vmax=1)

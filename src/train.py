@@ -12,14 +12,13 @@ import random
 import time
 from pathlib import Path
 
-import numpy as np
 import torch
 import torch.nn as nn
 import yaml
 from torch.utils.data import DataLoader
 
 from src.data.synthetic import SyntheticEllipses
-from src.metrics.semantic import dice, iou, to_binary
+from src.metrics.semantic import IoU, Dice, ToBinary
 from src.models.unet import UNet
 
 
@@ -60,6 +59,10 @@ def evaluate(model, loader, criterion, device, threshold: float):
     é trabalho do eval.py. Durante o treino queremos um sinal barato e por época.
     """
     model.eval()
+    to_binary = ToBinary()
+    iou_metric = IoU()
+    dice_metric = Dice()
+
     total_loss, ious, dices = 0.0, [], []
     for images, labels in loader:
         images = images.to(device)
@@ -68,15 +71,15 @@ def evaluate(model, loader, criterion, device, threshold: float):
         logits = model(images)
         total_loss += criterion(logits, target).item() * images.size(0)
 
-        prob = torch.sigmoid(logits).cpu().numpy()[:, 0]
-        gt = labels.numpy()
-        for p, g in zip(prob, gt):
+        prob = torch.sigmoid(logits).cpu()[:, 0]
+        for p, g in zip(prob, labels):
             pred_mask = p > threshold
-            ious.append(iou(pred_mask, to_binary(g)))
-            dices.append(dice(pred_mask, to_binary(g)))
+            binary_gt = to_binary(g)
+            ious.append(iou_metric(pred_mask, binary_gt))
+            dices.append(dice_metric(pred_mask, binary_gt))
 
     n = len(loader.dataset)
-    return total_loss / n, float(np.mean(ious)), float(np.mean(dices))
+    return total_loss / n, float(torch.tensor(ious).mean()), float(torch.tensor(dices).mean())
 
 
 def main():
