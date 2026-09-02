@@ -18,7 +18,8 @@ import yaml
 from torch.utils.data import DataLoader
 
 from src.data.synthetic import SyntheticEllipses
-from src.metrics.semantic import IoU, Dice, ToBinary
+from src.metrics.semantic import IoU, Dice
+from src.utils import to_binary
 from src.models.unet import UNet
 
 
@@ -59,7 +60,6 @@ def evaluate(model, loader, criterion, device, threshold: float):
     é trabalho do eval.py. Durante o treino queremos um sinal barato e por época.
     """
     model.eval()
-    to_binary = ToBinary()
     iou_metric = IoU()
     dice_metric = Dice()
 

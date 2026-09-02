@@ -1,12 +1,11 @@
 """Testes da decodificação por componentes conexos."""
 
-from pathlib import Path
 import numpy as np
 
 from helpers import setup_environment
 setup_environment()
 
-from src.decode.connected import labels_from_probability, remove_small_objects
+from src.utils import labels_from_probability, remove_small_objects
 
 import pytest
 

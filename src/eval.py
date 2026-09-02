@@ -22,9 +22,10 @@ import yaml
 from torch.utils.data import DataLoader
 
 from src.data.synthetic import SyntheticEllipses
-from src.decode.connected import labels_from_probability
+from src.utils import labels_from_probability
 from src.metrics.instance import MeanAveragePrecision, CountError
-from src.metrics.semantic import IoU, Dice, ToBinary
+from src.metrics.semantic import IoU, Dice
+from src.utils import to_binary
 from src.models.unet import UNet
 
 
@@ -60,7 +61,6 @@ def run(cfg: dict, checkpoint: Path, out_dir: Path, n_figuras: int = 6):
     model.load_state_dict(torch.load(checkpoint, map_location=device)["model"])
     model.eval()
 
-    to_binary = ToBinary()
     iou_metric = IoU()
     dice_metric = Dice()
     map_metric = MeanAveragePrecision()

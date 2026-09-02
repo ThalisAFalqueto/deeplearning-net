@@ -23,6 +23,7 @@ from helpers.setup_environment import setup_environment
 setup_environment()
 
 from src.metrics import instance, semantic
+from src.utils import to_binary as _to_binary_fn
 
 
 # --------------------------------------------------------------------------- helpers
@@ -60,7 +61,7 @@ def object_with_exact_iou(target_iou: float, canvas=(20, 20)):
 
 @pytest.fixture
 def to_binary():
-    return semantic.ToBinary()
+    return _to_binary_fn
 
 
 @pytest.fixture
@@ -83,12 +84,12 @@ def test_to_binary_separa_fundo_de_objeto(to_binary):
                            [2, 0]])
     esperado = torch.tensor([[False, True],
                              [True, False]])
-    assert torch.equal(to_binary(labels), esperado)
+    assert torch.equal(_to_binary_fn(labels), esperado)
 
 
 def test_to_binary_tudo_fundo(to_binary):
     vazio = torch.zeros((3, 3), dtype=torch.int64)
-    assert not to_binary(vazio).any()
+    assert not _to_binary_fn(vazio).any()
 
 
 def test_to_binary_labels_nao_contiguos(to_binary):
@@ -96,21 +97,21 @@ def test_to_binary_labels_nao_contiguos(to_binary):
     labels = torch.tensor([[1, 5],
                            [9, 0]])
     esperado = torch.tensor([[True, True],
-                             [True, False]])
-    assert torch.equal(to_binary(labels), esperado)
+                              [True, False]])
+    assert torch.equal(_to_binary_fn(labels), esperado)
 
 
 def test_to_binary_preserva_forma_e_devolve_bool(to_binary):
     labels = torch.tensor([[0, 1, 2],
                            [3, 0, 4]])
-    r = to_binary(labels)
+    r = _to_binary_fn(labels)
     assert r.shape == labels.shape
     assert r.dtype == torch.bool
 
 
 def test_iou_dice_identicos(iou_metric, dice_metric):
     gt = three_touching_blocks()
-    mask = semantic.ToBinary()(gt)
+    mask = _to_binary_fn(gt)
     assert iou_metric(mask, mask) == pytest.approx(1.0)
     assert dice_metric(mask, mask) == pytest.approx(1.0)
 
@@ -291,9 +292,8 @@ def test_tres_nucleos_grudados(iou_metric, dice_metric, map_metric, count_error_
     gt = three_touching_blocks()
     blob = (gt > 0).long()
 
-    to_binary = semantic.ToBinary()
-    assert iou_metric(to_binary(blob), to_binary(gt)) == pytest.approx(1.0)
-    assert dice_metric(to_binary(blob), to_binary(gt)) == pytest.approx(1.0)
+    assert iou_metric(_to_binary_fn(blob), _to_binary_fn(gt)) == pytest.approx(1.0)
+    assert dice_metric(_to_binary_fn(blob), _to_binary_fn(gt)) == pytest.approx(1.0)
 
     iou_mat = instance.IoUMatrix()(blob, gt)
     assert torch.allclose(iou_mat, torch.full((1, 3), 9 / 27))
