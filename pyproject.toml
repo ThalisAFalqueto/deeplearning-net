@@ -1,3 +1,19 @@
-[tool.pytest.ini_options]
-pythonpath = ["."]
-testpaths = ["tests"]
+[project]
+name = "deeplearning-net"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "albumentations>=1.4",
+    "matplotlib>=3.8",
+    "numpy>=1.26",
+    "pytest>=8.0",
+    "pyyaml>=6.0",
+    "scikit-image>=0.22",
+    "scikit-learn>=1.4",
+    "scipy>=1.11",
+    "torch>=2.2",
+    "torchvision>=0.17",
+    "tqdm>=4.66",
+]
