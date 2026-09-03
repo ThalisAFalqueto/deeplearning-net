@@ -9,12 +9,9 @@ BBBC038v1** (núcleos de microscopia).
 ## Ambiente
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
+make setup  # Instalação
 
-# torch CPU (evita baixar ~2.5 GB de CUDA)
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-pip install -r requirements.txt
+make setup-cpu  # Instalação sem utilizar pacote de placa de vídeo
 ```
 
 ## Dados

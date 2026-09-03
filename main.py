@@ -34,10 +34,17 @@ def main():
         help="caminho do YAML de configuração (padrão: configs/default.yaml)",
     )
     parser.add_argument(
+        "--synthetic", action="store_true",
+        help="atalho para --config configs/synthetic.yaml",
+    )
+    parser.add_argument(
         "--checkpoint", default=None,
         help="caminho do checkpoint para avaliação (padrão: <output_dir>/best.pth)",
     )
     args = parser.parse_args()
+
+    if args.synthetic:
+        args.config = "configs/synthetic.yaml"
 
     cfg = yaml.safe_load(Path(args.config).read_text())
 

@@ -11,6 +11,7 @@ import torch
 from torch.utils.data import DataLoader
 
 from src.data.synthetic import SyntheticEllipses
+from src.data.dsb2018 import DSB2018
 from src.utils import labels_from_probability
 from src.metrics.instance import MeanAveragePrecision, CountError
 from src.metrics.semantic import IoU, Dice
@@ -31,11 +32,8 @@ class EvalEngine:
         d = cfg.data
         threshold = cfg.decode["threshold"]
 
-        val = SyntheticEllipses(
-            n_samples=d["n_val"], size=d["size"], seed=cfg.seed + 777,
-            min_obj=d["min_obj"], max_obj=d["max_obj"],
-        )
-        loader = DataLoader(val, batch_size=cfg.train["batch_size"])
+        val_ds = self._build_val_dataset()
+        loader = DataLoader(val_ds, batch_size=cfg.train["batch_size"])
 
         model = UNet(
             in_channels=1, out_channels=cfg.model["out_channels"],
@@ -106,6 +104,18 @@ class EvalEngine:
                 axes[row, col].axis("off")
         plt.tight_layout()
         plt.savefig(out_dir / "predicoes.png", dpi=90)
+
+    def _build_val_dataset(self):
+        """Constrói o dataset de validação a partir da config."""
+        d = self.cfg.data
+        if d["kind"] == "synthetic":
+            return SyntheticEllipses(
+                n_samples=d["n_val"], size=d["size"], seed=self.cfg.seed + 777,
+                min_obj=d["min_obj"], max_obj=d["max_obj"],
+            )
+        if d["kind"] == "dsb2018":
+            return DSB2018(data_dir=d["val_dir"], size=d["size"])
+        raise ValueError(f"data.kind desconhecido: {d['kind']}")
 
     def _print_summary(self, resumo, out_dir, n_imagens) -> None:
         print(f"\n{n_imagens} imagens de validação\n")

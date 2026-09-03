@@ -9,6 +9,7 @@ import torch
 from torch.utils.data import DataLoader
 
 from src.data.synthetic import SyntheticEllipses
+from src.data.dsb2018 import DSB2018
 from src.metrics.semantic import IoU, Dice
 from src.models.unet import UNet
 from src.utils import to_binary
@@ -105,6 +106,10 @@ class TrainEngine:
                 n_samples=d["n_val"], size=d["size"], seed=self.cfg.seed + 777,
                 min_obj=d["min_obj"], max_obj=d["max_obj"],
             )
+            return train, val
+        if d["kind"] == "dsb2018":
+            train = DSB2018(data_dir=d["train_dir"], size=d["size"])
+            val = DSB2018(data_dir=d["val_dir"], size=d["size"])
             return train, val
         raise ValueError(f"data.kind desconhecido: {d['kind']}")
 
