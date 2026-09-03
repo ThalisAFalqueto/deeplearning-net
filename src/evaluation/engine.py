@@ -11,18 +11,18 @@ import torch
 from torch.utils.data import DataLoader
 
 from src.data.synthetic import SyntheticEllipses
-from src.data.dsb2018 import DSB2018
 from src.utils import labels_from_probability
 from src.metrics.instance import MeanAveragePrecision, CountError
 from src.metrics.semantic import IoU, Dice
 from src.models.unet import UNet
 from src.utils import to_binary
 from src.evaluation.config import EvalConfig
+from src.core.config import AppConfig
 
 
 class EvalEngine:
-    def __init__(self, config: EvalConfig, checkpoint: Path):
-        self.cfg = config
+    def __init__(self, app_config: AppConfig, checkpoint: Path):
+        self.cfg = app_config.get_eval_config()
         self.checkpoint = checkpoint
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -113,8 +113,6 @@ class EvalEngine:
                 n_samples=d["n_val"], size=d["size"], seed=self.cfg.seed + 777,
                 min_obj=d["min_obj"], max_obj=d["max_obj"],
             )
-        if d["kind"] == "dsb2018":
-            return DSB2018(data_dir=d["val_dir"], size=d["size"])
         raise ValueError(f"data.kind desconhecido: {d['kind']}")
 
     def _print_summary(self, resumo, out_dir, n_imagens) -> None:

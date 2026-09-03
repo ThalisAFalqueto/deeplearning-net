@@ -15,11 +15,8 @@ PROJECT_ROOT = Path(__file__).resolve().parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-import yaml
-
-from src.training.config import TrainConfig
+from src.core.config import AppConfig
 from src.training.engine import TrainEngine
-from src.evaluation.config import EvalConfig
 from src.evaluation.engine import EvalEngine
 
 
@@ -56,16 +53,16 @@ def main():
     if args.synthetic:
         args.config = "configs/synthetic.yaml"
 
-    cfg = yaml.safe_load(Path(args.config).read_text())
+    app_config = AppConfig(args.config)
+    Path(app_config.train_config.output_dir).mkdir(parents=True, exist_ok=True)
 
     if args.mode in ("train", "both"):
-        train_cfg = TrainConfig.from_dict(cfg)
-        TrainEngine(train_cfg).run()
+        Path(app_config.get_train_config().output_dir).mkdir(parents=True, exist_ok=True)
+        TrainEngine(app_config).run()
 
     if args.mode in ("eval", "both"):
-        checkpoint = Path(args.checkpoint) if args.checkpoint else Path(cfg["output_dir"]) / "best.pth"
-        eval_cfg = EvalConfig.from_dict(cfg)
-        EvalEngine(eval_cfg, checkpoint).run()
+        checkpoint = Path(args.checkpoint) if args.checkpoint else app_config.get_eval_config().output_dir / "best.pth"
+        EvalEngine(app_config, checkpoint).run()
 
 
 if __name__ == "__main__":

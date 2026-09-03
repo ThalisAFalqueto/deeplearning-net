@@ -6,24 +6,24 @@ from pathlib import Path
 
 import numpy as np
 import torch
-from torch.utils.data import DataLoader
 
-from src.data.synthetic import SyntheticEllipses
-from src.data.dsb2018 import DSB2018
 from src.metrics.semantic import IoU, Dice
 from src.models.unet import UNet
 from src.utils import to_binary
-from src.training.config import TrainConfig
+from src.training.data import DataPipeline
+from src.core.config import AppConfig
 
 
 class TrainEngine:
-    def __init__(self, config: TrainConfig):
-        self.cfg = config  # A engine recebe a configuração carregada na inicialização
+    def __init__(self, app_config: AppConfig):
+        self.app_config = app_config
+        self.cfg = app_config.get_train_config()
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         # Detecto o device utilizado (cuda, rocm ou cpu)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    def _fix_seeds(self):
+    def _fixed_seeds(self):
         """Ajusta a seed aleatória para manter os resultados reprodutíveis
         """
         torch.manual_seed(self.cfg.seed)
@@ -34,16 +34,15 @@ class TrainEngine:
         cfg = self.cfg
         t = cfg.train
 
-        self._fix_seeds()
+        self._fixed_seeds()
 
-        train_ds, val_ds = self._build_datasets()
-        train_loader = DataLoader(
-            train_ds, batch_size=t["batch_size"], shuffle=True, num_workers=t["num_workers"]
-        )
-        val_loader = DataLoader(
-            val_ds, batch_size=t["batch_size"], num_workers=t["num_workers"]
-        )
+        # Crio a pipeline que gera os dataloaders
+        data_pipeline = DataPipeline(self.app_config)
 
+        # Carrego os loaders via pipeline (treino e validação)
+        train_loader, val_loader = data_pipeline.build_dataloaders()
+
+        # Instancio o modelo que vai ser utilizado
         model = UNet(
             in_channels=1,
             out_channels=cfg.model["out_channels"],
@@ -51,17 +50,21 @@ class TrainEngine:
             depth=cfg.model["depth"],
         ).to(self.device)
 
+        # Instancio o critério de otimização (função de perca)
         criterion = torch.nn.BCEWithLogitsLoss()
+
+        # Instancio o método de otimização (Adam, SGD, etc)
         optimizer = torch.optim.Adam(model.parameters(), lr=t["lr"])
 
+        # Conto o número de parâmetros do modelo e imprimo algumas informações
         n_params = sum(p.numel() for p in model.parameters())
         print(f"dispositivo: {self.device} | parâmetros: {n_params/1e3:.1f}k "
               f"| campo receptivo: {model.receptive_field()} px")
-        print(f"treino: {len(train_ds)} imagens | validação: {len(val_ds)} imagens\n")
+        print(f"treino: {len(train_loader.dataset)} imagens | validação: {len(val_loader.dataset)} imagens\n")
 
-        cfg.output_dir.mkdir(parents=True, exist_ok=True)
-        history, best_iou = [], -1.0
-        t_start = time.perf_counter()
+        # =================== LOOP DE TREINO ===================
+        history, best_iou = [], -1.0  # Inicio o histórico de treino e o melhor IoU de validação
+        t_start = time.perf_counter()  # Inicio a contagem do tempo total de treino
 
         for epoch in range(1, t["epochs"] + 1):
             model.train()
@@ -77,7 +80,7 @@ class TrainEngine:
                 optimizer.step()
                 epoch_loss += loss.item() * images.size(0)
 
-            train_loss = epoch_loss / len(train_ds)
+            train_loss = epoch_loss / len(train_loader.dataset)
             val_loss, val_iou, val_dice = self._evaluate(model, val_loader, criterion)
             dt = time.perf_counter() - t_epoch
             history.append({
@@ -101,24 +104,6 @@ class TrainEngine:
         print(f"\ntempo total: {total/60:.1f} min ({total/t['epochs']:.1f}s por época)")
         print(f"melhor IoU de validação: {best_iou:.4f}")
         print(f"checkpoint: {cfg.output_dir/'best.pth'}")
-
-    def _build_datasets(self):
-        d = self.cfg.data
-        if d["kind"] == "synthetic":
-            train = SyntheticEllipses(
-                n_samples=d["n_train"], size=d["size"], seed=self.cfg.seed,
-                min_obj=d["min_obj"], max_obj=d["max_obj"],
-            )
-            val = SyntheticEllipses(
-                n_samples=d["n_val"], size=d["size"], seed=self.cfg.seed + 777,
-                min_obj=d["min_obj"], max_obj=d["max_obj"],
-            )
-            return train, val
-        if d["kind"] == "dsb2018":
-            train = DSB2018(data_dir=d["train_dir"], size=d["size"])
-            val = DSB2018(data_dir=d["val_dir"], size=d["size"])
-            return train, val
-        raise ValueError(f"data.kind desconhecido: {d['kind']}")
 
     @torch.no_grad()
     def _evaluate(self, model, loader, criterion):
