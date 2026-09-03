@@ -18,16 +18,23 @@ from src.training.config import TrainConfig
 
 class TrainEngine:
     def __init__(self, config: TrainConfig):
-        self.cfg = config
+        self.cfg = config  # A engine recebe a configuração carregada na inicialização
+
+        # Detecto o device utilizado (cuda, rocm ou cpu)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+    def _fix_seeds(self):
+        """Ajusta a seed aleatória para manter os resultados reprodutíveis
+        """
+        torch.manual_seed(self.cfg.seed)
+        np.random.seed(self.cfg.seed)
+        torch.cuda.manual_seed_all(self.cfg.seed)
 
     def run(self) -> None:
         cfg = self.cfg
         t = cfg.train
 
-        torch.manual_seed(cfg.seed)
-        np.random.seed(cfg.seed)
-        torch.cuda.manual_seed_all(cfg.seed)
+        self._fix_seeds()
 
         train_ds, val_ds = self._build_datasets()
         train_loader = DataLoader(

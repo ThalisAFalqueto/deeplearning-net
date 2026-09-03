@@ -23,7 +23,12 @@ from src.evaluation.config import EvalConfig
 from src.evaluation.engine import EvalEngine
 
 
-def main():
+def parse_arguments() -> argparse.Namespace:
+    """Parse automático dos argumentos inline
+
+    Returns:
+        argparse.Namespace: namespace com os argumentos e seus valores
+    """
     parser = argparse.ArgumentParser(description="Deep Learning Net")
     parser.add_argument(
         "--mode", choices=["train", "eval", "both"], default="both",
@@ -41,7 +46,12 @@ def main():
         "--checkpoint", default=None,
         help="caminho do checkpoint para avaliação (padrão: <output_dir>/best.pth)",
     )
-    args = parser.parse_args()
+
+    return parser.parse_args()
+
+
+def main():
+    args = parse_arguments()
 
     if args.synthetic:
         args.config = "configs/synthetic.yaml"
