@@ -7,11 +7,10 @@ seed: 0
 data:
   kind: dsb2018
   size: 256
-  train_dir: src/data/datasets/dsb2018/train
-  val_dir: src/data/datasets/dsb2018/validation
-  # junta as duas pastas e refaz a divisão preservando a proporção de cada
-  # modalidade (fluorescência / histologia / brightfield) nos dois lados
-  stratify: true
+  # onde estão as amostras (busca recursiva; subpastas não influenciam a divisão)
+  data_dir: src/data/datasets/dsb2018
+  # fração para validação. A divisão é sempre estratificada por modalidade
+  # (fluorescência / histologia / brightfield), recalculada a cada execução.
   val_fraction: 0.2
 
 model:
