@@ -27,19 +27,26 @@ bash scripts/download_data.sh      # baixa e organiza o DSB2018 em data/
 ## Treinar
 
 ```bash
-python -m src.train --config configs/p0_synthetic.yaml
+python -m main --config configs/synthetic.yaml --mode train
 ```
 
 ## Avaliar
 
 ```bash
-python -m src.eval --config configs/p0_synthetic.yaml
+python -m main --config configs/synthetic.yaml --mode eval
 ```
 
 Reporta IoU, Dice, mAP de instância (0,50:0,05:0,95) e erro absoluto de contagem, e salva
 `outputs/<nome>/predicoes.png` com imagem, gabarito e predição lado a lado.
 
 O checkpoint padrão é `<output_dir>/best.pth`; use `--checkpoint` para apontar outro.
+
+Sem `--mode`, executa treino e avaliação em sequência. `--synthetic` é atalho para
+`--config configs/synthetic.yaml`:
+
+```bash
+python -m main --synthetic          # treina e avalia a Parte 0
+```
 
 ## Testes
 
@@ -53,15 +60,17 @@ qualquer número ser reportado.
 ## Estrutura
 
 ```
+main.py         ponto de entrada único (treino e avaliação)
 configs/        hiperparâmetros por experimento (YAML)
 src/
-├── data/       geração sintética (P0) e DSB2018 (P1)
+├── core/       carregamento de configuração
+├── data/       geração sintética (P0), DSB2018 (P1) e as factories
 ├── models/     U-Net com out_channels configurável
 ├── losses/     funções de perda
-├── decode/     pós-processamento: previsão -> objetos numerados
 ├── metrics/    IoU/Dice semânticos e mAP de instância (implementado à mão)
-├── train.py    o "um comando que treina"
-└── eval.py     o "um comando que avalia"
+├── training/   loop de treino
+├── evaluation/ avaliação e figuras
+└── utils/      pós-processamento: previsão -> objetos numerados
 tests/          testes das métricas e da decodificação
 outputs/        checkpoints, figuras e logs (fora do git)
 ```
@@ -79,18 +88,23 @@ O quanto as elipses se tocam varia **por imagem**, de forma que o conjunto cobre
 esparsas até aglomerados densos. No conjunto gerado, 60% dos objetos se fundem: 469 objetos
 formam apenas 143 componentes conexos.
 
-| | |
-|---|---|
-| Treino | 1,9 min em CPU (7,7 s/época × 15 épocas) |
-| IoU semântico | 0,9956 |
+Resultado em 60 imagens de validação, treinando 15 épocas em CPU:
 
-O IoU quase perfeito com um mAP de instância baixo é o resultado esperado, não um defeito: a
-segmentação semântica responde "onde tem objeto?" e acerta, mas a máscara binária não
-carrega nenhuma informação capaz de separar dois objetos encostados.
+| | Semântico | | Instância | |
+|---|---|---|---|---|
+| **Treino: 1,4 min** | IoU | **0,9994** | mAP | **0,2253** |
+| | Dice | **0,9997** | erro de contagem | **7,00** objetos/imagem |
+
+O IoU quase perfeito com um mAP baixo é o resultado esperado, não um defeito. A segmentação
+semântica responde "onde tem objeto?" e acerta praticamente todos os pixels — mas a máscara
+binária não carrega nenhuma informação capaz de separar dois objetos encostados. Em
+`outputs/p0/predicoes.png` é possível ver um gabarito de 20 objetos virando 4 na predição.
+
+É esse contraste que a Parte 2 ataca, mudando o que a rede prevê.
 
 ## Métrica de instância
 
-Implementada à mão em `src/metrics/instance.py` (bibliotecas de AP de instância são proibidas
+Implementada à mão em `src/metrics/instance/` (bibliotecas de AP de instância são proibidas
 pelo enunciado). Definição usada:
 
 - IoU calculado entre **cada par** (objeto previsto, objeto real);
