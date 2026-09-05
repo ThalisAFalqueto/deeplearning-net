@@ -10,7 +10,7 @@ import torch
 from src.metrics.semantic import IoU, Dice
 from src.models.unet import UNet
 from src.utils import to_binary
-from src.training.data import DataPipeline
+from src.data import DataPipeline
 from src.core.config import AppConfig
 
 

@@ -10,7 +10,7 @@ import numpy as np
 import torch
 from torch.utils.data import DataLoader
 
-from src.data.synthetic import SyntheticEllipses
+from src.data import SyntheticEllipses
 from src.utils import labels_from_probability
 from src.metrics.instance import MeanAveragePrecision, CountError
 from src.metrics.semantic import IoU, Dice
