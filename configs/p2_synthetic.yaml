@@ -23,9 +23,9 @@ model:
     pos_weight: 50.0       # compensa o pico ser ~0,06% da imagem; 0 = L2 pura (Eixo 2)
 
 train:
-  epochs: 20
+  epochs: 100
   batch_size: 8
-  lr: 0.001
+  lr: 0.008
   num_workers: 0
 
 decode:
