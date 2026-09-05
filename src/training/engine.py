@@ -16,9 +16,10 @@ from src.core.task import get_task
 
 
 class TrainEngine:
-    def __init__(self, app_config: AppConfig):
+    def __init__(self, app_config: AppConfig, resume: bool = False):
         self.app_config = app_config
         self.cfg = app_config.get_train_config()
+        self.resume = resume
 
         # Detecto o device utilizado (cuda, rocm ou cpu)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -29,6 +30,36 @@ class TrainEngine:
         torch.manual_seed(self.cfg.seed)
         np.random.seed(self.cfg.seed)
         torch.cuda.manual_seed_all(self.cfg.seed)
+
+    def _save_checkpoint(self, path, model, optimizer, epoch, best_iou, history):
+        """Salva o estado COMPLETO do treino.
+
+        Só os pesos não bastam para retomar: o Adam mantém médias móveis dos gradientes
+        (os momentos), e recomeçar sem elas faz as primeiras épocas depois do resume
+        saírem instáveis. O histórico vai junto para o log não perder as épocas antigas.
+        """
+        torch.save({
+            "model": model.state_dict(),
+            "optimizer": optimizer.state_dict(),
+            "epoch": epoch,
+            "best_iou": best_iou,
+            "history": history,
+            "config": {**self.cfg.__dict__, "output_dir": str(self.cfg.output_dir)},
+        }, path)
+
+    def _load_checkpoint(self, path, model, optimizer):
+        """Restaura o estado de um treino interrompido.
+
+        Returns:
+            Tupla (primeira época a rodar, melhor IoU até aqui, histórico).
+        """
+        estado = torch.load(path, map_location=self.device, weights_only=False)
+        model.load_state_dict(estado["model"])
+        if "optimizer" in estado:
+            optimizer.load_state_dict(estado["optimizer"])
+        epoca = estado.get("epoch", 0)
+        print(f"retomando de {path} — época {epoca}, melhor IoU {estado.get('best_iou', -1):.4f}\n")
+        return epoca + 1, estado.get("best_iou", -1.0), estado.get("history", [])
 
     def run(self) -> None:
         cfg = self.cfg
@@ -65,9 +96,21 @@ class TrainEngine:
 
         # =================== LOOP DE TREINO ===================
         history, best_iou = [], -1.0  # Inicio o histórico de treino e o melhor IoU de validação
+        primeira_epoca = 1
+
+        # Retomar de um treino interrompido. `last.pth` guarda o estado completo e é
+        # gravado a cada `save_every` épocas — a rede de segurança para queda de energia,
+        # sessão do Colab que expira, ou os 12 treinos da Parte 3.
+        ultimo = cfg.output_dir / "last.pth"
+        if self.resume and ultimo.exists():
+            primeira_epoca, best_iou, history = self._load_checkpoint(ultimo, model, optimizer)
+        elif self.resume:
+            print(f"--resume pedido, mas {ultimo} não existe: começando do zero\n")
+
+        save_every = t.get("save_every", 5)
         t_start = time.perf_counter()  # Inicio a contagem do tempo total de treino
 
-        for epoch in range(1, t["epochs"] + 1):
+        for epoch in range(primeira_epoca, t["epochs"] + 1):
             model.train()
             epoch_loss, t_epoch = 0.0, time.perf_counter()
 
@@ -104,18 +147,22 @@ class TrainEngine:
 
             if val_iou > best_iou:
                 best_iou = val_iou
-                torch.save(
-                    {"model": model.state_dict(),
-                     "config": {**cfg.__dict__, "output_dir": str(cfg.output_dir)},
-                     "epoch": epoch, "val_iou": val_iou},
-                    cfg.output_dir / "best.pth",
-                )
+                self._save_checkpoint(cfg.output_dir / "best.pth", model, optimizer,
+                                      epoch, best_iou, history)
+
+            # `last.pth` é o ponto de retomada; `best.pth` é o modelo que vai para a
+            # avaliação. São arquivos diferentes de propósito: o melhor modelo pode ser
+            # de uma época bem anterior à última.
+            if epoch % save_every == 0 or epoch == t["epochs"]:
+                self._save_checkpoint(cfg.output_dir / "last.pth", model, optimizer,
+                                      epoch, best_iou, history)
 
         total = time.perf_counter() - t_start
         (cfg.output_dir / "history.json").write_text(json.dumps(history, indent=2))
         print(f"\ntempo total: {total/60:.1f} min ({total/t['epochs']:.1f}s por época)")
         print(f"melhor IoU de validação: {best_iou:.4f}")
         print(f"checkpoint: {cfg.output_dir/'best.pth'}")
+        print(f"retomável:  {cfg.output_dir/'last.pth'} (--resume)")
 
     @torch.no_grad()
     def _evaluate(self, model, loader, task):

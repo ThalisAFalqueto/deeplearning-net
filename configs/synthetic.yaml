@@ -20,7 +20,8 @@ train:
   epochs: 15
   batch_size: 8
   lr: 0.001
-  num_workers: 0         # dataset já está em memória
+  num_workers: 0
+  save_every: 5           # grava last.pth a cada N épocas, para poder retomar         # dataset já está em memória
 
 decode:
   threshold: 0.5         # limiar aplicado à probabilidade antes dos componentes conexos
