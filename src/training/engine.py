@@ -18,7 +18,6 @@ class TrainEngine:
     def __init__(self, app_config: AppConfig):
         self.app_config = app_config
         self.cfg = app_config.get_train_config()
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         # Detecto o device utilizado (cuda, rocm ou cpu)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
