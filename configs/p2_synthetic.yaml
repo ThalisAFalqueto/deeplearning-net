@@ -22,9 +22,12 @@ model:
     pos_weight: 50.0       # compensa o pico ser ~0,06% da imagem; 0 = L2 pura (Eixo 2)
 
 train:
-  epochs: 100
+  # lr e epochs alinhados com os configs da Parte 1 (synthetic.yaml, default.yaml):
+  # a comparação entre as duas Partes só isola o efeito da representação se o regime
+  # de treino for o mesmo dos dois lados, e o enunciado pede as métricas lado a lado.
+  epochs: 20
   batch_size: 8
-  lr: 0.008
+  lr: 0.001
   num_workers: 0
   save_every: 5           # grava last.pth a cada N épocas, para poder retomar
 
