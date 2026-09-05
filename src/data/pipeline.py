@@ -6,8 +6,8 @@ from .factory import DatasetFactoryRegistry
 
 
 class DataPipeline:
-    def __init__(self, app_config: AppConfig):
-        self.cfg = app_config.get_train_config()
+    def __init__(self, app_config: AppConfig, config=None):
+        self.cfg = config or app_config.get_train_config()
         self.factory = DatasetFactoryRegistry.get(app_config)
 
     def build_dataloaders(self) -> Tuple[DataLoader, DataLoader]:

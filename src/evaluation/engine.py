@@ -8,9 +8,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
-from torch.utils.data import DataLoader
 
-from src.data import SyntheticEllipses
 from src.utils import labels_from_probability
 from src.metrics.instance import MeanAveragePrecision, CountError
 from src.metrics.semantic import IoU, Dice
@@ -18,10 +16,12 @@ from src.models.unet import UNet
 from src.utils import to_binary
 from src.evaluation.config import EvalConfig
 from src.core.config import AppConfig
+from src.data import DataPipeline
 
 
 class EvalEngine:
     def __init__(self, app_config: AppConfig, checkpoint: Path):
+        self.app_config = app_config
         self.cfg = app_config.get_eval_config()
         self.checkpoint = checkpoint
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -29,11 +29,10 @@ class EvalEngine:
     @torch.no_grad()
     def run(self) -> None:
         cfg = self.cfg
-        d = cfg.data
         threshold = cfg.decode["threshold"]
 
-        val_ds = self._build_val_dataset()
-        loader = DataLoader(val_ds, batch_size=cfg.train["batch_size"])
+        data_pipeline = DataPipeline(self.app_config, config=cfg)
+        _, val_loader = data_pipeline.build_dataloaders()
 
         model = UNet(
             in_channels=1, out_channels=cfg.model["out_channels"],
@@ -48,7 +47,7 @@ class EvalEngine:
         count_error_metric = CountError()
 
         por_imagem, exemplos = [], []
-        for images, gts in loader:
+        for images, gts in val_loader:
             probs = torch.sigmoid(model(images.to(self.device))).cpu()[:, 0]
             for prob, gt in zip(probs, gts):
                 prob_np = prob.numpy()
@@ -104,16 +103,6 @@ class EvalEngine:
                 axes[row, col].axis("off")
         plt.tight_layout()
         plt.savefig(out_dir / "predicoes.png", dpi=90)
-
-    def _build_val_dataset(self):
-        """Constrói o dataset de validação a partir da config."""
-        d = self.cfg.data
-        if d["kind"] == "synthetic":
-            return SyntheticEllipses(
-                n_samples=d["n_val"], size=d["size"], seed=self.cfg.seed + 777,
-                min_obj=d["min_obj"], max_obj=d["max_obj"],
-            )
-        raise ValueError(f"data.kind desconhecido: {d['kind']}")
 
     def _print_summary(self, resumo, out_dir, n_imagens) -> None:
         print(f"\n{n_imagens} imagens de validação\n")
