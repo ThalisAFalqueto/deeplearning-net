@@ -40,6 +40,10 @@ def parse_arguments() -> argparse.Namespace:
         help="atalho para --config configs/synthetic.yaml",
     )
     parser.add_argument(
+        "--resume", action="store_true",
+        help="retoma o treino de <output_dir>/last.pth, se existir",
+    )
+    parser.add_argument(
         "--checkpoint", default=None,
         help="caminho do checkpoint para avaliação (padrão: <output_dir>/best.pth)",
     )
@@ -58,7 +62,7 @@ def main():
 
     if args.mode in ("train", "both"):
         Path(app_config.get_train_config().output_dir).mkdir(parents=True, exist_ok=True)
-        TrainEngine(app_config).run()
+        TrainEngine(app_config, resume=args.resume).run()
 
     if args.mode in ("eval", "both"):
         checkpoint = Path(args.checkpoint) if args.checkpoint else app_config.get_eval_config().output_dir / "best.pth"
