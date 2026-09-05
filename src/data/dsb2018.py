@@ -34,17 +34,32 @@ class DSB2018(Dataset):
     de padding, e a distorção é modesta na maioria das imagens.
 
     Args:
-        data_dir: caminho para ``stage1_train`` ou ``stage1_val``.
+        data_dir: diretório contendo uma pasta por amostra. Ignorado se ``sample_dirs``
+            for fornecido.
         size: resolução alvo (lado do quadrado).
+        sample_dirs: lista explícita de amostras. É o caminho usado pelo split
+            estratificado (``src/data/split.py``), que decide a divisão a partir da
+            modalidade de cada imagem em vez de depender de como os arquivos estão
+            organizados em disco.
     """
 
-    def __init__(self, data_dir: str, size: int = 256):
+    def __init__(
+        self,
+        data_dir: str | None = None,
+        size: int = 256,
+        sample_dirs: list[Path] | None = None,
+    ):
         self.root = Path(os.getcwd())
-        self.data_dir = self.root / Path(data_dir)
         self.size = size
-        self.samples = sorted(
-            d for d in self.data_dir.iterdir() if d.is_dir()
-        )
+
+        if sample_dirs is not None:
+            self.data_dir = None
+            self.samples = sorted(Path(d) for d in sample_dirs)
+        else:
+            if data_dir is None:
+                raise ValueError("informe data_dir ou sample_dirs")
+            self.data_dir = self.root / Path(data_dir)
+            self.samples = sorted(d for d in self.data_dir.iterdir() if d.is_dir())
 
     def __len__(self) -> int:
         return len(self.samples)

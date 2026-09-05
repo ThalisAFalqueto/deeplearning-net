@@ -9,6 +9,10 @@ data:
   size: 256
   train_dir: src/data/datasets/dsb2018/train
   val_dir: src/data/datasets/dsb2018/validation
+  # junta as duas pastas e refaz a divisão preservando a proporção de cada
+  # modalidade (fluorescência / histologia / brightfield) nos dois lados
+  stratify: true
+  val_fraction: 0.2
 
 model:
   base: 16

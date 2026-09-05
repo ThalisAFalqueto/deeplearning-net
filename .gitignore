@@ -21,3 +21,4 @@ outputs/
 
 # Sistema
 .DS_Store
+.modality_cache.json
