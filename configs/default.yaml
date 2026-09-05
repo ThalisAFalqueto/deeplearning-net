@@ -7,8 +7,8 @@ seed: 0
 data:
   kind: dsb2018
   size: 256
-  train_dir: /kaggle/input/data-science-bowl-2018/stage1_train
-  val_dir: /kaggle/input/data-science-bowl-2018/stage1_val
+  train_dir: src/data/datasets/dsb2018/train
+  val_dir: src/data/datasets/dsb2018/validation
 
 model:
   base: 16
@@ -16,7 +16,7 @@ model:
   out_channels: 1
 
 train:
-  epochs: 100
+  epochs: 20
   batch_size: 8
   lr: 0.001
   num_workers: 0

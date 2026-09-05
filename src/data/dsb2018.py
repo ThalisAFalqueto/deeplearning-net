@@ -22,6 +22,7 @@ import numpy as np
 import torch
 from PIL import Image
 from torch.utils.data import Dataset
+import os
 
 
 class DSB2018(Dataset):
@@ -33,7 +34,8 @@ class DSB2018(Dataset):
     """
 
     def __init__(self, data_dir: str, size: int = 256):
-        self.data_dir = Path(data_dir)
+        self.root = Path(os.getcwd())
+        self.data_dir = self.root / Path(data_dir)
         self.size = size
         self.samples = sorted(
             d for d in self.data_dir.iterdir() if d.is_dir()
