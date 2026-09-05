@@ -23,21 +23,19 @@ def labels_com_dois_discos(size=48):
     return torch.from_numpy(labels)
 
 
-def logits_perfeitos(alvos):
-    """Constrói a saída da rede que reproduz exatamente os alvos.
+def saidas_perfeitas(alvos):
+    """Constrói as três saídas da rede que reproduzem exatamente os alvos.
 
-    A perda de segmentação usa BCEWithLogits e a do heatmap aplica sigmoid, então os dois
-    canais precisam ser o logit inverso do alvo. Os offsets são previstos direto.
+    A perda de segmentação usa BCEWithLogits e a do heatmap aplica sigmoid, então as duas
+    precisam do logit inverso do alvo. Os offsets são previstos direto.
     """
     def inv_sigmoid(p, eps=1e-6):
         p = p.clamp(eps, 1 - eps)
         return torch.log(p / (1 - p))
 
-    return torch.cat([
-        inv_sigmoid(alvos["foreground"]),
-        inv_sigmoid(alvos["heatmap"]),
-        alvos["offsets"],
-    ], dim=1)
+    return (inv_sigmoid(alvos["foreground"]),
+            inv_sigmoid(alvos["heatmap"]),
+            alvos["offsets"])
 
 
 @pytest.fixture
@@ -51,7 +49,7 @@ def test_alvos_perfeitos_dao_perda_quase_zero(alvos):
               converge para outra coisa e nada denuncia.
     Como: constrói os logits que reproduzem os alvos e confere as três componentes.
     """
-    total, comp = CenterOffsetLoss()(logits_perfeitos(alvos), alvos)
+    total, comp = CenterOffsetLoss()(*saidas_perfeitas(alvos), alvos)
 
     assert comp["seg"] < 1e-4
     assert comp["heatmap"] < 1e-6
@@ -121,7 +119,8 @@ def test_imagem_sem_foreground_nao_explode():
     Como: label map todo zero.
     """
     alvos = batch_center_offset_targets(torch.zeros(1, 32, 32, dtype=torch.long))
-    total, comp = CenterOffsetLoss()(torch.zeros(1, 4, 32, 32), alvos)
+    z = torch.zeros(1, 1, 32, 32)
+    total, comp = CenterOffsetLoss()(z, z, torch.zeros(1, 2, 32, 32), alvos)
     assert torch.isfinite(total)
     assert comp["offset"] == pytest.approx(0.0)
 
@@ -132,12 +131,14 @@ def test_gradiente_flui(alvos):
               continua caindo por conta dos outros.
     Como: logits com requires_grad; confere gradiente em cada canal separadamente.
     """
-    logits = torch.zeros(1, 4, 48, 48, requires_grad=True)
-    total, _ = CenterOffsetLoss()(logits, alvos)
+    seg = torch.zeros(1, 1, 48, 48, requires_grad=True)
+    hm = torch.zeros(1, 1, 48, 48, requires_grad=True)
+    off = torch.zeros(1, 2, 48, 48, requires_grad=True)
+    total, _ = CenterOffsetLoss()(seg, hm, off, alvos)
     total.backward()
 
-    for canal, nome in ((0, "foreground"), (1, "heatmap"), (2, "offset y"), (3, "offset x")):
-        assert logits.grad[:, canal].abs().sum() > 0, f"sem gradiente no canal {nome}"
+    for tensor, nome in ((seg, "segmentação"), (hm, "heatmap"), (off, "offsets")):
+        assert tensor.grad.abs().sum() > 0, f"sem gradiente em {nome}"
 
 
 def test_pesos_alteram_a_contribuicao(alvos):
@@ -146,6 +147,6 @@ def test_pesos_alteram_a_contribuicao(alvos):
               funcionassem, ajustar o equilíbrio seria impossível.
     Como: compara o total com w_offset=0 contra a soma das outras duas componentes.
     """
-    logits = torch.randn(1, 4, 48, 48)
-    total_sem_offset, comp = CenterOffsetLoss(w_offset=0.0)(logits, alvos)
+    saidas = (torch.randn(1, 1, 48, 48), torch.randn(1, 1, 48, 48), torch.randn(1, 2, 48, 48))
+    total_sem_offset, comp = CenterOffsetLoss(w_offset=0.0)(*saidas, alvos)
     assert float(total_sem_offset) == pytest.approx(comp["seg"] + comp["heatmap"], rel=1e-5)

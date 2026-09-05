@@ -87,7 +87,20 @@ class UNet(nn.Module):
         # --- cabeça: conv 1x1 não olha vizinhança, só combina canais
         self.head = nn.Conv2d(ch, out_channels, kernel_size=1)
 
-    def forward(self, x):
+        # canais de saída do backbone, para as variantes montarem as próprias cabeças
+        self.feature_channels = ch
+        self._bce = nn.BCEWithLogitsLoss()
+
+    def features(self, x):
+        """Encoder + bottleneck + decoder, sem a cabeça final.
+
+        Separado do `forward` para que as variantes possam trocar apenas a cabeça e
+        reaproveitar exatamente este encoder-decoder. O enunciado da Parte 2 exige isso:
+        "mantenham o encoder-decoder da Parte 1 e mudem o que ele prevê".
+
+        Returns:
+            (B, base, H, W) — features na resolução da entrada.
+        """
         skips = []
         for encoder in self.encoders:
             x = encoder(x)
@@ -103,7 +116,44 @@ class UNet(nn.Module):
             x = torch.cat([x, skip], dim=1)
             x = decoder(x)
 
-        return self.head(x)
+        return x
+
+    def forward(self, x):
+        return self.head(self.features(x))
+
+    # ------------------------------------------------------------------ interface comum
+    # Os modelos declaram como interpretar a própria saída: quais alvos ela exige, como
+    # medir o erro e como virar objetos numerados. Assim os engines não precisam saber
+    # de nada sobre a tarefa — e não há índice de canal espalhado pelo código.
+
+    def build_targets(self, labels: torch.Tensor, device):
+        """Máscara binária de foreground, (B, 1, H, W)."""
+        return (labels > 0).float().unsqueeze(1).to(device)
+
+    def compute_loss(self, outputs, targets):
+        """BCE sobre o único canal de saída.
+
+        Returns:
+            (perda, dict de componentes) — o dict entra no log por época.
+        """
+        perda = self._bce(outputs, targets)
+        return perda, {"bce": float(perda.detach())}
+
+    def foreground_prob(self, outputs) -> torch.Tensor:
+        """Probabilidade de foreground, (B, H, W)."""
+        return torch.sigmoid(outputs)[:, 0]
+
+    def decode(self, outputs, decode_cfg: dict):
+        """Uma imagem (1, H, W) → label map por limiar + componentes conexos.
+
+        É o método ingênuo da Parte 1: a máscara binária não carrega informação capaz de
+        separar dois objetos encostados, então cada mancha de pixels grudados vira um
+        objeto só.
+        """
+        from src.utils import labels_from_probability
+
+        prob = torch.sigmoid(outputs)[0].cpu().numpy()
+        return labels_from_probability(prob, decode_cfg["threshold"])
 
     def receptive_field(self) -> int:
         """Campo receptivo teórico de um pixel de saída, em pixels da entrada.

@@ -12,6 +12,7 @@ data:
   max_obj: 20
 
 model:
+  name: unet
   base: 16
   depth: 3
   out_channels: 1        # 1 logit de foreground (baseline binário)

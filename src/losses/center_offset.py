@@ -88,26 +88,37 @@ class CenterOffsetLoss:
             return pred.sum() * 0.0    # imagem sem foreground: zero, mas mantém o grafo
         return erro.sum() / n
 
-    def __call__(self, logits: torch.Tensor, alvos: dict) -> tuple[torch.Tensor, dict]:
+    def __call__(
+        self,
+        seg_logits: torch.Tensor,
+        heatmap_logits: torch.Tensor,
+        offsets: torch.Tensor,
+        alvos: dict,
+    ) -> tuple[torch.Tensor, dict]:
         """Calcula a perda total e as componentes.
 
+        Recebe as três saídas separadas, e não um tensor único fatiado por índice: o
+        modelo já as devolve nomeadas, e assim nenhuma convenção de canal precisa ser
+        repetida aqui.
+
         Args:
-            logits: saída bruta da rede, (B, 4, H, W). Canal 0 é logit de foreground,
-                canal 1 é o heatmap, canais 2-3 são os offsets.
+            seg_logits: (B, 1, H, W) — logit de foreground.
+            heatmap_logits: (B, 1, H, W) — logit do heatmap de centros.
+            offsets: (B, 2, H, W) — (Δy, Δx) previstos, em pixels.
             alvos: dicionário de :func:`src.data.targets.batch_center_offset_targets`.
 
         Returns:
-            Tupla (perda total, dicionário com as três componentes já ponderadas). O
-            dicionário vai para o log por época — é como se percebe cedo que uma das
-            perdas está dominando ou estagnada.
+            Tupla (perda total, dicionário com as três componentes). O dicionário vai
+            para o log por época — é como se percebe cedo que uma das perdas está
+            dominando ou estagnada.
         """
-        seg = self.seg_loss(logits[:, 0:1], alvos["foreground"])
+        seg = self.seg_loss(seg_logits, alvos["foreground"])
 
         # sigmoid no heatmap: o alvo é uma gaussiana em [0, 1], então a saída precisa
         # estar no mesmo intervalo. Sem isso a rede teria que aprender a se limitar sozinha.
-        heatmap = self.heatmap_loss(torch.sigmoid(logits[:, 1:2]), alvos["heatmap"])
+        heatmap = self.heatmap_loss(torch.sigmoid(heatmap_logits), alvos["heatmap"])
 
-        offset = self.offset_loss(logits[:, 2:4], alvos["offsets"], alvos["foreground"])
+        offset = self.offset_loss(offsets, alvos["offsets"], alvos["foreground"])
 
         total = self.w_seg * seg + self.w_heatmap * heatmap + self.w_offset * offset
         return total, {
