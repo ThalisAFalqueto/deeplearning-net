@@ -17,6 +17,7 @@ from src.utils import to_binary
 from src.evaluation.config import EvalConfig
 from src.evaluation.density import gt_fusion_rate, plot_density, plot_fusion
 from src.core.config import AppConfig
+from src.core.task import get_task
 from src.data import DataPipeline
 
 
@@ -42,6 +43,8 @@ class EvalEngine:
         model.load_state_dict(torch.load(self.checkpoint, map_location=self.device, weights_only=False)["model"])
         model.eval()
 
+        task = get_task(cfg)
+
         iou_metric = IoU()
         dice_metric = Dice()
         map_metric = MeanAveragePrecision()
@@ -49,12 +52,14 @@ class EvalEngine:
 
         por_imagem, exemplos = [], []
         for images, gts in val_loader:
-            probs = torch.sigmoid(model(images.to(self.device))).cpu()[:, 0]
-            for prob, gt in zip(probs, gts):
+            logits = model(images.to(self.device)).cpu()
+            probs = task.foreground_prob(logits)
+            for saida, prob, gt in zip(logits, probs, gts):
                 prob_np = prob.numpy()
                 gt_np = gt.numpy()
 
-                pred_labels_np = labels_from_probability(prob_np, threshold)
+                # cada tarefa decodifica a sua própria saída em objetos numerados
+                pred_labels_np = np.asarray(task.decode(saida, cfg.decode))
                 pred_labels = torch.tensor(pred_labels_np)
                 gt_tensor = gt.long()
 

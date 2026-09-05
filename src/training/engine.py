@@ -12,6 +12,7 @@ from src.models.unet import UNet
 from src.utils import to_binary
 from src.data import DataPipeline
 from src.core.config import AppConfig
+from src.core.task import get_task
 
 
 class TrainEngine:
@@ -49,8 +50,9 @@ class TrainEngine:
             depth=cfg.model["depth"],
         ).to(self.device)
 
-        # Instancio o critério de otimização (função de perca)
-        criterion = torch.nn.BCEWithLogitsLoss()
+        # A tarefa define o que a rede prevê, qual perda otimiza isso e como decodificar.
+        # Trocar 'task' no YAML troca as três de uma vez, sem tocar no loop.
+        task = get_task(cfg)
 
         # Instancio o método de otimização (Adam, SGD, etc)
         optimizer = torch.optim.Adam(model.parameters(), lr=t["lr"])
@@ -69,34 +71,45 @@ class TrainEngine:
             model.train()
             epoch_loss, t_epoch = 0.0, time.perf_counter()
 
+            componentes_epoca = {}
             for images, labels in train_loader:
                 images = images.to(self.device)
-                target = (labels > 0).float().unsqueeze(1).to(self.device)
+                target = task.build_targets(labels, self.device)
 
                 optimizer.zero_grad()
-                loss = criterion(model(images), target)
+                loss, componentes = task.loss(model(images), target)
                 loss.backward()
                 optimizer.step()
                 epoch_loss += loss.item() * images.size(0)
+                for k, v in componentes.items():
+                    componentes_epoca[k] = componentes_epoca.get(k, 0.0) + v * images.size(0)
 
-            train_loss = epoch_loss / len(train_loader.dataset)
-            val_loss, val_iou, val_dice = self._evaluate(model, val_loader, criterion)
+            n_train = len(train_loader.dataset)
+            train_loss = epoch_loss / n_train
+            componentes_epoca = {k: v / n_train for k, v in componentes_epoca.items()}
+            val_loss, val_iou, val_dice = self._evaluate(model, val_loader, task)
             dt = time.perf_counter() - t_epoch
             history.append({
                 "epoch": epoch, "train_loss": train_loss, "val_loss": val_loss,
                 "val_iou": val_iou, "val_dice": val_dice, "seconds": dt,
+                **{f"loss_{k}": v for k, v in componentes_epoca.items()},
             })
-            print(f"época {epoch:3d}/{t['epochs']} | treino {train_loss:.4f} "
+            # com várias perdas somadas, o total sozinho esconde qual delas estagnou
+            detalhe = ""
+            if len(componentes_epoca) > 1:
+                detalhe = " (" + " ".join(f"{k} {v:.4f}" for k, v in componentes_epoca.items()) + ")"
+            print(f"época {epoch:3d}/{t['epochs']} | treino {train_loss:.4f}{detalhe} "
                   f"| val {val_loss:.4f} | IoU {val_iou:.4f} | Dice {val_dice:.4f} "
                   f"| {dt:.1f}s")
 
             if val_iou > best_iou:
                 best_iou = val_iou
-            torch.save(
-                {"model": model.state_dict(), "config": {**cfg.__dict__, "output_dir": str(cfg.output_dir)},
-                 "epoch": epoch, "val_iou": val_iou},
-                cfg.output_dir / "best.pth",
-            )
+                torch.save(
+                    {"model": model.state_dict(),
+                     "config": {**cfg.__dict__, "output_dir": str(cfg.output_dir)},
+                     "epoch": epoch, "val_iou": val_iou},
+                    cfg.output_dir / "best.pth",
+                )
 
         total = time.perf_counter() - t_start
         (cfg.output_dir / "history.json").write_text(json.dumps(history, indent=2))
@@ -105,7 +118,7 @@ class TrainEngine:
         print(f"checkpoint: {cfg.output_dir/'best.pth'}")
 
     @torch.no_grad()
-    def _evaluate(self, model, loader, criterion):
+    def _evaluate(self, model, loader, task):
         model.eval()
         iou_metric = IoU()
         dice_metric = Dice()
@@ -113,12 +126,13 @@ class TrainEngine:
         total_loss, ious, dices = 0.0, [], []
         for images, labels in loader:
             images = images.to(self.device)
-            target = (labels > 0).float().unsqueeze(1).to(self.device)
+            target = task.build_targets(labels, self.device)
 
             logits = model(images)
-            total_loss += criterion(logits, target).item() * images.size(0)
+            loss, _ = task.loss(logits, target)
+            total_loss += loss.item() * images.size(0)
 
-            prob = torch.sigmoid(logits).cpu()[:, 0]
+            prob = task.foreground_prob(logits).cpu()
             for p, g in zip(prob, labels):
                 pred_mask = p > self.cfg.decode["threshold"]
                 binary_gt = to_binary(g)

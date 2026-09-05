@@ -1,0 +1,37 @@
+# Parte 2 (Trilha C) no DSB2018 — o resultado que vai para a apresentação.
+# Comparar contra a Parte 1: IoU 0,8098 / mAP 0,4439 com o baseline binário.
+# Em GPU, aumentar epochs (60+), batch_size (32) e num_workers (4).
+name: p2_dsb2018
+seed: 0
+
+data:
+  kind: dsb2018
+  size: 256
+  train_dir: src/data/datasets/dsb2018/train
+  val_dir: src/data/datasets/dsb2018/validation
+  stratify: true
+  val_fraction: 0.2
+
+model:
+  base: 16
+  depth: 3
+  task: center_offset
+  out_channels: 4          # 1 foreground + 1 heatmap + 2 offsets
+  loss:
+    w_seg: 1.0
+    w_heatmap: 1.0
+    w_offset: 0.1          # a L1 dos offsets é medida em pixels: sem escalar, domina
+    pos_weight: 50.0       # compensa o pico ser ~0,06% da imagem; 0 = L2 pura (Eixo 2)
+
+train:
+  epochs: 20
+  batch_size: 8
+  lr: 0.001
+  num_workers: 0
+
+decode:
+  threshold: 0.5           # foreground
+  peak_threshold: 0.3      # altura mínima de um máximo local para contar como centro
+  nms_kernel: 3
+
+output_dir: outputs/p2

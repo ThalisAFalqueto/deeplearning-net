@@ -1,0 +1,36 @@
+# Parte 2 (Trilha C) no dataset sintético — validação rápida em CPU antes de ir para a GPU.
+# Comparar contra a Parte 0: mAP 0,2253 com o baseline binário.
+name: p2_synthetic
+seed: 0
+
+data:
+  kind: synthetic
+  size: 128
+  n_train: 240
+  n_val: 60
+  min_obj: 5
+  max_obj: 20
+
+model:
+  base: 16
+  depth: 3
+  task: center_offset
+  out_channels: 4          # 1 foreground + 1 heatmap + 2 offsets
+  loss:
+    w_seg: 1.0
+    w_heatmap: 1.0
+    w_offset: 0.1          # a L1 dos offsets é medida em pixels: sem escalar, domina
+    pos_weight: 50.0       # compensa o pico ser ~0,06% da imagem; 0 = L2 pura (Eixo 2)
+
+train:
+  epochs: 20
+  batch_size: 8
+  lr: 0.001
+  num_workers: 0
+
+decode:
+  threshold: 0.5           # foreground
+  peak_threshold: 0.3      # altura mínima de um máximo local para contar como centro
+  nms_kernel: 3
+
+output_dir: outputs/p2_synthetic
