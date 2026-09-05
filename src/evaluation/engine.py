@@ -15,6 +15,7 @@ from src.metrics.semantic import IoU, Dice
 from src.models.unet import UNet
 from src.utils import to_binary
 from src.evaluation.config import EvalConfig
+from src.evaluation.density import gt_fusion_rate, plot_density, plot_fusion
 from src.core.config import AppConfig
 from src.data import DataPipeline
 
@@ -70,6 +71,10 @@ class EvalEngine:
                     "dice": dice_val,
                     "map": float(m_ap),
                     "count_error": int(count_err),
+                    # quantos objetos do gabarito dividem componente conexo com outro:
+                    # é a variável que de fato explica a queda do mAP, mais do que a
+                    # densidade pura (ver src/evaluation/density.py)
+                    "gt_fusion": float(gt_fusion_rate(gt_np)),
                 })
                 if len(exemplos) < 6:
                     exemplos.append((prob_np, gt_np, pred_labels_np))
@@ -83,7 +88,17 @@ class EvalEngine:
         (out_dir / "summary.json").write_text(json.dumps(resumo, indent=2))
 
         self._save_figures(exemplos, out_dir)
-        self._print_summary(resumo, out_dir, len(por_imagem))
+
+        # gráficos do item 5 da Parte 1: a tendência contra a densidade (o que o
+        # enunciado pede) e contra a taxa de fusão (a variável que a explica)
+        figuras = Path("outputs/figures")
+        nome = out_dir.name
+        plot_density(por_imagem, figuras / f"{nome}_densidade.png",
+                     titulo="Métricas vs. densidade de objetos")
+        plot_fusion(por_imagem, figuras / f"{nome}_fusao.png",
+                    titulo="Métricas vs. fração de objetos que se tocam")
+
+        self._print_summary(resumo, out_dir, len(por_imagem), figuras, nome)
 
     def _colorize(self, labels: np.ndarray, seed: int = 0) -> np.ndarray:
         rng = np.random.default_rng(seed)
@@ -104,7 +119,7 @@ class EvalEngine:
         plt.tight_layout()
         plt.savefig(out_dir / "predicoes.png", dpi=90)
 
-    def _print_summary(self, resumo, out_dir, n_imagens) -> None:
+    def _print_summary(self, resumo, out_dir, n_imagens, figuras, nome) -> None:
         print(f"\n{n_imagens} imagens de validação\n")
         print("  SEMÂNTICO (a máscara binária)")
         print(f"    IoU                 {resumo['iou']:.4f}")
@@ -112,5 +127,7 @@ class EvalEngine:
         print("\n  INSTÂNCIA (os objetos)")
         print(f"    mAP                 {resumo['map']:.4f}")
         print(f"    erro de contagem    {resumo['count_error']:.2f} objetos por imagem")
-        print(f"\n  figura:  {out_dir/'predicoes.png'}")
+        print(f"\n  predições:  {out_dir/'predicoes.png'}")
+        print(f"  densidade:  {figuras/f'{nome}_densidade.png'}")
+        print(f"  fusão:      {figuras/f'{nome}_fusao.png'}")
         print(f"  por imagem: {out_dir/'per_image.json'}")

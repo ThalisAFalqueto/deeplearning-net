@@ -207,8 +207,8 @@ def plot_density(
 
 
 def plot_fusion(
-    registros: list[dict], fusao: list[float], output_path: Path,
-    n_bins: int = 5, titulo: str = ""
+    registros: list[dict], output_path: Path,
+    n_bins: int = 5, titulo: str = "", fusao: list[float] | None = None
 ) -> None:
     """Mesmo gráfico, mas contra a taxa de fusão do gabarito em vez da densidade.
 
@@ -217,11 +217,14 @@ def plot_fusion(
 
     Args:
         registros: saída de ``load_per_image``.
-        fusao: taxa de fusão de cada imagem, na mesma ordem dos registros.
         output_path: onde salvar a figura.
         n_bins: quantas faixas.
         titulo: título da figura.
+        fusao: taxa de fusão por imagem. Se None, lê o campo ``gt_fusion`` que a
+            avaliação grava em cada registro.
     """
+    if fusao is None:
+        fusao = [r["gt_fusion"] for r in registros]
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt

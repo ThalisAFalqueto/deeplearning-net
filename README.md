@@ -72,7 +72,7 @@ src/
 ├── evaluation/ avaliação e figuras
 └── utils/      pós-processamento: previsão -> objetos numerados
 tests/          testes das métricas e da decodificação
-outputs/        checkpoints, figuras e logs (fora do git)
+outputs/        figuras e métricas (versionadas); checkpoints (fora do git)
 ```
 
 A mesma `UNet` serve as três Partes; muda apenas `out_channels`: 1 canal nas Partes 0 e 1
@@ -144,11 +144,11 @@ U-Net binária, 20 épocas.
 | **Treino: 33,1 min (CPU)** | IoU | **0,8098** | mAP | **0,4439** |
 | | Dice | **0,8870** | erro de contagem | **10,42** objetos/imagem |
 
-O gráfico exigido pelo item 5 está em `docs/figures/p1_densidade.png`: conforme a densidade
+O gráfico exigido pelo item 5 está em `outputs/figures/p1_densidade.png`: conforme a densidade
 de objetos cresce, o IoU semântico praticamente não se move enquanto o mAP de instância cai
 e o erro de contagem cresce uma ordem de grandeza.
 
-`docs/figures/p1_fusao.png` mostra o mesmo contra a **fração de objetos que se tocam**, que é
+`outputs/figures/p1_fusao.png` mostra o mesmo contra a **fração de objetos que se tocam**, que é
 a variável causal — a densidade é apenas uma proxy dela. Uma imagem com 300 núcleos bem
 espaçados não quebra o baseline; o que quebra é o toque:
 
