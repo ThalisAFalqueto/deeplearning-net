@@ -112,5 +112,73 @@ pelo enunciado). Definição usada:
 - `AP(t) = TP / (TP + FP + FN)`, contando **objetos** (convenção DSB2018);
 - `mAP` = média de `AP(t)` sobre `t = 0,50; 0,55; ...; 0,95`.
 
-A regra de matching (gulosa por IoU decrescente ou Hungarian) é selecionável — ver
-`src/metrics/instance.py`.
+### Regra de matching
+
+**Os resultados reportados usam matching guloso por IoU decrescente.** O Hungarian
+(atribuição ótima, via `scipy.optimize.linear_sum_assignment`) também está implementado e é
+selecionável pelo parâmetro `matcher` de `MeanAveragePrecision`.
+
+O enunciado observa que regras diferentes dão números diferentes. Medimos: **nas 136 imagens
+de validação as duas produzem exatamente o mesmo mAP (0,4439)** — não há uma única imagem em
+que divirjam.
+
+Isso não é coincidência do dataset, é consequência do limiar. Se um objeto previsto `P`
+tivesse IoU > 0,5 com dois objetos reais disjuntos `A` e `B`, teríamos `|P∩A| > 0,5·|P|` e
+`|P∩B| > 0,5·|P|`; somando, `|P∩A| + |P∩B| > |P|`, impossível para conjuntos disjuntos
+contidos em `P`. Ou seja, **com limiar ≥ 0,50 nenhum objeto previsto tem mais de um
+candidato**, e sem ambiguidade a escolha gulosa já é a ótima. Verificado empiricamente:
+0 casos ambíguos em 4.469 objetos previstos.
+
+A divergência só apareceria com limiares abaixo de 0,50, que a métrica definida pelo
+enunciado não utiliza. O teste `test_guloso_e_hungaro_divergem` constrói uma matriz de IoU
+artificial em que elas divergem, para garantir que as duas implementações são de fato
+diferentes.
+
+## Parte 1 — baseline no DSB2018
+
+Split estratificado por modalidade (ver adiante), 534 imagens de treino e 136 de validação,
+U-Net binária, 20 épocas.
+
+| | Semântico | | Instância | |
+|---|---|---|---|---|
+| **Treino: 33,1 min (CPU)** | IoU | **0,8098** | mAP | **0,4439** |
+| | Dice | **0,8870** | erro de contagem | **10,42** objetos/imagem |
+
+O gráfico exigido pelo item 5 está em `docs/figures/p1_densidade.png`: conforme a densidade
+de objetos cresce, o IoU semântico praticamente não se move enquanto o mAP de instância cai
+e o erro de contagem cresce uma ordem de grandeza.
+
+`docs/figures/p1_fusao.png` mostra o mesmo contra a **fração de objetos que se tocam**, que é
+a variável causal — a densidade é apenas uma proxy dela. Uma imagem com 300 núcleos bem
+espaçados não quebra o baseline; o que quebra é o toque:
+
+| objetos que se tocam | IoU | mAP |
+|---|---|---|
+| 0 – 10% | 0,833 | 0,589 |
+| 10 – 30% | 0,794 | 0,359 |
+| 30 – 50% | 0,787 | 0,198 |
+| 50 – 70% | 0,781 | 0,064 |
+
+O IoU cai 6% e o mAP cai 89% na mesma faixa. Correlação do mAP com a densidade: −0,240;
+com a taxa de fusão: −0,577.
+
+## Split estratificado por modalidade
+
+O DSB2018 mistura três tipos de imagem, detectados automaticamente
+(`src/data/modality.py`) pela saturação de cor e pelo brilho mediano:
+
+| Modalidade | Amostras | |
+|---|---|---|
+| Fluorescência | 546 | 81,5% |
+| Histologia H&E | 108 | 16,1% |
+| Brightfield | 16 | 2,4% |
+
+A divisão treino/validação é feita **dentro de cada modalidade** (`src/data/split.py`),
+preservando a proporção nos dois conjuntos. Com apenas 16 imagens brightfield, um sorteio
+simples deixaria entre 2 e 6 delas na validação conforme a seed; estratificando, são sempre
+4. Isso importa porque as ablações da Parte 3 usam 2 seeds e reportam média ± desvio — sem
+estratificar, parte do desvio seria a variação de composição do split, e não o efeito que se
+quer medir.
+
+Ativado por `stratify: true` em `configs/default.yaml`. A divisão é lógica: nenhum arquivo é
+movido, e a classificação de modalidade fica em cache (`.modality_cache.json`).
