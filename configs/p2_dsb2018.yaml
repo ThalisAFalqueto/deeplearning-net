@@ -31,7 +31,11 @@ train:
 
 decode:
   threshold: 0.5           # foreground
-  peak_threshold: 0.3      # altura mínima de um máximo local para contar como centro
+  # Varrido no sintético: 0,3 -> mAP 0,424 / erro 1,93 | 0,5 -> 0,476 / 1,75
+  # | 0,7 -> 0,497 / 2,80. Limiar alto exige picos mais confiantes: sobe o mAP mas
+  # perde objetos fracos, e a contagem piora. 0,5 é o melhor equilíbrio entre as duas
+  # métricas que o enunciado pede.
+  peak_threshold: 0.5
   nms_kernel: 3
 
 output_dir: outputs/p2
