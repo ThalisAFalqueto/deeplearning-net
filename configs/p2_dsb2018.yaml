@@ -11,7 +11,7 @@ data:
   data_dir: src/data/datasets/dsb2018
   # fração para validação. A divisão é sempre estratificada por modalidade
   # (fluorescência / histologia / brightfield), recalculada a cada execução.
-  val_fraction: 0.2
+  val_fraction: 0.15
 
 model:
   name: unet_improved
@@ -24,9 +24,9 @@ model:
     pos_weight: 50.0       # compensa o pico ser ~0,06% da imagem; 0 = L2 pura (Eixo 2)
 
 train:
-  epochs: 20
+  epochs: 100
   batch_size: 8
-  lr: 0.001
+  lr: 0.006
   num_workers: 0
   save_every: 5           # grava last.pth a cada N épocas, para poder retomar
 
