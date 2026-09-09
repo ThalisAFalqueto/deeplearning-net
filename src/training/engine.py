@@ -37,6 +37,7 @@ class TrainEngine:
         (os momentos), e recomeçar sem elas faz as primeiras épocas depois do resume
         saírem instáveis. O histórico vai junto para o log não perder as épocas antigas.
         """
+        path.parent.mkdir(parents=True, exist_ok=True)
         torch.save({
             "model": model.state_dict(),
             "optimizer": optimizer.state_dict(),
@@ -150,6 +151,7 @@ class TrainEngine:
                                       epoch, best_iou, history)
 
         total = time.perf_counter() - t_start
+        cfg.output_dir.mkdir(parents=True, exist_ok=True)
         (cfg.output_dir / "history.json").write_text(json.dumps(history, indent=2))
         print(f"\ntempo total: {total/60:.1f} min ({total/t['epochs']:.1f}s por época)")
         print(f"melhor IoU de validação: {best_iou:.4f}")

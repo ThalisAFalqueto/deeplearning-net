@@ -5,9 +5,11 @@ no YAML troca a arquitetura, e com ela o que a rede prevê, qual perda otimiza i
 decodificar a saída em objetos — porque cada modelo carrega esse contrato.
 
     unet            1 saída     BCE                  limiar + componentes conexos
+    segnet          1 saída     BCE                  limiar + componentes conexos
+    resunet         1 saída     BCE                  limiar + componentes conexos
     unet_improved   3 saídas    CE + L2 + L1         picos + atribuição ao centro
 
-É isso que permite rodar as Partes 1 e 2 com o mesmo comando, mudando só o config, e
+É isso que permite rodar as Partes 1, 2 e 3 com o mesmo comando, mudando só o config, e
 comparar as métricas lado a lado como o enunciado exige.
 """
 
@@ -17,6 +19,8 @@ import torch.nn as nn
 
 from src.models.unet import UNet
 from src.models.unet_improved import UNetImproved
+from src.models.segnet import SegNet
+from src.models.resunet import ResUNet
 
 
 class ModelFactory(ABC):
@@ -51,9 +55,35 @@ class UNetImprovedFactory(ModelFactory):
         )
 
 
+class SegNetFactory(ModelFactory):
+    """SegNet — max unpooling com índices no decoder."""
+
+    def build(self, cfg) -> nn.Module:
+        return SegNet(
+            in_channels=cfg.model.get("in_channels", 1),
+            out_channels=cfg.model.get("out_channels", 1),
+            base=cfg.model["base"],
+            depth=cfg.model["depth"],
+        )
+
+
+class ResUNetFactory(ModelFactory):
+    """ResUNet — U-Net com Residual Blocks."""
+
+    def build(self, cfg) -> nn.Module:
+        return ResUNet(
+            in_channels=cfg.model.get("in_channels", 1),
+            out_channels=cfg.model.get("out_channels", 1),
+            base=cfg.model["base"],
+            depth=cfg.model["depth"],
+        )
+
+
 class ModelFactoryRegistry:
     _factories = {
         "unet": UNetFactory(),
+        "segnet": SegNetFactory(),
+        "resunet": ResUNetFactory(),
         "unet_improved": UNetImprovedFactory(),
     }
 

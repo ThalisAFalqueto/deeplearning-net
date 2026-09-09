@@ -47,6 +47,18 @@ def parse_arguments() -> argparse.Namespace:
         "--checkpoint", default=None,
         help="caminho do checkpoint para avaliação (padrão: <output_dir>/best.pth)",
     )
+    parser.add_argument(
+        "--ablation", nargs="+", metavar="CONFIG",
+        help="executa ablação: treino+eval de múltiplas configs em múltiplas seeds",
+    )
+    parser.add_argument(
+        "--ablation-seeds", nargs="+", type=int, default=[0, 42],
+        help="seeds para a ablação (padrão: 0 42)",
+    )
+    parser.add_argument(
+        "--ablation-output", default="outputs/ablation",
+        help="diretório base para relatórios de ablação",
+    )
 
     return parser.parse_args()
 
@@ -57,8 +69,20 @@ def main():
     if args.synthetic:
         args.config = "configs/synthetic.yaml"
 
+    # ===== MODO ABLAÇÃO =====
+    if args.ablation:
+        from src.ablation.runner import AblationRunner
+        runner = AblationRunner(
+            config_paths=args.ablation,
+            seeds=args.ablation_seeds,
+            base_output_dir=args.ablation_output,
+        )
+        runner.run()
+        return
+
+    # ===== MODO NORMAL =====
     app_config = AppConfig(args.config)
-    Path(app_config.train_config.output_dir).mkdir(parents=True, exist_ok=True)
+    Path(app_config.get_train_config().output_dir).mkdir(parents=True, exist_ok=True)
 
     if args.mode in ("train", "both"):
         Path(app_config.get_train_config().output_dir).mkdir(parents=True, exist_ok=True)

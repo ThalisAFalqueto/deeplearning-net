@@ -1,6 +1,6 @@
-# Parte 1 — baseline binário no DSB2018.
-# Usado como referência na ablação contra a Parte 2 (Trilha C).
-name: baseline
+# Config exemplo para ResUNet no DSB2018.
+# Uso: python -m main --config configs/resunet_dsb2018.yaml
+name: resunet_dsb2018
 seed: 0
 
 data:
@@ -10,7 +10,7 @@ data:
   val_fraction: 0.15
 
 model:
-  name: unet_improved
+  name: resunet
   base: 16
   depth: 3
   out_channels: 1
@@ -25,4 +25,4 @@ train:
 decode:
   threshold: 0.5
 
-output_dir: outputs/p1
+output_dir: outputs/resunet
