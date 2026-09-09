@@ -16,9 +16,9 @@ model:
   out_channels: 1
 
 train:
-  epochs: 10
+  epochs: 200
   batch_size: 8
-  lr: 0.001
+  lr: 0.005
   num_workers: 0
   save_every: 5
 
