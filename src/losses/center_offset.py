@@ -15,6 +15,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+from src.data.targets import batch_center_offset_targets
+
 
 class CenterOffsetLoss:
     """Soma ponderada das três perdas da Trilha C.
@@ -126,3 +128,32 @@ class CenterOffsetLoss:
             "heatmap": float(heatmap.detach()),
             "offset": float(offset.detach()),
         }
+
+
+class CenterOffsetTask:
+    """Adaptador da Trilha C para a interface que os engines consomem.
+
+    A ``LossFactoryRegistry`` devolve objetos com dois métodos — ``build_targets`` e
+    ``__call__(outputs, targets)`` — para que o motor de treino não precise saber que
+    representação cada tarefa exige. Esta classe embrulha :class:`CenterOffsetLoss` (que
+    continua sendo a matemática pura, testada em isolado) e cuida de:
+
+    - construir os alvos de heatmap e offsets a partir do label map do gabarito;
+    - desempacotar a tupla ``(seg, heatmap, offsets)`` que a cabeça de três saídas devolve.
+
+    Aceita as mesmas chaves de ``CenterOffsetLoss`` (``w_seg``, ``w_heatmap``, ``w_offset``,
+    ``pos_weight``); a chave ``name`` do YAML é retirada pela factory antes de chegar aqui.
+    """
+
+    def __init__(self, **loss_cfg):
+        self.criterion = CenterOffsetLoss(**loss_cfg)
+
+    def build_targets(self, labels: torch.Tensor, device) -> dict:
+        """Label map (B, H, W) → dict com ``foreground``, ``heatmap`` e ``offsets``."""
+        alvos = batch_center_offset_targets(labels)
+        return {chave: valor.to(device) for chave, valor in alvos.items()}
+
+    def __call__(self, outputs, targets):
+        """``outputs`` é a tupla ``(seg_logits, heatmap_logits, offsets)`` da cabeça."""
+        seg_logits, heatmap_logits, offsets = outputs
+        return self.criterion(seg_logits, heatmap_logits, offsets, targets)

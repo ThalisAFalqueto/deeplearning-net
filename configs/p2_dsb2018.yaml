@@ -18,6 +18,7 @@ model:
   base: 16
   depth: 3
   loss:
+    name: center_offset
     w_seg: 1.0
     w_heatmap: 1.0
     w_offset: 0.1          # a L1 dos offsets é medida em pixels: sem escalar, domina

@@ -62,21 +62,22 @@ class ResidualBlock(nn.Module):
 class ResUNet(nn.Module):
     """ResUNet com profundidade configurável.
 
+    É um **backbone**: ``features(x)`` devolve ``(B, base, H, W)``. A cabeça de tarefa e a
+    perda ficam fora (ver ``src/models/heads.py`` e ``src/losses/factory.py``).
+
     Args:
         in_channels: canais da imagem de entrada.
-        out_channels: canais de saída.
         base: filtros no primeiro nível do encoder.
         depth: quantas vezes reduz a resolução.
 
     Shape:
         entrada  (B, in_channels, H, W)
-        saída    (B, out_channels, H, W)
+        saída    (B, base, H, W)   — features na resolução da entrada
     """
 
     def __init__(
         self,
         in_channels: int = 1,
-        out_channels: int = 1,
         base: int = 16,
         depth: int = 3,
     ):
@@ -104,28 +105,15 @@ class ResUNet(nn.Module):
             self.decoders.append(ResidualBlock(skip_ch * 2, skip_ch))
             ch = skip_ch
 
-        # cabeça
-        self.head = nn.Conv2d(ch, out_channels, kernel_size=1)
+        # canais de saída do backbone, para a factory dimensionar a cabeça
         self.feature_channels = ch
-        self._bce = nn.BCEWithLogitsLoss()
-
-    def forward(self, x):
-        skips = []
-        for encoder in self.encoders:
-            x = encoder(x)
-            skips.append(x)
-            x = self.pool(x)
-
-        x = self.bridge(x)
-
-        for up, decoder, skip in zip(self.ups, self.decoders, reversed(skips)):
-            x = up(x)
-            x = torch.cat([x, skip], dim=1)
-            x = decoder(x)
-
-        return self.head(x)
 
     def features(self, x):
+        """Encoder → bridge → decoder (skips por concatenação).
+
+        Returns:
+            (B, base, H, W) — features na resolução da entrada.
+        """
         skips = []
         for encoder in self.encoders:
             x = encoder(x)
@@ -141,22 +129,8 @@ class ResUNet(nn.Module):
 
         return x
 
-    # ------------------------------------------------------------------ interface comum
-    def build_targets(self, labels: torch.Tensor, device):
-        return (labels > 0).float().unsqueeze(1).to(device)
-
-    def compute_loss(self, outputs, targets):
-        perda = self._bce(outputs, targets)
-        return perda, {"bce": float(perda.detach())}
-
-    def foreground_prob(self, outputs) -> torch.Tensor:
-        return torch.sigmoid(outputs)[:, 0]
-
-    def decode(self, outputs, decode_cfg: dict):
-        from src.utils import labels_from_probability
-
-        prob = torch.sigmoid(outputs)[0].detach().cpu().numpy()
-        return labels_from_probability(prob, decode_cfg["threshold"])
+    def forward(self, x):
+        return self.features(x)
 
     def receptive_field(self) -> int:
         r, j = 1, 1

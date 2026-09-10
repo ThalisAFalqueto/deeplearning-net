@@ -1,9 +1,8 @@
 """U-Net — encoder-decoder com skip connections.
 
-Uma única implementação serve as três Partes; o que muda é só `out_channels`:
-
-    Partes 0 e 1   out_channels = 1        logit de foreground
-    Parte 2 (B)    out_channels = 1 + D    foreground + D canais de embedding
+É um **backbone**: só extrai features. O que a rede prevê (foreground binário, ou
+segmentação + heatmap + offsets) fica na cabeça, escolhida pela factory; a perda, na
+``LossFactoryRegistry``. ``features(x)`` devolve ``(B, base, H, W)`` na resolução da entrada.
 
 O decoder usa ConvTranspose2d com kernel 2 e stride 2. Kernel divisível pelo stride
 significa que as contribuições não se sobrepõem de forma desigual — é o que evita os
@@ -42,19 +41,17 @@ class UNet(nn.Module):
 
     Args:
         in_channels: canais da imagem de entrada (1 para escala de cinza).
-        out_channels: canais de saída (ver docstring do módulo).
         base: número de filtros no primeiro nível; dobra a cada descida.
         depth: quantas vezes reduz a resolução.
 
     Shape:
         entrada  (B, in_channels, H, W)
-        saída    (B, out_channels, H, W)   — mesma resolução da entrada
+        saída    (B, base, H, W)   — features na mesma resolução da entrada
     """
 
     def __init__(
         self,
         in_channels: int = 1,
-        out_channels: int = 1,
         base: int = 16,
         depth: int = 3,
     ):
@@ -84,19 +81,15 @@ class UNet(nn.Module):
             self.decoders.append(DoubleConv(skip_ch * 2, skip_ch))
             ch = skip_ch
 
-        # --- cabeça: conv 1x1 não olha vizinhança, só combina canais
-        self.head = nn.Conv2d(ch, out_channels, kernel_size=1)
-
-        # canais de saída do backbone, para as variantes montarem as próprias cabeças
+        # canais de saída do backbone, para a factory dimensionar a cabeça
         self.feature_channels = ch
-        self._bce = nn.BCEWithLogitsLoss()
 
     def features(self, x):
-        """Encoder + bottleneck + decoder, sem a cabeça final.
+        """Encoder + bottleneck + decoder.
 
-        Separado do `forward` para que as variantes possam trocar apenas a cabeça e
-        reaproveitar exatamente este encoder-decoder. O enunciado da Parte 2 exige isso:
-        "mantenham o encoder-decoder da Parte 1 e mudem o que ele prevê".
+        É a saída do backbone. As cabeças (``src/models/heads.py``) partem daqui — o
+        enunciado da Parte 2 exige "mantenham o encoder-decoder da Parte 1 e mudem o que
+        ele prevê", e é exatamente isso que a separação backbone/cabeça garante.
 
         Returns:
             (B, base, H, W) — features na resolução da entrada.
@@ -119,41 +112,8 @@ class UNet(nn.Module):
         return x
 
     def forward(self, x):
-        return self.head(self.features(x))
-
-    # ------------------------------------------------------------------ interface comum
-    # Os modelos declaram como interpretar a própria saída: quais alvos ela exige, como
-    # medir o erro e como virar objetos numerados. Assim os engines não precisam saber
-    # de nada sobre a tarefa — e não há índice de canal espalhado pelo código.
-
-    def build_targets(self, labels: torch.Tensor, device):
-        """Máscara binária de foreground, (B, 1, H, W)."""
-        return (labels > 0).float().unsqueeze(1).to(device)
-
-    def compute_loss(self, outputs, targets):
-        """BCE sobre o único canal de saída.
-
-        Returns:
-            (perda, dict de componentes) — o dict entra no log por época.
-        """
-        perda = self._bce(outputs, targets)
-        return perda, {"bce": float(perda.detach())}
-
-    def foreground_prob(self, outputs) -> torch.Tensor:
-        """Probabilidade de foreground, (B, H, W)."""
-        return torch.sigmoid(outputs)[:, 0]
-
-    def decode(self, outputs, decode_cfg: dict):
-        """Uma imagem (1, H, W) → label map por limiar + componentes conexos.
-
-        É o método ingênuo da Parte 1: a máscara binária não carrega informação capaz de
-        separar dois objetos encostados, então cada mancha de pixels grudados vira um
-        objeto só.
-        """
-        from src.utils import labels_from_probability
-
-        prob = torch.sigmoid(outputs)[0].cpu().numpy()
-        return labels_from_probability(prob, decode_cfg["threshold"])
+        """Como backbone, o forward é o próprio ``features`` — a cabeça fica no Segmenter."""
+        return self.features(x)
 
     def receptive_field(self) -> int:
         """Campo receptivo teórico de um pixel de saída, em pixels da entrada.

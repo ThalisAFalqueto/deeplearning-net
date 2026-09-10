@@ -1,5 +1,5 @@
-# Parte 1 — baseline binário no DSB2018.
-# Usado como referência na ablação contra a Parte 2 (Trilha C).
+# Baseline no DSB2018 — segmentação de instância pela Trilha C (seg + heatmap + offsets).
+# Referência da ablação contra as demais arquiteturas (segnet, resunet, pspnet).
 name: baseline
 seed: 0
 
@@ -13,16 +13,23 @@ model:
   name: unet_improved
   base: 16
   depth: 3
-  out_channels: 1
+  loss:
+    name: center_offset
+    w_seg: 1.0
+    w_heatmap: 1.0
+    w_offset: 0.1          # a L1 dos offsets é medida em pixels: sem escalar, domina
+    pos_weight: 50.0       # compensa o pico ser ~0,06% da imagem; 0 = L2 pura (Eixo 2)
 
 train:
-  epochs: 200
+  epochs: 20
   batch_size: 8
   lr: 0.005
   num_workers: 0
   save_every: 5
 
 decode:
-  threshold: 0.5
+  threshold: 0.5           # foreground
+  peak_threshold: 0.5
+  nms_kernel: 3
 
 output_dir: outputs/p1

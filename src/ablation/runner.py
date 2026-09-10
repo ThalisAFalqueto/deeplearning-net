@@ -92,6 +92,9 @@ class AblationRunner:
         raw = yaml.safe_load(Path(config_path).read_text())
         raw["seed"] = seed
         raw["output_dir"] = str(output_dir)
+        # todas as figuras da ablação ficam sob outputs/ablation/<timestamp>/<config>/seed_<n>/,
+        # junto de predicoes.png e summary.json — nada vaza para outputs/figures/
+        raw["figures_dir"] = str(output_dir)
         return raw
 
     def _calcular_estatisticas(self, metricas_por_seed: dict) -> dict:

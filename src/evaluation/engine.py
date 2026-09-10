@@ -94,8 +94,10 @@ class EvalEngine:
         self._save_figures(exemplos, out_dir)
 
         # gráficos do item 5 da Parte 1: a tendência contra a densidade (o que o
-        # enunciado pede) e contra a taxa de fusão (a variável que a explica)
-        figuras = Path("outputs/figures")
+        # enunciado pede) e contra a taxa de fusão (a variável que a explica).
+        # figures_dir vem do config: runs normais -> outputs/figures; ablação -> a pasta
+        # da seed, para não vazar arquivo fora de outputs/ablation/<timestamp>.
+        figuras = Path(cfg.figures_dir)
         nome = out_dir.name
         plot_density(por_imagem, figuras / f"{nome}_densidade.png",
                      titulo="Métricas vs. densidade de objetos")
@@ -122,6 +124,7 @@ class EvalEngine:
                 axes[row, col].axis("off")
         plt.tight_layout()
         plt.savefig(out_dir / "predicoes.png", dpi=90)
+        plt.close(fig)
 
     def _print_summary(self, resumo, out_dir, n_imagens, figuras, nome) -> None:
         print(f"\n{n_imagens} imagens de validação\n")

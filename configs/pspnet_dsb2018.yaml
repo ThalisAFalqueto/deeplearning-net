@@ -1,6 +1,6 @@
-# SegNet no DSB2018 — segmentação de instância pela Trilha C (seg + heatmap + offsets).
-# Uso: python -m main --config configs/segnet_dsb2018.yaml
-name: segnet_dsb2018
+# PSPNet no DSB2018 — Pyramid Pooling Module + Trilha C (seg + heatmap + offsets).
+# Uso: python -m main --config configs/pspnet_dsb2018.yaml
+name: pspnet_dsb2018
 seed: 0
 
 data:
@@ -10,7 +10,7 @@ data:
   val_fraction: 0.15
 
 model:
-  name: segnet
+  name: pspnet
   base: 16
   depth: 3
   loss:
@@ -32,4 +32,4 @@ decode:
   peak_threshold: 0.5
   nms_kernel: 3
 
-output_dir: outputs/segnet
+output_dir: outputs/pspnet

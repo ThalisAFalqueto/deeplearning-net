@@ -4,11 +4,13 @@ Diferente da U-Net, o decoder não usa transpose convolution. Em vez disso,
 o max pooling do encoder guarda os índices dos valores máximos, e o decoder
 os recupera com ``MaxUnpool2d``.
 
-Interface comum com ``UNet`` e ``UNetImproved``:
-    - ``build_targets``, ``compute_loss``, ``foreground_prob``, ``decode``
+É um **backbone**: ``features(x)`` devolve ``(B, feature_channels, H, W)``. A cabeça de
+tarefa e a perda ficam fora (ver ``src/models/heads.py`` e ``src/losses/factory.py``).
+Atenção: o decoder reduz canais pela metade a cada nível, então ``feature_channels`` acaba
+em ``base / 2`` (não ``base`` como na U-Net) — a cabeça é dimensionada a partir desse
+atributo, então isso é transparente.
 """
 
-import torch
 import torch.nn as nn
 
 
@@ -62,19 +64,17 @@ class SegNet(nn.Module):
 
     Args:
         in_channels: canais da imagem de entrada (1 para escala de cinza).
-        out_channels: canais de saída.
         base: número de filtros no primeiro nível.
         depth: quantas vezes reduz a resolução.
 
     Shape:
         entrada  (B, in_channels, H, W)
-        saída    (B, out_channels, H, W)
+        saída    (B, feature_channels, H, W)   — features na resolução da entrada
     """
 
     def __init__(
         self,
         in_channels: int = 1,
-        out_channels: int = 1,
         base: int = 16,
         depth: int = 3,
     ):
@@ -105,25 +105,15 @@ class SegNet(nn.Module):
             self.decoders.append(SegNetDecoderBlock(ch))
             ch = ch // 2
 
-        # cabeça
-        self.head = nn.Conv2d(ch, out_channels, kernel_size=1)
+        # canais de saída do backbone, para a factory dimensionar a cabeça
         self.feature_channels = ch
-        self._bce = nn.BCEWithLogitsLoss()
-
-    def forward(self, x):
-        indices_list = []
-        for encoder in self.encoders:
-            x, indices = encoder(x)
-            indices_list.append(indices)
-
-        x = self.bridge(x)
-
-        for decoder, indices in zip(self.decoders, reversed(indices_list)):
-            x = decoder(x, indices)
-
-        return self.head(x)
 
     def features(self, x):
+        """Encoder → bridge → decoder. Os índices do pooling ficam locais a esta chamada.
+
+        Returns:
+            (B, feature_channels, H, W) — features na resolução da entrada.
+        """
         indices_list = []
         for encoder in self.encoders:
             x, indices = encoder(x)
@@ -136,22 +126,8 @@ class SegNet(nn.Module):
 
         return x
 
-    # ------------------------------------------------------------------ interface comum
-    def build_targets(self, labels: torch.Tensor, device):
-        return (labels > 0).float().unsqueeze(1).to(device)
-
-    def compute_loss(self, outputs, targets):
-        perda = self._bce(outputs, targets)
-        return perda, {"bce": float(perda.detach())}
-
-    def foreground_prob(self, outputs) -> torch.Tensor:
-        return torch.sigmoid(outputs)[:, 0]
-
-    def decode(self, outputs, decode_cfg: dict):
-        from src.utils import labels_from_probability
-
-        prob = torch.sigmoid(outputs)[0].detach().cpu().numpy()
-        return labels_from_probability(prob, decode_cfg["threshold"])
+    def forward(self, x):
+        return self.features(x)
 
     def receptive_field(self) -> int:
         r, j = 1, 1

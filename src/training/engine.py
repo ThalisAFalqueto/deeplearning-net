@@ -9,6 +9,7 @@ import torch
 
 from src.metrics.semantic import IoU, Dice
 from src.models.factory import ModelFactoryRegistry
+from src.losses.factory import LossFactoryRegistry
 from src.utils import to_binary
 from src.data import DataPipeline
 from src.core.config import AppConfig
@@ -73,9 +74,10 @@ class TrainEngine:
         # Carrego os loaders via pipeline (treino e validação)
         train_loader, val_loader = data_pipeline.build_dataloaders()
 
-        # A factory escolhe a arquitetura pelo config. O modelo carrega o contrato
-        # completo: quais alvos exige, como calcular a perda e como decodificar.
+        # A factory escolhe a arquitetura (backbone + cabeça) pelo config. A perda vem de
+        # uma factory separada: o modelo só extrai features e decodifica, não conhece a perda.
         model = ModelFactoryRegistry.build(cfg).to(self.device)
+        self.loss = LossFactoryRegistry.build(cfg)
 
 
         # Instancio o método de otimização (Adam, SGD, etc)
@@ -83,7 +85,7 @@ class TrainEngine:
 
         # Conto o número de parâmetros do modelo e imprimo algumas informações
         n_params = sum(p.numel() for p in model.parameters())
-        print(f"modelo: {type(model).__name__} | dispositivo: {self.device} | parâmetros: {n_params/1e3:.1f}k "
+        print(f"modelo: {type(model.backbone).__name__} | dispositivo: {self.device} | parâmetros: {n_params/1e3:.1f}k "
               f"| campo receptivo: {model.receptive_field()} px")
         print(f"treino: {len(train_loader.dataset)} imagens | validação: {len(val_loader.dataset)} imagens\n")
 
@@ -110,10 +112,10 @@ class TrainEngine:
             componentes_epoca = {}
             for images, labels in train_loader:
                 images = images.to(self.device)
-                target = model.build_targets(labels, self.device)
+                target = self.loss.build_targets(labels, self.device)
 
                 optimizer.zero_grad()
-                loss, componentes = model.compute_loss(model(images), target)
+                loss, componentes = self.loss(model(images), target)
                 loss.backward()
                 optimizer.step()
                 epoch_loss += loss.item() * images.size(0)
@@ -167,10 +169,10 @@ class TrainEngine:
         total_loss, ious, dices = 0.0, [], []
         for images, labels in loader:
             images = images.to(self.device)
-            target = model.build_targets(labels, self.device)
+            target = self.loss.build_targets(labels, self.device)
 
             logits = model(images)
-            loss, _ = model.compute_loss(logits, target)
+            loss, _ = self.loss(logits, target)
             total_loss += loss.item() * images.size(0)
 
             prob = model.foreground_prob(logits).cpu()

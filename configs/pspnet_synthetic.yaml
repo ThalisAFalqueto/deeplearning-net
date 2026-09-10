@@ -1,0 +1,36 @@
+# PSPNet no dataset sintético — validação rápida em CPU antes de ir para a GPU.
+name: pspnet_synthetic
+seed: 0
+
+data:
+  kind: synthetic
+  size: 128
+  n_train: 240
+  n_val: 60
+  min_obj: 5
+  max_obj: 20
+
+model:
+  name: pspnet
+  base: 16
+  depth: 3
+  loss:
+    name: center_offset
+    w_seg: 1.0
+    w_heatmap: 1.0
+    w_offset: 0.1
+    pos_weight: 50.0
+
+train:
+  epochs: 20
+  batch_size: 8
+  lr: 0.001
+  num_workers: 0
+  save_every: 5
+
+decode:
+  threshold: 0.5
+  peak_threshold: 0.5
+  nms_kernel: 3
+
+output_dir: outputs/pspnet_synthetic

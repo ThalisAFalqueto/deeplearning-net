@@ -1,26 +1,38 @@
 """Constrói o modelo a partir da configuração.
 
 Mesmo padrão do ``DatasetFactoryRegistry`` em ``src/data/factory.py``: trocar ``model.name``
-no YAML troca a arquitetura, e com ela o que a rede prevê, qual perda otimiza isso e como
-decodificar a saída em objetos — porque cada modelo carrega esse contrato.
+no YAML troca a arquitetura do backbone. Trocar ``model.loss.name`` troca a cabeça **e** a
+perda — a escolha vem de uma função só (``resolve_task_name``), então cabeça e perda nunca
+dessincronizam.
 
-    unet            1 saída     BCE                  limiar + componentes conexos
-    segnet          1 saída     BCE                  limiar + componentes conexos
-    resunet         1 saída     BCE                  limiar + componentes conexos
-    unet_improved   3 saídas    CE + L2 + L1         picos + atribuição ao centro
+    backbone   unet | unet_improved | segnet | resunet | pspnet   (só extrai features)
+    cabeça     bce          → BinaryHead        (1 logit de foreground)
+               center_offset → CenterOffsetHeads (seg + heatmap + offsets)
 
-É isso que permite rodar as Partes 1, 2 e 3 com o mesmo comando, mudando só o config, e
-comparar as métricas lado a lado como o enunciado exige.
+O que a factory devolve é sempre um ``Segmenter`` (backbone + cabeça).
 """
 
 from abc import ABC, abstractmethod
 
 import torch.nn as nn
 
-from src.models.unet import UNet
-from src.models.unet_improved import UNetImproved
-from src.models.segnet import SegNet
+from src.losses.factory import resolve_task_name
+from src.models.heads import BinaryHead, CenterOffsetHeads
+from src.models.pspnet import PSPNet
 from src.models.resunet import ResUNet
+from src.models.segmenter import Segmenter
+from src.models.segnet import SegNet
+from src.models.unet import UNet
+
+# ``unet_improved`` é o mesmo backbone da U-Net — o "improved" era só a troca de cabeça,
+# que agora é escolhida pela perda. Mantido como alias para os configs da Parte 2.
+_BACKBONES = {
+    "unet": UNet,
+    "unet_improved": UNet,
+    "segnet": SegNet,
+    "resunet": ResUNet,
+    "pspnet": PSPNet,
+}
 
 
 class ModelFactory(ABC):
@@ -31,61 +43,27 @@ class ModelFactory(ABC):
         """Instancia o modelo a partir de um TrainConfig ou EvalConfig."""
 
 
-class UNetFactory(ModelFactory):
-    """U-Net binária das Partes 0 e 1."""
+class SegmenterFactory(ModelFactory):
+    """Monta ``Segmenter(backbone, cabeça)`` — a cabeça vem de ``model.loss.name``."""
+
+    def __init__(self, backbone_cls):
+        self._backbone_cls = backbone_cls
 
     def build(self, cfg) -> nn.Module:
-        return UNet(
-            in_channels=cfg.model.get("in_channels", 1),
-            out_channels=cfg.model.get("out_channels", 1),
-            base=cfg.model["base"],
-            depth=cfg.model["depth"],
-        )
-
-
-class UNetImprovedFactory(ModelFactory):
-    """U-Net de três cabeças da Parte 2 (Trilha C)."""
-
-    def build(self, cfg) -> nn.Module:
-        return UNetImproved(
+        backbone = self._backbone_cls(
             in_channels=cfg.model.get("in_channels", 1),
             base=cfg.model["base"],
             depth=cfg.model["depth"],
-            loss_cfg=cfg.model.get("loss", {}),
         )
-
-
-class SegNetFactory(ModelFactory):
-    """SegNet — max unpooling com índices no decoder."""
-
-    def build(self, cfg) -> nn.Module:
-        return SegNet(
-            in_channels=cfg.model.get("in_channels", 1),
-            out_channels=cfg.model.get("out_channels", 1),
-            base=cfg.model["base"],
-            depth=cfg.model["depth"],
-        )
-
-
-class ResUNetFactory(ModelFactory):
-    """ResUNet — U-Net com Residual Blocks."""
-
-    def build(self, cfg) -> nn.Module:
-        return ResUNet(
-            in_channels=cfg.model.get("in_channels", 1),
-            out_channels=cfg.model.get("out_channels", 1),
-            base=cfg.model["base"],
-            depth=cfg.model["depth"],
-        )
+        if resolve_task_name(cfg) == "bce":
+            head = BinaryHead(backbone.feature_channels, cfg.model.get("out_channels", 1))
+        else:
+            head = CenterOffsetHeads(backbone.feature_channels)
+        return Segmenter(backbone, head)
 
 
 class ModelFactoryRegistry:
-    _factories = {
-        "unet": UNetFactory(),
-        "segnet": SegNetFactory(),
-        "resunet": ResUNetFactory(),
-        "unet_improved": UNetImprovedFactory(),
-    }
+    _factories = {nome: SegmenterFactory(cls) for nome, cls in _BACKBONES.items()}
 
     @classmethod
     def get(cls, cfg) -> ModelFactory:

@@ -1,4 +1,4 @@
-# Config exemplo para ResUNet no DSB2018.
+# ResUNet no DSB2018 — segmentação de instância pela Trilha C (seg + heatmap + offsets).
 # Uso: python -m main --config configs/resunet_dsb2018.yaml
 name: resunet_dsb2018
 seed: 0
@@ -13,10 +13,15 @@ model:
   name: resunet
   base: 16
   depth: 3
-  out_channels: 1
+  loss:
+    name: center_offset
+    w_seg: 1.0
+    w_heatmap: 1.0
+    w_offset: 0.1
+    pos_weight: 50.0
 
 train:
-  epochs: 200
+  epochs: 20
   batch_size: 8
   lr: 0.005
   num_workers: 0
@@ -24,5 +29,7 @@ train:
 
 decode:
   threshold: 0.5
+  peak_threshold: 0.5
+  nms_kernel: 3
 
 output_dir: outputs/resunet
