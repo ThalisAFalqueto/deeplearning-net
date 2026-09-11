@@ -1,0 +1,434 @@
+[
+  {
+    "mosaico": 0,
+    "fontes": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      8,
+      9,
+      12,
+      14,
+      15,
+      16,
+      17,
+      19,
+      20,
+      21,
+      22
+    ],
+    "modalidade": "fluorescence",
+    "n_gt": 889,
+    "n_cruzam": 72,
+    "referencia": {
+      "map": 0.43522547220368396,
+      "count_error": 3,
+      "iou": 0.8186603784561157,
+      "n_pred": 886,
+      "recall_divisa": 0.9027777777777778,
+      "recall_resto": 0.8323133414932681
+    },
+    "ingenua": {
+      "map": 0.38754652643840604,
+      "count_error": 80,
+      "iou": 0.8186999559402466,
+      "n_pred": 969,
+      "recall_divisa": 0.7638888888888888,
+      "recall_resto": 0.835985312117503
+    },
+    "fusao_iou": {
+      "map": 0.43495150727494913,
+      "count_error": 0,
+      "iou": 0.8186999559402466,
+      "n_pred": 889,
+      "recall_divisa": 0.9027777777777778,
+      "recall_resto": 0.8323133414932681
+    },
+    "mapas_interna": {
+      "map": 0.4348151259171109,
+      "count_error": 2,
+      "iou": 0.8186999559402466,
+      "n_pred": 887,
+      "recall_divisa": 0.9027777777777778,
+      "recall_resto": 0.8323133414932681
+    },
+    "media_simples": {
+      "map": 0.41692984122536025,
+      "count_error": 24,
+      "iou": 0.8232365846633911,
+      "n_pred": 913,
+      "recall_divisa": 0.875,
+      "recall_resto": 0.8323133414932681
+    },
+    "media_interior": {
+      "map": 0.43912599044823547,
+      "count_error": 6,
+      "iou": 0.8207056522369385,
+      "n_pred": 883,
+      "recall_divisa": 0.8888888888888888,
+      "recall_resto": 0.8372093023255814
+    }
+  },
+  {
+    "mosaico": 1,
+    "fontes": [
+      23,
+      24,
+      26,
+      27,
+      29,
+      30,
+      31,
+      32,
+      34,
+      36,
+      37,
+      39,
+      40,
+      42,
+      43,
+      44
+    ],
+    "modalidade": "fluorescence",
+    "n_gt": 754,
+    "n_cruzam": 92,
+    "referencia": {
+      "map": 0.4855734169411024,
+      "count_error": 35,
+      "iou": 0.8191609382629395,
+      "n_pred": 789,
+      "recall_divisa": 0.8695652173913043,
+      "recall_resto": 0.879154078549849
+    },
+    "ingenua": {
+      "map": 0.41112377900120356,
+      "count_error": 134,
+      "iou": 0.8191640973091125,
+      "n_pred": 888,
+      "recall_divisa": 0.782608695652174,
+      "recall_resto": 0.8821752265861027
+    },
+    "fusao_iou": {
+      "map": 0.4845328136647087,
+      "count_error": 39,
+      "iou": 0.8191640973091125,
+      "n_pred": 793,
+      "recall_divisa": 0.8695652173913043,
+      "recall_resto": 0.8806646525679759
+    },
+    "mapas_interna": {
+      "map": 0.48488016777537163,
+      "count_error": 36,
+      "iou": 0.8191640973091125,
+      "n_pred": 790,
+      "recall_divisa": 0.8695652173913043,
+      "recall_resto": 0.879154078549849
+    },
+    "media_simples": {
+      "map": 0.44927882174196865,
+      "count_error": 71,
+      "iou": 0.8204663395881653,
+      "n_pred": 825,
+      "recall_divisa": 0.8913043478260869,
+      "recall_resto": 0.8700906344410876
+    },
+    "media_interior": {
+      "map": 0.4876852627357307,
+      "count_error": 31,
+      "iou": 0.8200609087944031,
+      "n_pred": 785,
+      "recall_divisa": 0.8804347826086957,
+      "recall_resto": 0.8806646525679759
+    }
+  },
+  {
+    "mosaico": 2,
+    "fontes": [
+      45,
+      46,
+      48,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ],
+    "modalidade": "fluorescence",
+    "n_gt": 873,
+    "n_cruzam": 79,
+    "referencia": {
+      "map": 0.3163646565363609,
+      "count_error": 249,
+      "iou": 0.8823405504226685,
+      "n_pred": 624,
+      "recall_divisa": 0.810126582278481,
+      "recall_resto": 0.5050377833753149
+    },
+    "ingenua": {
+      "map": 0.27073739904495725,
+      "count_error": 159,
+      "iou": 0.8823513388633728,
+      "n_pred": 714,
+      "recall_divisa": 0.759493670886076,
+      "recall_resto": 0.5050377833753149
+    },
+    "fusao_iou": {
+      "map": 0.3152980198328227,
+      "count_error": 246,
+      "iou": 0.8823513388633728,
+      "n_pred": 627,
+      "recall_divisa": 0.810126582278481,
+      "recall_resto": 0.5050377833753149
+    },
+    "mapas_interna": {
+      "map": 0.3161591443621327,
+      "count_error": 249,
+      "iou": 0.8823513388633728,
+      "n_pred": 624,
+      "recall_divisa": 0.810126582278481,
+      "recall_resto": 0.5050377833753149
+    },
+    "media_simples": {
+      "map": 0.30350686983519604,
+      "count_error": 233,
+      "iou": 0.8861784338951111,
+      "n_pred": 640,
+      "recall_divisa": 0.810126582278481,
+      "recall_resto": 0.5125944584382871
+    },
+    "media_interior": {
+      "map": 0.3188033246962625,
+      "count_error": 256,
+      "iou": 0.8844085931777954,
+      "n_pred": 617,
+      "recall_divisa": 0.810126582278481,
+      "recall_resto": 0.5062972292191436
+    }
+  },
+  {
+    "mosaico": 3,
+    "fontes": [
+      64,
+      65,
+      66,
+      67,
+      68,
+      70,
+      71,
+      72,
+      74,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82
+    ],
+    "modalidade": "fluorescence",
+    "n_gt": 550,
+    "n_cruzam": 63,
+    "referencia": {
+      "map": 0.5192888432897249,
+      "count_error": 37,
+      "iou": 0.8701402544975281,
+      "n_pred": 513,
+      "recall_divisa": 0.9206349206349206,
+      "recall_resto": 0.7926078028747433
+    },
+    "ingenua": {
+      "map": 0.423356420048537,
+      "count_error": 32,
+      "iou": 0.8702023029327393,
+      "n_pred": 582,
+      "recall_divisa": 0.9047619047619048,
+      "recall_resto": 0.7926078028747433
+    },
+    "fusao_iou": {
+      "map": 0.5162958037581233,
+      "count_error": 34,
+      "iou": 0.8702023029327393,
+      "n_pred": 516,
+      "recall_divisa": 0.9206349206349206,
+      "recall_resto": 0.7905544147843943
+    },
+    "mapas_interna": {
+      "map": 0.5192888432897249,
+      "count_error": 37,
+      "iou": 0.8702023029327393,
+      "n_pred": 513,
+      "recall_divisa": 0.9206349206349206,
+      "recall_resto": 0.7926078028747433
+    },
+    "media_simples": {
+      "map": 0.4896479028929449,
+      "count_error": 10,
+      "iou": 0.873200535774231,
+      "n_pred": 540,
+      "recall_divisa": 0.9206349206349206,
+      "recall_resto": 0.7967145790554415
+    },
+    "media_interior": {
+      "map": 0.5183291790884581,
+      "count_error": 36,
+      "iou": 0.8711679577827454,
+      "n_pred": 514,
+      "recall_divisa": 0.9206349206349206,
+      "recall_resto": 0.7926078028747433
+    }
+  },
+  {
+    "mosaico": 4,
+    "fontes": [
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99
+    ],
+    "modalidade": "fluorescence",
+    "n_gt": 438,
+    "n_cruzam": 43,
+    "referencia": {
+      "map": 0.5180616731453936,
+      "count_error": 6,
+      "iou": 0.8883043527603149,
+      "n_pred": 432,
+      "recall_divisa": 0.8837209302325582,
+      "recall_resto": 0.8481012658227848
+    },
+    "ingenua": {
+      "map": 0.44508612722016727,
+      "count_error": 47,
+      "iou": 0.8882746696472168,
+      "n_pred": 485,
+      "recall_divisa": 0.7906976744186046,
+      "recall_resto": 0.850632911392405
+    },
+    "fusao_iou": {
+      "map": 0.5179358712261438,
+      "count_error": 2,
+      "iou": 0.8882746696472168,
+      "n_pred": 436,
+      "recall_divisa": 0.9069767441860465,
+      "recall_resto": 0.8481012658227848
+    },
+    "mapas_interna": {
+      "map": 0.5183719773862182,
+      "count_error": 6,
+      "iou": 0.8882746696472168,
+      "n_pred": 432,
+      "recall_divisa": 0.8837209302325582,
+      "recall_resto": 0.8481012658227848
+    },
+    "media_simples": {
+      "map": 0.4741805088285197,
+      "count_error": 17,
+      "iou": 0.8911439180374146,
+      "n_pred": 455,
+      "recall_divisa": 0.8604651162790697,
+      "recall_resto": 0.8379746835443038
+    },
+    "media_interior": {
+      "map": 0.522287079389435,
+      "count_error": 10,
+      "iou": 0.8896957635879517,
+      "n_pred": 428,
+      "recall_divisa": 0.8837209302325582,
+      "recall_resto": 0.8430379746835444
+    }
+  },
+  {
+    "mosaico": 5,
+    "fontes": [
+      4,
+      6,
+      7,
+      13,
+      18,
+      25,
+      28,
+      33,
+      35,
+      38,
+      41,
+      47,
+      56,
+      69,
+      73,
+      75
+    ],
+    "modalidade": "histology",
+    "n_gt": 405,
+    "n_cruzam": 78,
+    "referencia": {
+      "map": 0.2175518039743496,
+      "count_error": 192,
+      "iou": 0.7182148694992065,
+      "n_pred": 597,
+      "recall_divisa": 0.717948717948718,
+      "recall_resto": 0.6880733944954128
+    },
+    "ingenua": {
+      "map": 0.1722459804665431,
+      "count_error": 308,
+      "iou": 0.718724250793457,
+      "n_pred": 713,
+      "recall_divisa": 0.5641025641025641,
+      "recall_resto": 0.691131498470948
+    },
+    "fusao_iou": {
+      "map": 0.20665291861043142,
+      "count_error": 232,
+      "iou": 0.718724250793457,
+      "n_pred": 637,
+      "recall_divisa": 0.7307692307692307,
+      "recall_resto": 0.6880733944954128
+    },
+    "mapas_interna": {
+      "map": 0.21306410208369725,
+      "count_error": 207,
+      "iou": 0.718724250793457,
+      "n_pred": 612,
+      "recall_divisa": 0.717948717948718,
+      "recall_resto": 0.6880733944954128
+    },
+    "media_simples": {
+      "map": 0.18972020209186774,
+      "count_error": 225,
+      "iou": 0.7237892150878906,
+      "n_pred": 630,
+      "recall_divisa": 0.7051282051282052,
+      "recall_resto": 0.6697247706422018
+    },
+    "media_interior": {
+      "map": 0.21720002390554552,
+      "count_error": 188,
+      "iou": 0.7207346558570862,
+      "n_pred": 593,
+      "recall_divisa": 0.717948717948718,
+      "recall_resto": 0.6850152905198776
+    }
+  }
+]

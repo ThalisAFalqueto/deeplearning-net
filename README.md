@@ -182,3 +182,53 @@ quer medir.
 
 Ativado por `stratify: true` em `configs/default.yaml`. A divisão é lógica: nenhum arquivo é
 movido, e a classificação de modalidade fica em cache (`.modality_cache.json`).
+
+## Parte 4 — inferência em mosaico
+
+```bash
+python -m main --mode mosaic --config configs/p2_dsb2018.yaml --checkpoint outputs/p2/best.pth
+```
+
+Monta mosaicos 4×4 com imagens de validação da mesma modalidade (1024², com gabarito
+conhecido). Depois roda a rede em tiles 256² com passo 192 (sobreposição de 64 px; só 0,4% dos
+núcleos passam de 64 px) e compara formas de costurar o resultado. Resultados em
+`outputs/p4/summary.json` e `per_mosaic.json`. As figuras são `p4_mosaico.png` (grade de tiles
+e divisas), `p4_fronteira.png` (um núcleo na divisa em cada estratégia) e `p4_barras.png`.
+
+A **divisa** é onde termina a parte interna de um tile e começa a do vizinho: o meio da faixa
+de sobreposição (224, 416, 608 e 800 px).
+
+| estratégia | mAP | erro de contagem | recall dos núcleos na divisa |
+|---|---|---|---|
+| imagem inteira numa passada (referência) | 0,415 | 87,0 | 0,851 |
+| tiles decodificados um a um + parte interna (**antes**) | 0,352 | 126,7 | 0,761 |
+| correção A: fusão por IoU na faixa de sobreposição | 0,413 | 92,2 | 0,857 |
+| mapas densos pela parte interna, decodificados uma vez | 0,414 | 89,5 | 0,851 |
+| média simples dos mapas densos | 0,387 | 96,7 | 0,844 |
+| correção B: média dos mapas ponderada pelo interior | 0,417 | 87,8 | 0,850 |
+
+Checkpoint `outputs/p2/best.pth` (Trilha C, 100 épocas), avaliado em CPU. São 6 mosaicos com
+3909 núcleos, dos quais 427 cruzam uma divisa. O IoU semântico fica entre 0,833 e 0,836 em
+todas as estratégias.
+
+- **Para a segmentação semântica, a receita do slide funciona.** A máscara de foreground
+  costurada difere da passada inteira em 38 a 583 pixels por mosaico de 1 milhão (no máximo
+  0,06%).
+- **Para instâncias, costurar rótulos quebra.** O número de um objeto é arbitrário em cada
+  tile, então um núcleo que cruza a divisa vira dois (ou quatro, no cruzamento de divisas). O
+  mAP cai 15% e o erro de contagem sobe 46%.
+- **O problema é decodificar tile a tile, e não o contexto perdido na borda.** Costurando os
+  mapas densos pela parte interna e decodificando uma vez só, o resultado já é o da passada
+  inteira.
+- **Correção A:** junta os pedaços que dois tiles vizinhos veem na mesma região da faixa de
+  sobreposição. Serve para qualquer representação, inclusive a binária.
+- **Correção B:** é o que a Trilha C permite. Offsets e heatmap são grandezas por pixel, não
+  números de objeto, então dá para fazer a média entre tiles. A média precisa pesar o
+  interior: a média simples mistura previsões feitas na borda do tile, com pouco contexto, e
+  perde 7%.
+
+Os números absolutos são menores que os da Parte 2 (0,496) por dois motivos, e os dois atingem
+todas as estratégias igualmente:
+1. **O mAP é calculado por mosaico** (~650 núcleos), e não como média por imagem.
+2. **As emendas entre imagens criam bordas que não existem na imagem sozinha.** As mesmas 96
+   imagens dão 0,512 avaliadas sozinhas e 0,458 recortadas do mosaico.

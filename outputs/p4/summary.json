@@ -1,0 +1,65 @@
+{
+  "checkpoint": "outputs/p2/best.pth",
+  "mosaicos": 6,
+  "tamanho": [
+    1024,
+    1024
+  ],
+  "tile": 256,
+  "passo": 192,
+  "sobreposicao": 64,
+  "tiles_por_mosaico": 25,
+  "limiar_fusao": 0.5,
+  "nucleos": 3909,
+  "nucleos_na_divisa": 427,
+  "estrategias": {
+    "referencia": {
+      "map": 0.41534431101510255,
+      "count_error": 87.0,
+      "iou": 0.8328035573164622,
+      "n_pred": 640.1666666666666,
+      "recall_divisa": 0.85079569104396,
+      "recall_resto": 0.7575479444352289
+    },
+    "ingenua": {
+      "map": 0.3516827053699691,
+      "count_error": 126.66666666666667,
+      "iou": 0.8329027692476908,
+      "n_pred": 725.1666666666666,
+      "recall_divisa": 0.760925566451702,
+      "recall_resto": 0.7595950891361696
+    },
+    "fusao_iou": {
+      "map": 0.41261115572786317,
+      "count_error": 92.16666666666667,
+      "iou": 0.8329027692476908,
+      "n_pred": 649.6666666666666,
+      "recall_divisa": 0.8568084121729602,
+      "recall_resto": 0.7574574754231919
+    },
+    "mapas_interna": {
+      "map": 0.41442989346904263,
+      "count_error": 89.5,
+      "iou": 0.8329027692476908,
+      "n_pred": 643.0,
+      "recall_divisa": 0.85079569104396,
+      "recall_resto": 0.7575479444352289
+    },
+    "media_simples": {
+      "map": 0.3872106911026429,
+      "count_error": 96.66666666666667,
+      "iou": 0.8363358378410339,
+      "n_pred": 667.1666666666666,
+      "recall_divisa": 0.8437765286911273,
+      "recall_resto": 0.7532354112690983
+    },
+    "media_interior": {
+      "map": 0.41723847671061126,
+      "count_error": 87.83333333333333,
+      "iou": 0.8344622552394867,
+      "n_pred": 636.6666666666666,
+      "recall_divisa": 0.8502924704320437,
+      "recall_resto": 0.757472042031811
+    }
+  }
+}

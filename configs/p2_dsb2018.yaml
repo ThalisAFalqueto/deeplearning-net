@@ -40,4 +40,6 @@ decode:
   peak_threshold: 0.5
   nms_kernel: 3
 
-output_dir: outputs/p2
+# Com 10 épocas, grava em pasta própria: outputs/p2 guarda o treino de 100 épocas de 06/09
+# (mAP 0,496), que é o modelo final e o usado na Parte 4 — não gravar em cima dele.
+output_dir: outputs/p2_10ep

@@ -28,8 +28,9 @@ def parse_arguments() -> argparse.Namespace:
     """
     parser = argparse.ArgumentParser(description="Deep Learning Net")
     parser.add_argument(
-        "--mode", choices=["train", "eval", "both"], default="both",
-        help="executa treino, avaliação ou ambos (padrão: both)",
+        "--mode", choices=["train", "eval", "both", "mosaic"], default="both",
+        help="executa treino, avaliação, ambos (padrão: both) ou a inferência em mosaico "
+             "da Parte 4 (mosaic)",
     )
     parser.add_argument(
         "--config", default="configs/default.yaml",
@@ -59,6 +60,18 @@ def parse_arguments() -> argparse.Namespace:
         "--ablation-output", default="outputs/ablation",
         help="diretório base para relatórios de ablação",
     )
+    parser.add_argument(
+        "--tile", type=int, default=256,
+        help="--mode mosaic: lado do tile em pixels (padrão: 256, o tamanho de treino)",
+    )
+    parser.add_argument(
+        "--stride", type=int, default=192,
+        help="--mode mosaic: passo entre tiles; sobreposição = tile - stride (padrão: 192)",
+    )
+    parser.add_argument(
+        "--mosaic-output", default="outputs/p4",
+        help="--mode mosaic: pasta de resultados e figuras (padrão: outputs/p4)",
+    )
 
     return parser.parse_args()
 
@@ -80,8 +93,18 @@ def main():
         runner.run()
         return
 
-    # ===== MODO NORMAL =====
     app_config = AppConfig(args.config)
+
+    # ===== MODO MOSAICO (Parte 4) =====
+    # só avalia: usa o modelo do config e o checkpoint, e grava em --mosaic-output
+    if args.mode == "mosaic":
+        from src.mosaic.runner import MosaicRunner
+        checkpoint = Path(args.checkpoint) if args.checkpoint else app_config.get_eval_config().output_dir / "best.pth"
+        MosaicRunner(app_config, checkpoint, tile=args.tile, passo=args.stride,
+                     saida=args.mosaic_output).run()
+        return
+
+    # ===== MODO NORMAL =====
     Path(app_config.get_train_config().output_dir).mkdir(parents=True, exist_ok=True)
 
     if args.mode in ("train", "both"):
