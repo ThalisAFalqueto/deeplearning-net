@@ -32,4 +32,6 @@ decode:
   peak_threshold: 0.5
   nms_kernel: 3
 
-output_dir: outputs/p1
+# outputs/p1 guarda o resultado da Parte 1 (binário, 05/09) — não gravar em cima dele.
+# Na ablação, o runner troca esta pasta pela da run.
+output_dir: outputs/baseline

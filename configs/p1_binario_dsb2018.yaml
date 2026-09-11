@@ -1,0 +1,36 @@
+# Parte 1 — baseline binário no DSB2018, no MESMO regime da Parte 2 (configs/p2_dsb2018.yaml).
+# Serve para a tabela Parte 1 × Parte 2: mesmas imagens de validação (seed 0, val_fraction
+# 0.15 → mesma divisão), mesmo lr, épocas e lote. A única diferença é o que a rede prevê.
+#
+# O resultado versionado em outputs/p1 (IoU 0,810 / mAP 0,444) foi gerado em 05/09 em outro
+# regime (val_fraction 0.2 → 136 imagens, lr 0.001, 20 épocas) e NÃO é comparável com a
+# Parte 2. Por isso este config grava em outra pasta: outputs/p1 fica intacto como registro.
+#
+# Uso: uv run main.py --config configs/p1_binario_dsb2018.yaml
+name: p1_binario_dsb2018
+seed: 0
+
+data:
+  kind: dsb2018
+  size: 256
+  data_dir: src/data/datasets/dsb2018
+  val_fraction: 0.15
+
+model:
+  name: unet
+  base: 16
+  depth: 3
+  loss:
+    name: bce              # 1 logit de foreground; objetos = componentes conexos
+
+train:
+  epochs: 100
+  batch_size: 8
+  lr: 0.006
+  num_workers: 0
+  save_every: 5
+
+decode:
+  threshold: 0.5           # limiar aplicado à probabilidade antes dos componentes conexos
+
+output_dir: outputs/p1_binario

@@ -5,7 +5,7 @@ no YAML troca a arquitetura do backbone. Trocar ``model.loss.name`` troca a cabe
 perda — a escolha vem de uma função só (``resolve_task_name``), então cabeça e perda nunca
 dessincronizam.
 
-    backbone   unet | unet_improved | segnet | resunet | pspnet   (só extrai features)
+    backbone   unet | unet_improved | segnet | resunet | pspnet | unet_ppm   (só extrai features)
     cabeça     bce          → BinaryHead        (1 logit de foreground)
                center_offset → CenterOffsetHeads (seg + heatmap + offsets)
 
@@ -23,15 +23,19 @@ from src.models.resunet import ResUNet
 from src.models.segmenter import Segmenter
 from src.models.segnet import SegNet
 from src.models.unet import UNet
+from src.models.unet_ppm import UNetPPM
 
 # ``unet_improved`` é o mesmo backbone da U-Net — o "improved" era só a troca de cabeça,
 # que agora é escolhida pela perda. Mantido como alias para os configs da Parte 2.
+# ``unet_ppm`` é a U-Net com pyramid pooling no bottleneck, mantendo o decoder (Eixo 3);
+# a ``pspnet`` troca o decoder por upsample bilinear.
 _BACKBONES = {
     "unet": UNet,
     "unet_improved": UNet,
     "segnet": SegNet,
     "resunet": ResUNet,
     "pspnet": PSPNet,
+    "unet_ppm": UNetPPM,
 }
 
 

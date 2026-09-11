@@ -25,4 +25,4 @@ me fazia perguntas de checagem.
 
 Combinei com a ferramenta que **eu** escrevo as peças conceituais do trabalho — a métrica de
 instância e o matching, a decodificação em objetos, as perdas e o pós-processamento — porque
-são as que o enunciado exige como autoria nossa e as que a apresentação vai cobrar. 
+são as que o enunciado exige como autoria nossa e as que a apresentação vai cobrar. git

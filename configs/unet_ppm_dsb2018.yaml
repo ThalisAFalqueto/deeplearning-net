@@ -1,0 +1,39 @@
+# Eixo 3 — U-Net + Pyramid Pooling Module no bottleneck, decoder com skips mantido.
+# Mesmo regime do configs/default.yaml (a baseline da ablação); só model.name muda.
+# A pspnet_dsb2018.yaml não serve para este eixo: ela remove o decoder e as skips.
+#
+# Uso (pareado com a baseline, na mesma máquina):
+#   uv run main.py --ablation configs/default.yaml configs/unet_ppm_dsb2018.yaml --ablation-seeds 0 42
+name: unet_ppm_dsb2018
+seed: 0
+
+data:
+  kind: dsb2018
+  size: 256
+  data_dir: src/data/datasets/dsb2018
+  val_fraction: 0.15
+
+model:
+  name: unet_ppm
+  base: 16
+  depth: 3
+  loss:
+    name: center_offset
+    w_seg: 1.0
+    w_heatmap: 1.0
+    w_offset: 0.1
+    pos_weight: 50.0
+
+train:
+  epochs: 50
+  batch_size: 8            # > 1 obrigatório: o ramo de bin 1×1 do PPM tem BatchNorm
+  lr: 0.005
+  num_workers: 0
+  save_every: 5
+
+decode:
+  threshold: 0.5
+  peak_threshold: 0.5
+  nms_kernel: 3
+
+output_dir: outputs/unet_ppm

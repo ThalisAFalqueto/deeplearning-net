@@ -13,6 +13,7 @@ from src.utils import labels_from_probability
 from src.metrics.instance import MeanAveragePrecision, CountError
 from src.metrics.semantic import IoU, Dice
 from src.models.factory import ModelFactoryRegistry
+from src.models.checkpoint import load_checkpoint
 from src.utils import to_binary
 from src.evaluation.config import EvalConfig
 from src.evaluation.density import gt_fusion_rate, plot_density, plot_fusion
@@ -36,7 +37,8 @@ class EvalEngine:
         _, val_loader = data_pipeline.build_dataloaders()
 
         model = ModelFactoryRegistry.build(cfg).to(self.device)
-        model.load_state_dict(torch.load(self.checkpoint, map_location=self.device, weights_only=False)["model"])
+        # aceita também checkpoints salvos antes da separação backbone/cabeça
+        load_checkpoint(self.checkpoint, model, self.device)
         model.eval()
 
         iou_metric = IoU()

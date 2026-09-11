@@ -1,6 +1,7 @@
 """Motor de treino: loop, validação e checkpoint."""
 
 import json
+import random
 import time
 from pathlib import Path
 
@@ -9,6 +10,7 @@ import torch
 
 from src.metrics.semantic import IoU, Dice
 from src.models.factory import ModelFactoryRegistry
+from src.models.checkpoint import load_checkpoint
 from src.losses.factory import LossFactoryRegistry
 from src.utils import to_binary
 from src.data import DataPipeline
@@ -25,11 +27,21 @@ class TrainEngine:
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     def _fixed_seeds(self):
-        """Ajusta a seed aleatória para manter os resultados reprodutíveis
+        """Ajusta a seed aleatória para manter os resultados reprodutíveis.
+
+        A seed sozinha não basta em GPU: com ``cudnn.benchmark`` ligado, o cuDNN escolhe o
+        algoritmo de convolução medindo tempo, e a escolha pode mudar de uma execução para
+        outra; alguns desses algoritmos também somam em ordem variável. As duas flags fixam
+        algoritmos determinísticos. Isso garante repetir o resultado **na mesma máquina** —
+        GPU, driver e versão do PyTorch diferentes ainda dão números diferentes, então só
+        se comparam números produzidos na mesma máquina.
         """
-        torch.manual_seed(self.cfg.seed)
+        random.seed(self.cfg.seed)
         np.random.seed(self.cfg.seed)
+        torch.manual_seed(self.cfg.seed)
         torch.cuda.manual_seed_all(self.cfg.seed)
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False
 
     def _save_checkpoint(self, path, model, optimizer, epoch, best_iou, history):
         """Salva o estado COMPLETO do treino.
@@ -54,8 +66,8 @@ class TrainEngine:
         Returns:
             Tupla (primeira época a rodar, melhor IoU até aqui, histórico).
         """
-        estado = torch.load(path, map_location=self.device, weights_only=False)
-        model.load_state_dict(estado["model"])
+        # aceita também checkpoints salvos antes da separação backbone/cabeça
+        estado = load_checkpoint(path, model, self.device)
         if "optimizer" in estado:
             optimizer.load_state_dict(estado["optimizer"])
         epoca = estado.get("epoch", 0)
