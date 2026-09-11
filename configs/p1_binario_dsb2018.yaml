@@ -24,7 +24,7 @@ model:
     name: bce              # 1 logit de foreground; objetos = componentes conexos
 
 train:
-  epochs: 100
+  epochs: 10
   batch_size: 8
   lr: 0.006
   num_workers: 0
