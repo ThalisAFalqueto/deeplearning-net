@@ -19,13 +19,6 @@ src/data/datasets/*
 # Checkpoints não: ~2 MB cada, e a Parte 3 gera uma dúzia deles.
 # 'outputs/**' em vez de 'outputs/': com a barra no fim o git não desce no diretório
 # e as exceções abaixo nunca seriam avaliadas.
-outputs/**
-!outputs/**/
-!outputs/**/*.png
-!outputs/**/*.json
-*.pth
-*.pt
-*.ckpt
 /.vscode
 
 # Sistema
