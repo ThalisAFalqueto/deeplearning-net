@@ -6,6 +6,48 @@ Fazer arquiteturas de segmentação **semântica** (U-Net / ResUNet / DeepLab) p
 rótulos **instance-aware**, sem detectores com proposta de região. Dataset: **DSB2018 /
 BBBC038v1** (núcleos de microscopia).
 
+## Quick Start
+
+### Setup
+
+```bash
+# Instalação completa (CPU + CUDA)
+make setup
+
+# Instalação sem pacote de placa de vídeo
+make setup-cpu
+```
+
+### Rodar cada parte
+
+```bash
+# Parte 0 — teste unitário sintético (treino + avaliação em CPU, ~2 min)
+pytest tests/ -v
+python -m main --synthetic
+
+# Parte 1 — baseline no DSB2018 (treino + avaliação)
+python -m main --config configs/default.yaml
+
+# Parte 2 — Trilha C no DSB2018
+python -m main --config configs/p2_dsb2018.yaml
+
+# Parte 3 — ablação (compara configs em múltiplas seeds)
+python -m main --ablation configs/p1_baseline.yaml configs/p2_dsb2018.yaml
+
+# Parte 4 — inferência em mosaico
+python -m main --mode mosaic --config configs/p2_dsb2018.yaml --checkpoint outputs/p2/best.pth
+```
+
+### Modos de execução
+
+| Comando | O que faz |
+|---|---|
+| `python -m main` | Treino + avaliação em sequência |
+| `python -m main --train` | Apenas treino |
+| `python -m main --eval` | Apenas avaliação |
+| `python -m main --synthetic` | Atalho para `--config configs/synthetic.yaml` |
+| `python -m main --resume` | Retoma treino de `outputs/<dir>/last.pth` |
+
 ## Ambiente
 
 ```bash
@@ -45,7 +87,7 @@ Sem `--mode`, executa treino e avaliação em sequência. `--synthetic` é atalh
 `--config configs/synthetic.yaml`:
 
 ```bash
-python -m main --synthetic          # treina e avalia a Parte 0
+python -m main --synthetic          # treina eifica a Parte 0
 ```
 
 ## Testes

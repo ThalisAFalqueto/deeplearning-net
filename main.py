@@ -28,9 +28,9 @@ def parse_arguments() -> argparse.Namespace:
     """
     parser = argparse.ArgumentParser(description="Deep Learning Net")
     parser.add_argument(
-        "--mode", choices=["train", "eval", "both", "mosaic"], default="both",
-        help="executa treino, avaliação, ambos (padrão: both) ou a inferência em mosaico "
-             "da Parte 4 (mosaic)",
+        "--mode", choices=["train", "eval", "both", "mosaic", "fails"], default="both",
+        help="executa treino, avaliação, ambos (padrão: both), a inferência em mosaico "
+             "da Parte 4 (mosaic) ou a galeria de falhas da Parte 5 (fails)",
     )
     parser.add_argument(
         "--config", default="configs/default.yaml",
@@ -72,6 +72,19 @@ def parse_arguments() -> argparse.Namespace:
         "--mosaic-output", default="outputs/p4",
         help="--mode mosaic: pasta de resultados e figuras (padrão: outputs/p4)",
     )
+    parser.add_argument(
+        "--fails-n", type=int, default=5,
+        help="--mode fails: quantas imagens piores mostrar (padrão: 5)",
+    )
+    parser.add_argument(
+        "--fails-indices", nargs="+", type=int, default=None,
+        help="--mode fails: força estes índices da validação em vez de rankear — para "
+             "reproduzir a mesma galeria com outro checkpoint (antes/depois de uma correção)",
+    )
+    parser.add_argument(
+        "--fails-output", default="outputs/p5",
+        help="--mode fails: pasta de resultados e figuras (padrão: outputs/p5)",
+    )
 
     return parser.parse_args()
 
@@ -102,6 +115,15 @@ def main():
         checkpoint = Path(args.checkpoint) if args.checkpoint else app_config.get_eval_config().output_dir / "best.pth"
         MosaicRunner(app_config, checkpoint, tile=args.tile, passo=args.stride,
                      saida=args.mosaic_output).run()
+        return
+
+    # ===== MODO GALERIA DE FALHAS (Parte 5) =====
+    # só avalia: roda o checkpoint na validação e monta a galeria das piores predições
+    if args.mode == "fails":
+        from src.fails.runner import FailGalleryRunner
+        checkpoint = Path(args.checkpoint) if args.checkpoint else app_config.get_eval_config().output_dir / "best.pth"
+        FailGalleryRunner(app_config, checkpoint, n=args.fails_n,
+                           indices=args.fails_indices, saida=args.fails_output).run()
         return
 
     # ===== MODO NORMAL =====

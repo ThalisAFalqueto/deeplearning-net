@@ -25,7 +25,10 @@ model:
     pos_weight: 50.0
 
 train:
-  epochs: 10
+  # 50 épocas para parear com default/resunet/segnet/pspnet — o pacote de ablação da
+  # Parte 5 depende de todos rodarem sob o mesmo orçamento, senão mais épocas ganha
+  # independente do que o experimento quer medir (contexto do PPM vs. campo receptivo).
+  epochs: 50
   batch_size: 8            # > 1 obrigatório: o ramo de bin 1×1 do PPM tem BatchNorm
   lr: 0.005
   num_workers: 0
