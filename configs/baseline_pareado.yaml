@@ -3,8 +3,8 @@
 # então comparar unet_ppm (20) com default.yaml (50) mediria o treino mais longo, não o
 # pyramid pooling.
 #
-# Uso: uv run main.py --ablation configs/baseline_20ep.yaml configs/unet_ppm_dsb2018.yaml --ablation-seeds 0 42
-name: baseline_20ep
+# Uso: uv run main.py --ablation configs/baseline_pareado.yaml configs/unet_ppm_dsb2018.yaml --ablation-seeds 0 42
+name: baseline_pareado
 seed: 0
 
 data:
@@ -25,7 +25,7 @@ model:
     pos_weight: 50.0       # compensa o pico ser ~0,06% da imagem; 0 = L2 pura (Eixo 2)
 
 train:
-  epochs: 20
+  epochs: 30
   batch_size: 8
   lr: 0.005
   num_workers: 0
@@ -38,4 +38,4 @@ decode:
 
 # outputs/p1 guarda o resultado da Parte 1 (binário, 05/09) — não gravar em cima dele.
 # Na ablação, o runner troca esta pasta pela da run.
-output_dir: outputs/baseline_20ep
+output_dir: outputs/baseline_pareado

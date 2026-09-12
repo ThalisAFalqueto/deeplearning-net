@@ -3,7 +3,7 @@
 # 0.15 → mesma divisão), mesmo lr, épocas e lote. A única diferença é o que a rede prevê.
 #
 # O resultado versionado em outputs/p1 (IoU 0,810 / mAP 0,444) foi gerado em 05/09 em outro
-# regime (val_fraction 0.2 → 136 imagens, lr 0.001, 20 épocas) e NÃO é comparável com a
+# regime (val_fraction 0.2 → 136 imagens, lr 0.001, 30 épocas) e NÃO é comparável com a
 # Parte 2. Por isso este config grava em outra pasta: outputs/p1 fica intacto como registro.
 #
 # Uso: uv run main.py --config configs/p1_binario_dsb2018.yaml
@@ -24,7 +24,7 @@ model:
     name: bce              # 1 logit de foreground; objetos = componentes conexos
 
 train:
-  epochs: 10
+  epochs: 30
   batch_size: 8
   lr: 0.006
   num_workers: 0

@@ -50,6 +50,7 @@ from src.mosaic.stitch import (
     separar,
 )
 from src.mosaic.tiling import grade_tiles, mapa_de_donos, peso_interior
+from src.utils import colorir
 
 ESTRATEGIAS = {
     "referencia": "imagem inteira, sem tiles",
@@ -295,17 +296,6 @@ class MosaicRunner:
 
     # -------------------------------------------------------------------------- figuras
 
-    @staticmethod
-    def _colorir(rotulos: np.ndarray, seed: int = 0) -> np.ndarray:
-        """Cores aleatórias por instância; fundo preto. Renumera antes, para a paleta caber."""
-        _, compacto = np.unique(rotulos, return_inverse=True)
-        compacto = compacto.reshape(rotulos.shape)
-        if rotulos.min() > 0:          # sem fundo no recorte: 0 também é objeto
-            compacto = compacto + 1
-        rng = np.random.default_rng(seed)
-        paleta = np.vstack([[0, 0, 0], rng.random((int(compacto.max()) + 1, 3)) * 0.8 + 0.2])
-        return paleta[compacto]
-
     def _figuras(self, primeiro, exemplo, grade, donos, resumo) -> None:
         self.saida.mkdir(parents=True, exist_ok=True)
         self._figura_mosaico(primeiro, grade, donos)
@@ -325,7 +315,7 @@ class MosaicRunner:
                          linewidths=0.8, linestyles="--")
         eixos[0].set_title(f"mosaico, {len(grade)} tiles {self.tile}² (laranja) "
                            f"e divisas (tracejado)", fontsize=9)
-        eixos[1].imshow(self._colorir(gt))
+        eixos[1].imshow(colorir(gt))
         eixos[1].contour(donos, levels=np.arange(donos.max()) + 0.5, colors="white",
                          linewidths=0.6, linestyles="--")
         eixos[1].set_title(f"gabarito: {len(np.unique(gt)) - 1} núcleos", fontsize=9)
@@ -357,7 +347,7 @@ class MosaicRunner:
                 # conta só rótulos que cobrem ≥ 10% do núcleo: fiapos de 2 px não são "partes"
                 ids, n = np.unique(r[no_nucleo], return_counts=True)
                 partes = int(((ids > 0) & (n >= 0.1 * no_nucleo.sum())).sum())
-                eixo.imshow(self._colorir(r))
+                eixo.imshow(colorir(r))
                 titulo = f"{titulo}\n{partes} parte(s) no núcleo" if rot is not gt else titulo
             if len(np.unique(donos_r)) > 1:
                 eixo.contour(donos_r, levels=np.unique(donos_r)[:-1] + 0.5, colors="white",

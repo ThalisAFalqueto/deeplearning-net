@@ -118,7 +118,7 @@ class AblationRunner:
         """Gera relatório em Markdown e JSON."""
         # JSON
         json_path = self.run_dir / "report.json"
-        json_path.write_text(json.dumps(resultados, indent=2))
+        json_path.write_text(json.dumps(resultados, indent=2), encoding="utf-8")
 
         # Markdown
         linhas = ["# Ablation Report\n", "\n"]
@@ -137,7 +137,9 @@ class AblationRunner:
             linhas.append("\n")
 
         md_path = self.run_dir / "report.md"
-        md_path.write_text("".join(linhas))
+        # encoding explícito: sem ele, a gravação usa o padrão do sistema e os
+        # relatórios saem em ISO-8859 no Windows ("M?trica" em vez de "Métrica")
+        md_path.write_text("".join(linhas), encoding="utf-8")
 
         # Gráficos de ablação
         from src.ablation.reporter import plot_ablation_bars, plot_ablation_table

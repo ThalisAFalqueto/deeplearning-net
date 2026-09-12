@@ -15,10 +15,13 @@ venv/
 # Dados (pesados demais para o git)
 src/data/datasets/*
 
-# Saídas: figuras e métricas SÃO versionadas — dão lastro aos números da apresentação.
-# Checkpoints não: ~2 MB cada, e a Parte 3 gera uma dúzia deles.
-# 'outputs/**' em vez de 'outputs/': com a barra no fim o git não desce no diretório
-# e as exceções abaixo nunca seriam avaliadas.
+# Saídas: figuras, métricas E checkpoints são versionados — dão lastro aos números da
+# apresentação, e o enunciado pede o checkpoint como entregável. Decidido em 10/09; antes
+# os .pth ficavam de fora.
+
+# Logs de execução dos treinos: ruído, não resultado.
+logs/
+
 /.vscode
 
 # Sistema

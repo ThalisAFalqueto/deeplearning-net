@@ -37,7 +37,7 @@ from src.fails.runner import FailGalleryRunner, _modo_de_falha
 from src.metrics.instance import CountError, MeanAveragePrecision
 from src.models.checkpoint import load_checkpoint
 from src.models.factory import ModelFactoryRegistry
-from src.utils import remove_small_objects
+from src.utils import colorir, remove_small_objects
 
 # a grade da varredura. O primeiro valor de cada eixo é o que o config usa hoje, de modo que
 # a combinação inicial da grade é exatamente o "antes".
@@ -181,7 +181,7 @@ class CorrecaoRunner:
                     (gt, f"idx {idx} ({modalidades[idx]})\ngabarito: {len(np.unique(gt)) - 1} núcleos"),
                     (pred_antes, f"antes\n{len(np.unique(pred_antes[pred_antes > 0]))} rótulos"),
                     (pred_depois, f"depois\n{len(np.unique(pred_depois[pred_depois > 0]))} rótulos")]):
-                eixos[linha, coluna].imshow(FailGalleryRunner._colorir(rot))
+                eixos[linha, coluna].imshow(colorir(rot))
                 eixos[linha, coluna].set_title(titulo, fontsize=8)
                 eixos[linha, coluna].axis("off")
         fig.suptitle(

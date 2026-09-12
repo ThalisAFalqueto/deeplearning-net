@@ -14,7 +14,7 @@ from src.metrics.instance import MeanAveragePrecision, CountError
 from src.metrics.semantic import IoU, Dice
 from src.models.factory import ModelFactoryRegistry
 from src.models.checkpoint import load_checkpoint
-from src.utils import to_binary
+from src.utils import colorir, to_binary
 from src.evaluation.config import EvalConfig
 from src.evaluation.density import gt_fusion_rate, plot_density, plot_fusion
 from src.core.config import AppConfig
@@ -108,17 +108,12 @@ class EvalEngine:
 
         self._print_summary(resumo, out_dir, len(por_imagem), figuras, nome)
 
-    def _colorize(self, labels: np.ndarray, seed: int = 0) -> np.ndarray:
-        rng = np.random.default_rng(seed)
-        palette = np.vstack([[0, 0, 0], rng.random((int(labels.max()) + 1, 3))])
-        return palette[labels]
-
     def _save_figures(self, exemplos, out_dir: Path) -> None:
         fig, axes = plt.subplots(3, len(exemplos), figsize=(2.4 * len(exemplos), 7.4))
         for col, (prob, gt, pred_labels) in enumerate(exemplos):
             axes[0, col].imshow(prob, cmap="gray", vmin=0, vmax=1)
-            axes[1, col].imshow(self._colorize(gt))
-            axes[2, col].imshow(self._colorize(pred_labels))
+            axes[1, col].imshow(colorir(gt))
+            axes[2, col].imshow(colorir(pred_labels))
             axes[0, col].set_title("probabilidade", fontsize=8)
             axes[1, col].set_title(f"gabarito: {len(np.unique(gt))-1} obj", fontsize=8)
             axes[2, col].set_title(f"predição: {len(np.unique(pred_labels))-1} obj", fontsize=8)

@@ -24,13 +24,12 @@ import torch
 
 from src.data.factory import DatasetFactoryRegistry
 from src.data.modality import classify_samples
-from src.fails.runner import FailGalleryRunner
 from src.metrics.instance import CountError, MeanAveragePrecision
 from src.metrics.semantic import IoU
 from src.models.checkpoint import load_checkpoint
 from src.models.factory import ModelFactoryRegistry
 from src.stress.corrupcoes import CORRUPCOES, NEUTRO
-from src.utils import to_binary
+from src.utils import colorir, to_binary
 
 # mAP da Parte 2 nesta máquina (outputs/p5/correcao.json -> antes). A condição limpa tem que
 # bater com isto; se não bater, algo no caminho de avaliação mudou.
@@ -196,7 +195,7 @@ class StressRunner:
                     f"{corrupcao.nome} — "
                     f"{'limpa' if intensidade == NEUTRO else corrupcao.rotulo(intensidade)}",
                     fontsize=8)
-                baixo.imshow(FailGalleryRunner._colorir(pred))
+                baixo.imshow(colorir(pred))
                 baixo.set_title(f"{len(np.unique(pred[pred > 0]))} núcleos previstos "
                                 f"(gabarito: {len(np.unique(gt.numpy())) - 1})", fontsize=8)
                 topo.axis("off")

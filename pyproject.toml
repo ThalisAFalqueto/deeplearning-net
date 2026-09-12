@@ -6,6 +6,8 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "albumentations>=1.4",
+    # o entregável notebooks/inferencia.ipynb precisa de um kernel para abrir
+    "ipykernel>=6.29",
     "matplotlib>=3.8",
     "numpy>=1.26",
     "pytest>=8.0",

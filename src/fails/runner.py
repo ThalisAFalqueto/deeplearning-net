@@ -39,7 +39,7 @@ from src.metrics.instance import CountError, MeanAveragePrecision
 from src.metrics.semantic import IoU
 from src.models.checkpoint import load_checkpoint
 from src.models.factory import ModelFactoryRegistry
-from src.utils import to_binary
+from src.utils import colorir, to_binary
 
 # nenhum backbone do projeto usa atrous/dilated conv (ver docstring do módulo) — mantido
 # como constante para o item do enunciado que pede a comparação RF com/sem atrous.
@@ -296,14 +296,6 @@ class FailGalleryRunner:
 
     # ---------------------------------------------------------------------------- figuras
 
-    @staticmethod
-    def _colorir(rotulos: np.ndarray, seed: int = 0) -> np.ndarray:
-        _, compacto = np.unique(rotulos, return_inverse=True)
-        compacto = compacto.reshape(rotulos.shape)
-        rng = np.random.default_rng(seed)
-        paleta = np.vstack([[0, 0, 0], rng.random((int(compacto.max()) + 1, 3)) * 0.8 + 0.2])
-        return paleta[compacto]
-
     def _mapa_intermediario(self, logits) -> tuple:
         """Mapa intermediário relevante: heatmap de centros (Trilha C) ou prob. de foreground."""
         if isinstance(logits, tuple):
@@ -317,9 +309,9 @@ class FailGalleryRunner:
         fig, eixos = plt.subplots(1, 4, figsize=(11, 3.4))
         eixos[0].imshow(imagem[0], cmap="gray")
         eixos[0].set_title("imagem", fontsize=9)
-        eixos[1].imshow(self._colorir(gt))
+        eixos[1].imshow(colorir(gt))
         eixos[1].set_title(f"gabarito: {r['n_gt']} núcleos", fontsize=9)
-        eixos[2].imshow(self._colorir(pred))
+        eixos[2].imshow(colorir(pred))
         eixos[2].set_title(f"predição: {r['n_pred']} núcleos", fontsize=9)
         eixos[3].imshow(mapa, cmap="magma", vmin=0, vmax=1)
         eixos[3].set_title(titulo_mapa, fontsize=9)
