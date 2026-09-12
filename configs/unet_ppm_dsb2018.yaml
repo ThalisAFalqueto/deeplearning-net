@@ -25,9 +25,8 @@ model:
     pos_weight: 50.0
 
 train:
-  # 50 épocas para parear com default/resunet/segnet/pspnet — o pacote de ablação da
-  # Parte 5 depende de todos rodarem sob o mesmo orçamento, senão mais épocas ganha
-  # independente do que o experimento quer medir (contexto do PPM vs. campo receptivo).
+  # 50 épocas para parear com default/segnet/resunet/pspnet: a ablação só mede o efeito
+  # do pyramid pooling se todos rodarem sob o mesmo orçamento de treino.
   epochs: 50
   batch_size: 8            # > 1 obrigatório: o ramo de bin 1×1 do PPM tem BatchNorm
   lr: 0.005
