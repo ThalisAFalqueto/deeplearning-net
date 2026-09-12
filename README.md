@@ -122,6 +122,7 @@ src/
 ├── ablation/   Parte 3 — várias configs × várias seeds
 ├── mosaic/     Parte 4 — mosaico, tiles e costura
 ├── fails/      Parte 5 — galeria de falhas e a correção
+├── stress/     Parte 6 — corrupções e curva de degradação
 └── utils/      pós-processamento: previsão -> objetos numerados
 tests/          testes das métricas, da decodificação e de cada parte
 outputs/        figuras, métricas e checkpoints (tudo versionado)
@@ -361,3 +362,78 @@ desfragmenta e a imagem densa de fluorescência perde ainda mais núcleos.
 resultado é reportado — o trabalho não tem conjunto de teste separado —, então o ganho medido
 é otimista. A varredura das 36 combinações está em `outputs/p5/p5_varredura.png` e em
 `outputs/p5/correcao.json`.
+
+## Parte 6 — teste de estresse por corrupções
+
+```bash
+python -m main --mode stress --config configs/p2_dsb2018.yaml --checkpoint outputs/p2/best.pth
+```
+
+Das três opções do enunciado, escolhemos **corrupções**: borrão, ruído e brilho/contraste, em
+3 intensidades cada. São 10 condições (a imagem limpa mais 3 × 3) sobre as 102 imagens de
+validação, com o mesmo modelo e os mesmos pesos — muda só a imagem que entra. Os rótulos nunca
+são corrompidos. As corrupções são aplicadas na imagem **já em 256²**, o espaço de entrada do
+modelo: o que se testa aqui é o modelo, não o pipeline de dados.
+
+| família | fórmula | nível 1 | nível 2 | nível 3 |
+|---|---|---|---|---|
+| borrão | `gaussian_filter(img, σ)` | σ = 1 px | σ = 2 px | σ = 4 px |
+| ruído | `img + N(0, σ)`, cortado em [0,1] | σ = 0,02 | σ = 0,05 | σ = 0,10 |
+| brilho/contraste | `(img − 0,5)·(1−f) + 0,5 + f/2` | f = 0,2 | f = 0,4 | f = 0,6 |
+
+**O modelo foi treinado sem augmentation nenhuma** — não há transform, flip ou rotação em
+lugar nenhum do `src/`. Ele nunca viu estas corrupções, então uma curva íngreme é o resultado
+esperado, não uma descoberta. A severidade 0 é a imagem limpa, e o mAP nesse ponto reproduz
+exatamente o da Parte 2 (0,4984), o que serve de checagem de que o caminho novo não mexeu em
+nada.
+
+### Curva de degradação (`outputs/p6/p6_degradacao.png`)
+
+| condição | mAP | IoU | erro de contagem |
+|---|---|---|---|
+| limpa | 0,4984 | 0,8193 | 7,0 |
+| borrão σ=1 px | 0,4656 | 0,7947 | 7,9 |
+| borrão σ=2 px | 0,3234 | 0,7022 | 9,8 |
+| borrão σ=4 px | 0,1341 | 0,5187 | 16,6 |
+| ruído σ=0,02 | 0,2563 | 0,7274 | 35,0 |
+| ruído σ=0,05 | 0,0368 | 0,4646 | **509,7** |
+| ruído σ=0,10 | 0,0051 | 0,2518 | **1240,3** |
+| brilho/contraste f=0,2 | 0,1607 | 0,4276 | 14,6 |
+| brilho/contraste f=0,4 | 0,0395 | 0,1260 | 29,2 |
+| brilho/contraste f=0,6 | 0,0090 | 0,0352 | 37,6 |
+
+### O que a curva esconde: são três falhas diferentes
+
+O mAP cai nos três casos, mas **pelos três motivos opostos**, e isso só aparece olhando a
+contagem e a figura `p6_exemplos.png` (numa imagem com 66 núcleos no gabarito):
+
+| corrupção | núcleos previstos, do limpo ao nível 3 | o que o modelo faz |
+|---|---|---|
+| borrão | 65 → 65 → 65 → 59 | **mantém a contagem** e perde precisão de borda |
+| ruído | 65 → 75 → 385 → **1363** | **alucina objetos**: cada grão de ruído vira um pico no heatmap |
+| brilho/contraste | 65 → 61 → 9 → **1** | **fica cego**: o foreground desaparece |
+
+- **Borrão é o menos grave.** Mesmo com σ=4, que borra cerca de um terço de um núcleo típico
+  (13 px de extensão, medido na Parte 5), o modelo ainda encontra quase todos os núcleos; o que
+  ele perde é a borda exata, e é isso que derruba o mAP nos limiares altos de IoU.
+- **Ruído é o mais perigoso**, e pela mesma razão que a Parte 5 encontrou: a decodificação
+  transforma **todo máximo local do heatmap** num objeto. Ruído fabrica máximos locais aos
+  milhares. É a mesma falha da histologia fragmentada, agora provocada de propósito — e sugere
+  que a correção da Parte 5 (exigir picos mais altos) também ajudaria aqui.
+- **Brilho/contraste é o único em que o IoU desaba mais que o mAP** (0,819 → 0,035). Nos outros
+  dois a máscara semântica resiste enquanto as instâncias se perdem, que é o padrão da Parte 1.
+  Aqui não: comprimir o contraste e clarear o fundo empurra a imagem inteira para fora da faixa
+  que a rede viu no treino, e ela para de responder.
+
+Ou seja: a hipótese herdada da Parte 1 — "o mAP cai mais rápido que o IoU" — **vale para borrão
+e ruído, e não vale para brilho/contraste**.
+
+### Por modalidade
+
+Sob borrão de σ=4, a histologia degrada proporcionalmente **menos** que a fluorescência
+(0,240 → 0,147, contra 0,565 → 0,136). É coerente com a distribuição de tamanhos da Parte 5:
+núcleos de histologia são maiores, então um borrão de raio fixo os afeta relativamente menos.
+Sob ruído e sob brilho/contraste nenhuma modalidade se salva.
+
+Todos os números saem de CPU, com o checkpoint `outputs/p2/best.pth`. Rodar duas vezes dá
+`summary.json` idêntico, inclusive o ruído — a semente de cada imagem é fixa.

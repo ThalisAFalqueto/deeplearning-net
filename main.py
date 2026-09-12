@@ -28,10 +28,11 @@ def parse_arguments() -> argparse.Namespace:
     """
     parser = argparse.ArgumentParser(description="Deep Learning Net")
     parser.add_argument(
-        "--mode", choices=["train", "eval", "both", "mosaic", "fails", "fix"], default="both",
+        "--mode",
+        choices=["train", "eval", "both", "mosaic", "fails", "fix", "stress"], default="both",
         help="executa treino, avaliação, ambos (padrão: both), a inferência em mosaico "
-             "da Parte 4 (mosaic), a galeria de falhas da Parte 5 (fails) ou a correção "
-             "da Parte 5 com antes/depois (fix)",
+             "da Parte 4 (mosaic), a galeria de falhas da Parte 5 (fails), a correção "
+             "da Parte 5 com antes/depois (fix) ou o teste de estresse da Parte 6 (stress)",
     )
     parser.add_argument(
         "--config", default="configs/default.yaml",
@@ -86,6 +87,10 @@ def parse_arguments() -> argparse.Namespace:
         "--fails-output", default="outputs/p5",
         help="--mode fails/fix: pasta de resultados e figuras (padrão: outputs/p5)",
     )
+    parser.add_argument(
+        "--stress-output", default="outputs/p6",
+        help="--mode stress: pasta de resultados e figuras (padrão: outputs/p6)",
+    )
 
     return parser.parse_args()
 
@@ -134,6 +139,14 @@ def main():
         checkpoint = Path(args.checkpoint) if args.checkpoint else app_config.get_eval_config().output_dir / "best.pth"
         CorrecaoRunner(app_config, checkpoint, saida=args.fails_output,
                        n=args.fails_n).run()
+        return
+
+    # ===== MODO TESTE DE ESTRESSE (Parte 6) =====
+    # só avalia: roda o checkpoint sob corrupções e monta a curva de degradação
+    if args.mode == "stress":
+        from src.stress.runner import StressRunner
+        checkpoint = Path(args.checkpoint) if args.checkpoint else app_config.get_eval_config().output_dir / "best.pth"
+        StressRunner(app_config, checkpoint, saida=args.stress_output).run()
         return
 
     # ===== MODO NORMAL =====
