@@ -25,7 +25,7 @@ model:
     pos_weight: 50.0       # compensa o pico ser ~0,06% da imagem; 0 = L2 pura (Eixo 2)
 
 train:
-  epochs: 10
+  epochs: 30
   batch_size: 8
   lr: 0.006
   num_workers: 0
@@ -42,4 +42,4 @@ decode:
 
 # Com 10 épocas, grava em pasta própria: outputs/p2 guarda o treino de 100 épocas de 06/09
 # (mAP 0,496), que é o modelo final e o usado na Parte 4 — não gravar em cima dele.
-output_dir: outputs/p2_10ep
+output_dir: outputs/p2_pareado

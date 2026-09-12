@@ -1,0 +1,43 @@
+# Eixo 3 da Parte 3 no regime de 50 épocas — par exato do configs/default.yaml, para rodar na
+# mesma máquina e no mesmo orçamento do Eixo 1 (run_20260910_115413). A única diferença para o
+# default é model.name: unet_ppm.
+#
+# Existe também o configs/unet_ppm_dsb2018.yaml, com 30 épocas: é o par do baseline_pareado,
+# que rodou na máquina do Thalis. Os dois medem a mesma coisa em orçamentos diferentes.
+#
+# Uso: uv run main.py --ablation configs/default.yaml configs/unet_ppm_50ep.yaml --ablation-seeds 0 42
+name: unet_ppm_50ep
+seed: 0
+
+data:
+  kind: dsb2018
+  size: 256
+  data_dir: src/data/datasets/dsb2018
+  val_fraction: 0.15
+
+model:
+  name: unet_ppm
+  base: 16
+  depth: 3
+  loss:
+    name: center_offset
+    w_seg: 1.0
+    w_heatmap: 1.0
+    w_offset: 0.1          # a L1 dos offsets é medida em pixels: sem escalar, domina
+    pos_weight: 50.0       # compensa o pico ser ~0,06% da imagem; 0 = L2 pura (Eixo 2)
+
+train:
+  epochs: 50
+  batch_size: 8            # > 1 obrigatório: o ramo de bin 1x1 do PPM tem BatchNorm
+  lr: 0.005
+  num_workers: 0
+  save_every: 5
+
+decode:
+  threshold: 0.5           # foreground
+  peak_threshold: 0.5
+  nms_kernel: 3
+
+# outputs/p1 guarda o resultado da Parte 1 (binário, 05/09) — não gravar em cima dele.
+# Na ablação, o runner troca esta pasta pela da run.
+output_dir: outputs/unet_ppm_50ep

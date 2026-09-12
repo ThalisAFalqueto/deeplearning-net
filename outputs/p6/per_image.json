@@ -1,0 +1,8162 @@
+[
+  {
+    "condicao": "limpa",
+    "idx": 0,
+    "modalidade": "fluorescence",
+    "map": 0.5171927018610373,
+    "iou": 0.8631498217582703,
+    "count_error": 4
+  },
+  {
+    "condicao": "limpa",
+    "idx": 1,
+    "modalidade": "fluorescence",
+    "map": 0.6499999999999999,
+    "iou": 0.9428848028182983,
+    "count_error": 3
+  },
+  {
+    "condicao": "limpa",
+    "idx": 2,
+    "modalidade": "fluorescence",
+    "map": 0.4078729689405757,
+    "iou": 0.8129327893257141,
+    "count_error": 12
+  },
+  {
+    "condicao": "limpa",
+    "idx": 3,
+    "modalidade": "fluorescence",
+    "map": 0.47618641504513104,
+    "iou": 0.8157174587249756,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 4,
+    "modalidade": "histology",
+    "map": 0.0700836999022483,
+    "iou": 0.6470307111740112,
+    "count_error": 25
+  },
+  {
+    "condicao": "limpa",
+    "idx": 5,
+    "modalidade": "fluorescence",
+    "map": 0.6840522875816992,
+    "iou": 0.8861305713653564,
+    "count_error": 2
+  },
+  {
+    "condicao": "limpa",
+    "idx": 6,
+    "modalidade": "histology",
+    "map": 0.28271613416831237,
+    "iou": 0.79608154296875,
+    "count_error": 4
+  },
+  {
+    "condicao": "limpa",
+    "idx": 7,
+    "modalidade": "histology",
+    "map": 0.3501754605213037,
+    "iou": 0.8221929669380188,
+    "count_error": 0
+  },
+  {
+    "condicao": "limpa",
+    "idx": 8,
+    "modalidade": "fluorescence",
+    "map": 0.20657894736842106,
+    "iou": 0.6519731283187866,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 9,
+    "modalidade": "fluorescence",
+    "map": 0.5336267996071843,
+    "iou": 0.7971975803375244,
+    "count_error": 4
+  },
+  {
+    "condicao": "limpa",
+    "idx": 10,
+    "modalidade": "brightfield",
+    "map": 0.1098199548925047,
+    "iou": 0.2043493241071701,
+    "count_error": 12
+  },
+  {
+    "condicao": "limpa",
+    "idx": 11,
+    "modalidade": "brightfield",
+    "map": 0.13428794738294786,
+    "iou": 0.31412404775619507,
+    "count_error": 15
+  },
+  {
+    "condicao": "limpa",
+    "idx": 12,
+    "modalidade": "fluorescence",
+    "map": 0.3121847801350434,
+    "iou": 0.7972196936607361,
+    "count_error": 10
+  },
+  {
+    "condicao": "limpa",
+    "idx": 13,
+    "modalidade": "histology",
+    "map": 0.19685925538179677,
+    "iou": 0.7328787446022034,
+    "count_error": 16
+  },
+  {
+    "condicao": "limpa",
+    "idx": 14,
+    "modalidade": "fluorescence",
+    "map": 0.859090909090909,
+    "iou": 0.9117646813392639,
+    "count_error": 0
+  },
+  {
+    "condicao": "limpa",
+    "idx": 15,
+    "modalidade": "fluorescence",
+    "map": 0.5035285238932408,
+    "iou": 0.8262178897857666,
+    "count_error": 8
+  },
+  {
+    "condicao": "limpa",
+    "idx": 16,
+    "modalidade": "fluorescence",
+    "map": 0.45257644529383656,
+    "iou": 0.795945942401886,
+    "count_error": 4
+  },
+  {
+    "condicao": "limpa",
+    "idx": 17,
+    "modalidade": "fluorescence",
+    "map": 0.5914484126984128,
+    "iou": 0.7998108863830566,
+    "count_error": 3
+  },
+  {
+    "condicao": "limpa",
+    "idx": 18,
+    "modalidade": "histology",
+    "map": 0.1494209740587072,
+    "iou": 0.6786292791366577,
+    "count_error": 12
+  },
+  {
+    "condicao": "limpa",
+    "idx": 19,
+    "modalidade": "fluorescence",
+    "map": 0.558315062357434,
+    "iou": 0.9327579140663147,
+    "count_error": 5
+  },
+  {
+    "condicao": "limpa",
+    "idx": 20,
+    "modalidade": "fluorescence",
+    "map": 0.5552205835100572,
+    "iou": 0.7645490765571594,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 21,
+    "modalidade": "fluorescence",
+    "map": 0.5452587119601462,
+    "iou": 0.8550470471382141,
+    "count_error": 3
+  },
+  {
+    "condicao": "limpa",
+    "idx": 22,
+    "modalidade": "fluorescence",
+    "map": 0.8115384615384615,
+    "iou": 0.950900137424469,
+    "count_error": 2
+  },
+  {
+    "condicao": "limpa",
+    "idx": 23,
+    "modalidade": "fluorescence",
+    "map": 0.7478016430937998,
+    "iou": 0.9177162051200867,
+    "count_error": 0
+  },
+  {
+    "condicao": "limpa",
+    "idx": 24,
+    "modalidade": "fluorescence",
+    "map": 0.6247872225813402,
+    "iou": 0.8765264749526978,
+    "count_error": 0
+  },
+  {
+    "condicao": "limpa",
+    "idx": 25,
+    "modalidade": "histology",
+    "map": 0.2463811754885341,
+    "iou": 0.8171780109405518,
+    "count_error": 7
+  },
+  {
+    "condicao": "limpa",
+    "idx": 26,
+    "modalidade": "fluorescence",
+    "map": 0.35461004680418984,
+    "iou": 0.7488618493080139,
+    "count_error": 4
+  },
+  {
+    "condicao": "limpa",
+    "idx": 27,
+    "modalidade": "fluorescence",
+    "map": 0.5377700386449735,
+    "iou": 0.8500581979751587,
+    "count_error": 5
+  },
+  {
+    "condicao": "limpa",
+    "idx": 28,
+    "modalidade": "histology",
+    "map": 0.2925149137177068,
+    "iou": 0.7391958832740784,
+    "count_error": 17
+  },
+  {
+    "condicao": "limpa",
+    "idx": 29,
+    "modalidade": "fluorescence",
+    "map": 0.32091396424738416,
+    "iou": 0.7578201293945312,
+    "count_error": 2
+  },
+  {
+    "condicao": "limpa",
+    "idx": 30,
+    "modalidade": "fluorescence",
+    "map": 0.34143302053492597,
+    "iou": 0.767453134059906,
+    "count_error": 5
+  },
+  {
+    "condicao": "limpa",
+    "idx": 31,
+    "modalidade": "fluorescence",
+    "map": 0.4184300603117494,
+    "iou": 0.8118934035301208,
+    "count_error": 8
+  },
+  {
+    "condicao": "limpa",
+    "idx": 32,
+    "modalidade": "fluorescence",
+    "map": 0.5087403998106207,
+    "iou": 0.8048928380012512,
+    "count_error": 2
+  },
+  {
+    "condicao": "limpa",
+    "idx": 33,
+    "modalidade": "histology",
+    "map": 0.20492715617715618,
+    "iou": 0.7142255306243896,
+    "count_error": 12
+  },
+  {
+    "condicao": "limpa",
+    "idx": 34,
+    "modalidade": "fluorescence",
+    "map": 0.872857142857143,
+    "iou": 0.9175418019294739,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 35,
+    "modalidade": "histology",
+    "map": 0.34227415766433583,
+    "iou": 0.7291529774665833,
+    "count_error": 10
+  },
+  {
+    "condicao": "limpa",
+    "idx": 36,
+    "modalidade": "fluorescence",
+    "map": 0.770351652259547,
+    "iou": 0.9502401351928711,
+    "count_error": 5
+  },
+  {
+    "condicao": "limpa",
+    "idx": 37,
+    "modalidade": "fluorescence",
+    "map": 0.7423044829623956,
+    "iou": 0.9204744100570679,
+    "count_error": 5
+  },
+  {
+    "condicao": "limpa",
+    "idx": 38,
+    "modalidade": "histology",
+    "map": 0.33408593322386426,
+    "iou": 0.8534078001976013,
+    "count_error": 9
+  },
+  {
+    "condicao": "limpa",
+    "idx": 39,
+    "modalidade": "fluorescence",
+    "map": 0.5137193348731429,
+    "iou": 0.9311700463294983,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 40,
+    "modalidade": "fluorescence",
+    "map": 0.6652949220987512,
+    "iou": 0.940751850605011,
+    "count_error": 3
+  },
+  {
+    "condicao": "limpa",
+    "idx": 41,
+    "modalidade": "histology",
+    "map": 0.0678003623351385,
+    "iou": 0.495414674282074,
+    "count_error": 30
+  },
+  {
+    "condicao": "limpa",
+    "idx": 42,
+    "modalidade": "fluorescence",
+    "map": 0.28972708929392066,
+    "iou": 0.7207932472229004,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 43,
+    "modalidade": "fluorescence",
+    "map": 0.24089235968471798,
+    "iou": 0.6774019598960876,
+    "count_error": 6
+  },
+  {
+    "condicao": "limpa",
+    "idx": 44,
+    "modalidade": "fluorescence",
+    "map": 0.835129576306047,
+    "iou": 0.9130643606185913,
+    "count_error": 0
+  },
+  {
+    "condicao": "limpa",
+    "idx": 45,
+    "modalidade": "fluorescence",
+    "map": 0.5666132192334918,
+    "iou": 0.9256367683410645,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 46,
+    "modalidade": "fluorescence",
+    "map": 0.7158183507313941,
+    "iou": 0.926430881023407,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 47,
+    "modalidade": "histology",
+    "map": 0.30958493228419737,
+    "iou": 0.806613564491272,
+    "count_error": 9
+  },
+  {
+    "condicao": "limpa",
+    "idx": 48,
+    "modalidade": "fluorescence",
+    "map": 0.5920634920634921,
+    "iou": 0.8862951993942261,
+    "count_error": 2
+  },
+  {
+    "condicao": "limpa",
+    "idx": 49,
+    "modalidade": "brightfield",
+    "map": 0.17543964017159158,
+    "iou": 0.47177913784980774,
+    "count_error": 2
+  },
+  {
+    "condicao": "limpa",
+    "idx": 50,
+    "modalidade": "fluorescence",
+    "map": 0.690654924760602,
+    "iou": 0.9443468451499939,
+    "count_error": 4
+  },
+  {
+    "condicao": "limpa",
+    "idx": 51,
+    "modalidade": "fluorescence",
+    "map": 0.8382608695652174,
+    "iou": 0.944670557975769,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 52,
+    "modalidade": "fluorescence",
+    "map": 0.836923076923077,
+    "iou": 0.9586552381515503,
+    "count_error": 0
+  },
+  {
+    "condicao": "limpa",
+    "idx": 53,
+    "modalidade": "fluorescence",
+    "map": 0.4973793700403988,
+    "iou": 0.7992177605628967,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 54,
+    "modalidade": "fluorescence",
+    "map": 0.5166923723879149,
+    "iou": 0.912345826625824,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 55,
+    "modalidade": "fluorescence",
+    "map": 0.6933608058608058,
+    "iou": 0.9514520764350891,
+    "count_error": 0
+  },
+  {
+    "condicao": "limpa",
+    "idx": 56,
+    "modalidade": "histology",
+    "map": 0.06066742659129433,
+    "iou": 0.5440161228179932,
+    "count_error": 36
+  },
+  {
+    "condicao": "limpa",
+    "idx": 57,
+    "modalidade": "fluorescence",
+    "map": 0.4559581445669405,
+    "iou": 0.7774336934089661,
+    "count_error": 0
+  },
+  {
+    "condicao": "limpa",
+    "idx": 58,
+    "modalidade": "fluorescence",
+    "map": 0.7553220358847899,
+    "iou": 0.9207683205604553,
+    "count_error": 3
+  },
+  {
+    "condicao": "limpa",
+    "idx": 59,
+    "modalidade": "fluorescence",
+    "map": 0.5651577941509291,
+    "iou": 0.8967586755752563,
+    "count_error": 3
+  },
+  {
+    "condicao": "limpa",
+    "idx": 60,
+    "modalidade": "fluorescence",
+    "map": 0.19263966697790227,
+    "iou": 0.7654504776000977,
+    "count_error": 3
+  },
+  {
+    "condicao": "limpa",
+    "idx": 61,
+    "modalidade": "fluorescence",
+    "map": 0.4585774410774411,
+    "iou": 0.8659117817878723,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 62,
+    "modalidade": "fluorescence",
+    "map": 0.013623424200785722,
+    "iou": 0.4537651240825653,
+    "count_error": 260
+  },
+  {
+    "condicao": "limpa",
+    "idx": 63,
+    "modalidade": "fluorescence",
+    "map": 0.32341917829715866,
+    "iou": 0.8020761013031006,
+    "count_error": 2
+  },
+  {
+    "condicao": "limpa",
+    "idx": 64,
+    "modalidade": "fluorescence",
+    "map": 0.5163736932972481,
+    "iou": 0.8301333785057068,
+    "count_error": 2
+  },
+  {
+    "condicao": "limpa",
+    "idx": 65,
+    "modalidade": "fluorescence",
+    "map": 0.6247972542750053,
+    "iou": 0.886030375957489,
+    "count_error": 14
+  },
+  {
+    "condicao": "limpa",
+    "idx": 66,
+    "modalidade": "fluorescence",
+    "map": 0.5177223769204018,
+    "iou": 0.9481961727142334,
+    "count_error": 2
+  },
+  {
+    "condicao": "limpa",
+    "idx": 67,
+    "modalidade": "fluorescence",
+    "map": 0.5825384615384616,
+    "iou": 0.9084511995315552,
+    "count_error": 4
+  },
+  {
+    "condicao": "limpa",
+    "idx": 68,
+    "modalidade": "fluorescence",
+    "map": 0.4074404761904762,
+    "iou": 0.7055111527442932,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 69,
+    "modalidade": "histology",
+    "map": 0.42357796552349675,
+    "iou": 0.8156205415725708,
+    "count_error": 0
+  },
+  {
+    "condicao": "limpa",
+    "idx": 70,
+    "modalidade": "fluorescence",
+    "map": 0.5818818681318682,
+    "iou": 0.921933114528656,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 71,
+    "modalidade": "fluorescence",
+    "map": 0.5374997693096233,
+    "iou": 0.9171701669692993,
+    "count_error": 0
+  },
+  {
+    "condicao": "limpa",
+    "idx": 72,
+    "modalidade": "fluorescence",
+    "map": 0.8885714285714286,
+    "iou": 0.9392624497413635,
+    "count_error": 0
+  },
+  {
+    "condicao": "limpa",
+    "idx": 73,
+    "modalidade": "histology",
+    "map": 0.2426940276785478,
+    "iou": 0.7880949974060059,
+    "count_error": 2
+  },
+  {
+    "condicao": "limpa",
+    "idx": 74,
+    "modalidade": "fluorescence",
+    "map": 0.7916666666666666,
+    "iou": 0.8868229389190674,
+    "count_error": 0
+  },
+  {
+    "condicao": "limpa",
+    "idx": 75,
+    "modalidade": "histology",
+    "map": 0.33374041460481585,
+    "iou": 0.7799702286720276,
+    "count_error": 6
+  },
+  {
+    "condicao": "limpa",
+    "idx": 76,
+    "modalidade": "fluorescence",
+    "map": 0.4259975695553789,
+    "iou": 0.8610748052597046,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 77,
+    "modalidade": "fluorescence",
+    "map": 0.41249170701990445,
+    "iou": 0.8657024502754211,
+    "count_error": 7
+  },
+  {
+    "condicao": "limpa",
+    "idx": 78,
+    "modalidade": "fluorescence",
+    "map": 0.7562745098039215,
+    "iou": 0.8669748306274414,
+    "count_error": 0
+  },
+  {
+    "condicao": "limpa",
+    "idx": 79,
+    "modalidade": "fluorescence",
+    "map": 0.4807097312899781,
+    "iou": 0.8902661800384521,
+    "count_error": 6
+  },
+  {
+    "condicao": "limpa",
+    "idx": 80,
+    "modalidade": "fluorescence",
+    "map": 0.4676262626262626,
+    "iou": 0.854347825050354,
+    "count_error": 3
+  },
+  {
+    "condicao": "limpa",
+    "idx": 81,
+    "modalidade": "fluorescence",
+    "map": 0.5151884206126232,
+    "iou": 0.8109250068664551,
+    "count_error": 10
+  },
+  {
+    "condicao": "limpa",
+    "idx": 82,
+    "modalidade": "fluorescence",
+    "map": 0.7268729281574109,
+    "iou": 0.9549822211265564,
+    "count_error": 2
+  },
+  {
+    "condicao": "limpa",
+    "idx": 83,
+    "modalidade": "fluorescence",
+    "map": 0.43202559919700007,
+    "iou": 0.7745605111122131,
+    "count_error": 0
+  },
+  {
+    "condicao": "limpa",
+    "idx": 84,
+    "modalidade": "fluorescence",
+    "map": 0.2700237461431058,
+    "iou": 0.817966878414154,
+    "count_error": 2
+  },
+  {
+    "condicao": "limpa",
+    "idx": 85,
+    "modalidade": "fluorescence",
+    "map": 0.5777523402523402,
+    "iou": 0.9195771217346191,
+    "count_error": 4
+  },
+  {
+    "condicao": "limpa",
+    "idx": 86,
+    "modalidade": "fluorescence",
+    "map": 0.82254798835651,
+    "iou": 0.9256488084793091,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 87,
+    "modalidade": "fluorescence",
+    "map": 0.7016317016317016,
+    "iou": 0.8645833134651184,
+    "count_error": 0
+  },
+  {
+    "condicao": "limpa",
+    "idx": 88,
+    "modalidade": "fluorescence",
+    "map": 0.7614069264069265,
+    "iou": 0.927703320980072,
+    "count_error": 2
+  },
+  {
+    "condicao": "limpa",
+    "idx": 89,
+    "modalidade": "fluorescence",
+    "map": 0.4771675022890408,
+    "iou": 0.7687888741493225,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 90,
+    "modalidade": "fluorescence",
+    "map": 0.6500711053652231,
+    "iou": 0.8750712871551514,
+    "count_error": 2
+  },
+  {
+    "condicao": "limpa",
+    "idx": 91,
+    "modalidade": "fluorescence",
+    "map": 0.5182025946091281,
+    "iou": 0.7685086131095886,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 92,
+    "modalidade": "histology",
+    "map": 0.17874867327793226,
+    "iou": 0.7502129077911377,
+    "count_error": 10
+  },
+  {
+    "condicao": "limpa",
+    "idx": 93,
+    "modalidade": "fluorescence",
+    "map": 0.725246314406656,
+    "iou": 0.9370476603507996,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 94,
+    "modalidade": "fluorescence",
+    "map": 0.8214529914529913,
+    "iou": 0.9178799986839294,
+    "count_error": 0
+  },
+  {
+    "condicao": "limpa",
+    "idx": 95,
+    "modalidade": "fluorescence",
+    "map": 0.9136363636363637,
+    "iou": 0.9529411792755127,
+    "count_error": 0
+  },
+  {
+    "condicao": "limpa",
+    "idx": 96,
+    "modalidade": "fluorescence",
+    "map": 0.7499587912087912,
+    "iou": 0.8866442441940308,
+    "count_error": 1
+  },
+  {
+    "condicao": "limpa",
+    "idx": 97,
+    "modalidade": "fluorescence",
+    "map": 0.7761970443349754,
+    "iou": 0.9282124638557434,
+    "count_error": 3
+  },
+  {
+    "condicao": "limpa",
+    "idx": 98,
+    "modalidade": "fluorescence",
+    "map": 0.15885516645923456,
+    "iou": 0.5917159914970398,
+    "count_error": 11
+  },
+  {
+    "condicao": "limpa",
+    "idx": 99,
+    "modalidade": "fluorescence",
+    "map": 0.5109939691477658,
+    "iou": 0.9375631213188171,
+    "count_error": 5
+  },
+  {
+    "condicao": "limpa",
+    "idx": 100,
+    "modalidade": "fluorescence",
+    "map": 0.2679287777770224,
+    "iou": 0.6620728373527527,
+    "count_error": 2
+  },
+  {
+    "condicao": "limpa",
+    "idx": 101,
+    "modalidade": "fluorescence",
+    "map": 0.8018272747404659,
+    "iou": 0.9204146862030029,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 0,
+    "modalidade": "fluorescence",
+    "map": 0.47305491024960133,
+    "iou": 0.8283079266548157,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 1,
+    "modalidade": "fluorescence",
+    "map": 0.694047619047619,
+    "iou": 0.8616188168525696,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 2,
+    "modalidade": "fluorescence",
+    "map": 0.33538927297361615,
+    "iou": 0.7687451243400574,
+    "count_error": 26
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 3,
+    "modalidade": "fluorescence",
+    "map": 0.40146525842786634,
+    "iou": 0.7996715903282166,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 4,
+    "modalidade": "histology",
+    "map": 0.07436043421953502,
+    "iou": 0.5823235511779785,
+    "count_error": 20
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 5,
+    "modalidade": "fluorescence",
+    "map": 0.6294834054834054,
+    "iou": 0.8576476573944092,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 6,
+    "modalidade": "histology",
+    "map": 0.23866178898803128,
+    "iou": 0.7799776196479797,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 7,
+    "modalidade": "histology",
+    "map": 0.3546051001349233,
+    "iou": 0.8128457069396973,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 8,
+    "modalidade": "fluorescence",
+    "map": 0.24589197352355244,
+    "iou": 0.6953974962234497,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 9,
+    "modalidade": "fluorescence",
+    "map": 0.4476324601869422,
+    "iou": 0.7759330868721008,
+    "count_error": 9
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 10,
+    "modalidade": "brightfield",
+    "map": 0.03463393382140126,
+    "iou": 0.12544533610343933,
+    "count_error": 19
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 11,
+    "modalidade": "brightfield",
+    "map": 0.08234601881184098,
+    "iou": 0.18536235392093658,
+    "count_error": 31
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 12,
+    "modalidade": "fluorescence",
+    "map": 0.3049237909918102,
+    "iou": 0.7724482417106628,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 13,
+    "modalidade": "histology",
+    "map": 0.25776143421795594,
+    "iou": 0.6342662572860718,
+    "count_error": 7
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 14,
+    "modalidade": "fluorescence",
+    "map": 0.8290909090909091,
+    "iou": 0.8950980305671692,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 15,
+    "modalidade": "fluorescence",
+    "map": 0.46387903534631125,
+    "iou": 0.8096676468849182,
+    "count_error": 9
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 16,
+    "modalidade": "fluorescence",
+    "map": 0.41805844155844163,
+    "iou": 0.7871286869049072,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 17,
+    "modalidade": "fluorescence",
+    "map": 0.5535239578896013,
+    "iou": 0.7899181842803955,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 18,
+    "modalidade": "histology",
+    "map": 0.11527388350917762,
+    "iou": 0.6354624032974243,
+    "count_error": 8
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 19,
+    "modalidade": "fluorescence",
+    "map": 0.4993052392925196,
+    "iou": 0.9217787384986877,
+    "count_error": 5
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 20,
+    "modalidade": "fluorescence",
+    "map": 0.48194444444444445,
+    "iou": 0.756994903087616,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 21,
+    "modalidade": "fluorescence",
+    "map": 0.4798226824004681,
+    "iou": 0.820791482925415,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 22,
+    "modalidade": "fluorescence",
+    "map": 0.716806877333193,
+    "iou": 0.8836509585380554,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 23,
+    "modalidade": "fluorescence",
+    "map": 0.6943669717509312,
+    "iou": 0.9033508896827698,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 24,
+    "modalidade": "fluorescence",
+    "map": 0.49746336996336993,
+    "iou": 0.7972721457481384,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 25,
+    "modalidade": "histology",
+    "map": 0.29526135034536216,
+    "iou": 0.8168748021125793,
+    "count_error": 6
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 26,
+    "modalidade": "fluorescence",
+    "map": 0.43520670151104934,
+    "iou": 0.7839747071266174,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 27,
+    "modalidade": "fluorescence",
+    "map": 0.48004650508690644,
+    "iou": 0.8075571060180664,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 28,
+    "modalidade": "histology",
+    "map": 0.30935707519522826,
+    "iou": 0.7522917985916138,
+    "count_error": 11
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 29,
+    "modalidade": "fluorescence",
+    "map": 0.3539591501949111,
+    "iou": 0.7847919464111328,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 30,
+    "modalidade": "fluorescence",
+    "map": 0.27947894852723143,
+    "iou": 0.7435775399208069,
+    "count_error": 6
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 31,
+    "modalidade": "fluorescence",
+    "map": 0.37007348479670127,
+    "iou": 0.7905828952789307,
+    "count_error": 9
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 32,
+    "modalidade": "fluorescence",
+    "map": 0.5006640698969429,
+    "iou": 0.797395646572113,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 33,
+    "modalidade": "histology",
+    "map": 0.20051163217546913,
+    "iou": 0.7003553509712219,
+    "count_error": 10
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 34,
+    "modalidade": "fluorescence",
+    "map": 0.7084663865546219,
+    "iou": 0.8521956205368042,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 35,
+    "modalidade": "histology",
+    "map": 0.25862457681910567,
+    "iou": 0.6939179301261902,
+    "count_error": 6
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 36,
+    "modalidade": "fluorescence",
+    "map": 0.6871632324639844,
+    "iou": 0.9093561768531799,
+    "count_error": 5
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 37,
+    "modalidade": "fluorescence",
+    "map": 0.6754892624558696,
+    "iou": 0.9025883674621582,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 38,
+    "modalidade": "histology",
+    "map": 0.4104141737891737,
+    "iou": 0.8702738881111145,
+    "count_error": 7
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 39,
+    "modalidade": "fluorescence",
+    "map": 0.4773588820239394,
+    "iou": 0.8966175317764282,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 40,
+    "modalidade": "fluorescence",
+    "map": 0.6411439464832123,
+    "iou": 0.9313501119613647,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 41,
+    "modalidade": "histology",
+    "map": 0.06379475821336286,
+    "iou": 0.4537847936153412,
+    "count_error": 28
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 42,
+    "modalidade": "fluorescence",
+    "map": 0.3642374118575641,
+    "iou": 0.7534000277519226,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 43,
+    "modalidade": "fluorescence",
+    "map": 0.2974555124007889,
+    "iou": 0.7218272089958191,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 44,
+    "modalidade": "fluorescence",
+    "map": 0.6669977081741789,
+    "iou": 0.8621780276298523,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 45,
+    "modalidade": "fluorescence",
+    "map": 0.6217778517778518,
+    "iou": 0.9189229607582092,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 46,
+    "modalidade": "fluorescence",
+    "map": 0.6964016375781081,
+    "iou": 0.8835100531578064,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 47,
+    "modalidade": "histology",
+    "map": 0.28129513005344525,
+    "iou": 0.8102651834487915,
+    "count_error": 9
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 48,
+    "modalidade": "fluorescence",
+    "map": 0.6737179487179488,
+    "iou": 0.8777857422828674,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 49,
+    "modalidade": "brightfield",
+    "map": 0.12080918567556398,
+    "iou": 0.22194668650627136,
+    "count_error": 11
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 50,
+    "modalidade": "fluorescence",
+    "map": 0.6272473639993631,
+    "iou": 0.9381589889526367,
+    "count_error": 5
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 51,
+    "modalidade": "fluorescence",
+    "map": 0.7920520783564262,
+    "iou": 0.9377620816230774,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 52,
+    "modalidade": "fluorescence",
+    "map": 0.7412709030100335,
+    "iou": 0.9158123135566711,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 53,
+    "modalidade": "fluorescence",
+    "map": 0.41993676928798174,
+    "iou": 0.754172146320343,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 54,
+    "modalidade": "fluorescence",
+    "map": 0.5076323944254979,
+    "iou": 0.9076383113861084,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 55,
+    "modalidade": "fluorescence",
+    "map": 0.6545104895104895,
+    "iou": 0.948348879814148,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 56,
+    "modalidade": "histology",
+    "map": 0.07035688707838453,
+    "iou": 0.637729823589325,
+    "count_error": 20
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 57,
+    "modalidade": "fluorescence",
+    "map": 0.3273973167698704,
+    "iou": 0.7335302829742432,
+    "count_error": 7
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 58,
+    "modalidade": "fluorescence",
+    "map": 0.6730272008284965,
+    "iou": 0.8997138142585754,
+    "count_error": 5
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 59,
+    "modalidade": "fluorescence",
+    "map": 0.3564160654160654,
+    "iou": 0.8555111289024353,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 60,
+    "modalidade": "fluorescence",
+    "map": 0.18649530688323793,
+    "iou": 0.746675968170166,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 61,
+    "modalidade": "fluorescence",
+    "map": 0.41030989050929084,
+    "iou": 0.8224455714225769,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 62,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.3439618945121765,
+    "count_error": 343
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 63,
+    "modalidade": "fluorescence",
+    "map": 0.38389057239057245,
+    "iou": 0.7980198264122009,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 64,
+    "modalidade": "fluorescence",
+    "map": 0.4875869094453081,
+    "iou": 0.8040820360183716,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 65,
+    "modalidade": "fluorescence",
+    "map": 0.5428448652533624,
+    "iou": 0.8573114275932312,
+    "count_error": 15
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 66,
+    "modalidade": "fluorescence",
+    "map": 0.5173664258636721,
+    "iou": 0.9429868459701538,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 67,
+    "modalidade": "fluorescence",
+    "map": 0.599,
+    "iou": 0.9031752943992615,
+    "count_error": 5
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 68,
+    "modalidade": "fluorescence",
+    "map": 0.41291666666666665,
+    "iou": 0.7071860432624817,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 69,
+    "modalidade": "histology",
+    "map": 0.4474682731683397,
+    "iou": 0.8108797669410706,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 70,
+    "modalidade": "fluorescence",
+    "map": 0.5546586746586746,
+    "iou": 0.9132379293441772,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 71,
+    "modalidade": "fluorescence",
+    "map": 0.5742012194750532,
+    "iou": 0.9156785011291504,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 72,
+    "modalidade": "fluorescence",
+    "map": 0.7285714285714285,
+    "iou": 0.8651315569877625,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 73,
+    "modalidade": "histology",
+    "map": 0.22237542385375203,
+    "iou": 0.7908100485801697,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 74,
+    "modalidade": "fluorescence",
+    "map": 0.825,
+    "iou": 0.895638644695282,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 75,
+    "modalidade": "histology",
+    "map": 0.33472980434241634,
+    "iou": 0.7548956274986267,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 76,
+    "modalidade": "fluorescence",
+    "map": 0.4439360842239699,
+    "iou": 0.854917585849762,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 77,
+    "modalidade": "fluorescence",
+    "map": 0.38259729328817366,
+    "iou": 0.828916609287262,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 78,
+    "modalidade": "fluorescence",
+    "map": 0.7925,
+    "iou": 0.8883972764015198,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 79,
+    "modalidade": "fluorescence",
+    "map": 0.4670669716790473,
+    "iou": 0.8807615041732788,
+    "count_error": 10
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 80,
+    "modalidade": "fluorescence",
+    "map": 0.42527777777777775,
+    "iou": 0.845588207244873,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 81,
+    "modalidade": "fluorescence",
+    "map": 0.4989577642572735,
+    "iou": 0.7993658185005188,
+    "count_error": 12
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 82,
+    "modalidade": "fluorescence",
+    "map": 0.7272123657341047,
+    "iou": 0.9469338655471802,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 83,
+    "modalidade": "fluorescence",
+    "map": 0.4003512807158852,
+    "iou": 0.7623072862625122,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 84,
+    "modalidade": "fluorescence",
+    "map": 0.25893426713216816,
+    "iou": 0.7839643359184265,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 85,
+    "modalidade": "fluorescence",
+    "map": 0.5343961959659633,
+    "iou": 0.9135310649871826,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 86,
+    "modalidade": "fluorescence",
+    "map": 0.7921559139912697,
+    "iou": 0.9072158336639404,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 87,
+    "modalidade": "fluorescence",
+    "map": 0.6522727272727272,
+    "iou": 0.8478873372077942,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 88,
+    "modalidade": "fluorescence",
+    "map": 0.7140014040014041,
+    "iou": 0.889053225517273,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 89,
+    "modalidade": "fluorescence",
+    "map": 0.38618282050141917,
+    "iou": 0.7282682061195374,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 90,
+    "modalidade": "fluorescence",
+    "map": 0.7006216006216006,
+    "iou": 0.869349479675293,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 91,
+    "modalidade": "fluorescence",
+    "map": 0.4539518738529894,
+    "iou": 0.746508002281189,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 92,
+    "modalidade": "histology",
+    "map": 0.18264839601775115,
+    "iou": 0.7427877187728882,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 93,
+    "modalidade": "fluorescence",
+    "map": 0.6794340795359399,
+    "iou": 0.9318568706512451,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 94,
+    "modalidade": "fluorescence",
+    "map": 0.6572069597069597,
+    "iou": 0.8463180065155029,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 95,
+    "modalidade": "fluorescence",
+    "map": 0.8358823529411765,
+    "iou": 0.9084022045135498,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 96,
+    "modalidade": "fluorescence",
+    "map": 0.6746498599439776,
+    "iou": 0.8371369242668152,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 97,
+    "modalidade": "fluorescence",
+    "map": 0.716728064539159,
+    "iou": 0.8889999985694885,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 98,
+    "modalidade": "fluorescence",
+    "map": 0.10658574580358571,
+    "iou": 0.48668795824050903,
+    "count_error": 34
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 99,
+    "modalidade": "fluorescence",
+    "map": 0.36922038611358043,
+    "iou": 0.929689884185791,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 100,
+    "modalidade": "fluorescence",
+    "map": 0.3459420660664928,
+    "iou": 0.706144392490387,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:1.0",
+    "idx": 101,
+    "modalidade": "fluorescence",
+    "map": 0.7053467415436855,
+    "iou": 0.8687050342559814,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 0,
+    "modalidade": "fluorescence",
+    "map": 0.17180291628661193,
+    "iou": 0.6359843611717224,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 1,
+    "modalidade": "fluorescence",
+    "map": 0.34964285714285714,
+    "iou": 0.6799177527427673,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 2,
+    "modalidade": "fluorescence",
+    "map": 0.16585090176650302,
+    "iou": 0.6069419384002686,
+    "count_error": 70
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 3,
+    "modalidade": "fluorescence",
+    "map": 0.2233826402355814,
+    "iou": 0.6852314472198486,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 4,
+    "modalidade": "histology",
+    "map": 0.07440332970795156,
+    "iou": 0.4605034589767456,
+    "count_error": 13
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 5,
+    "modalidade": "fluorescence",
+    "map": 0.3794981489099136,
+    "iou": 0.7011070251464844,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 6,
+    "modalidade": "histology",
+    "map": 0.1742561721092951,
+    "iou": 0.7253938317298889,
+    "count_error": 7
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 7,
+    "modalidade": "histology",
+    "map": 0.33403322615201897,
+    "iou": 0.7248868942260742,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 8,
+    "modalidade": "fluorescence",
+    "map": 0.39409218232747645,
+    "iou": 0.7650453448295593,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 9,
+    "modalidade": "fluorescence",
+    "map": 0.246451451978297,
+    "iou": 0.6807562708854675,
+    "count_error": 19
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 10,
+    "modalidade": "brightfield",
+    "map": 0.002666666666666667,
+    "iou": 0.12352710217237473,
+    "count_error": 16
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 11,
+    "modalidade": "brightfield",
+    "map": 0.020136871772518973,
+    "iou": 0.16503341495990753,
+    "count_error": 55
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 12,
+    "modalidade": "fluorescence",
+    "map": 0.15679906398363508,
+    "iou": 0.6558858752250671,
+    "count_error": 11
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 13,
+    "modalidade": "histology",
+    "map": 0.17009166356992442,
+    "iou": 0.42415496706962585,
+    "count_error": 8
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 14,
+    "modalidade": "fluorescence",
+    "map": 0.5138528138528138,
+    "iou": 0.7519809603691101,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 15,
+    "modalidade": "fluorescence",
+    "map": 0.25342707137615983,
+    "iou": 0.7158523201942444,
+    "count_error": 13
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 16,
+    "modalidade": "fluorescence",
+    "map": 0.12191555803491769,
+    "iou": 0.6383948922157288,
+    "count_error": 8
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 17,
+    "modalidade": "fluorescence",
+    "map": 0.3345974783474783,
+    "iou": 0.7481221556663513,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 18,
+    "modalidade": "histology",
+    "map": 0.07908442039977079,
+    "iou": 0.4831247627735138,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 19,
+    "modalidade": "fluorescence",
+    "map": 0.5071109280167221,
+    "iou": 0.8946937322616577,
+    "count_error": 9
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 20,
+    "modalidade": "fluorescence",
+    "map": 0.3553889786273014,
+    "iou": 0.6832444071769714,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 21,
+    "modalidade": "fluorescence",
+    "map": 0.23885133398135014,
+    "iou": 0.686476469039917,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 22,
+    "modalidade": "fluorescence",
+    "map": 0.29952380952380947,
+    "iou": 0.6625328660011292,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 23,
+    "modalidade": "fluorescence",
+    "map": 0.4412838239164477,
+    "iou": 0.7965949773788452,
+    "count_error": 10
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 24,
+    "modalidade": "fluorescence",
+    "map": 0.20778846153846153,
+    "iou": 0.6054913401603699,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 25,
+    "modalidade": "histology",
+    "map": 0.2211191527179291,
+    "iou": 0.754302442073822,
+    "count_error": 8
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 26,
+    "modalidade": "fluorescence",
+    "map": 0.5786564273803363,
+    "iou": 0.8517355918884277,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 27,
+    "modalidade": "fluorescence",
+    "map": 0.2604991095900263,
+    "iou": 0.6725230813026428,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 28,
+    "modalidade": "histology",
+    "map": 0.3503246512954576,
+    "iou": 0.758694052696228,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 29,
+    "modalidade": "fluorescence",
+    "map": 0.2873386118472728,
+    "iou": 0.7726203203201294,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 30,
+    "modalidade": "fluorescence",
+    "map": 0.2139658078323124,
+    "iou": 0.6648076176643372,
+    "count_error": 5
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 31,
+    "modalidade": "fluorescence",
+    "map": 0.3018634912746817,
+    "iou": 0.7284608483314514,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 32,
+    "modalidade": "fluorescence",
+    "map": 0.32233522731005515,
+    "iou": 0.6987513899803162,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 33,
+    "modalidade": "histology",
+    "map": 0.1958741600706529,
+    "iou": 0.6578752994537354,
+    "count_error": 7
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 34,
+    "modalidade": "fluorescence",
+    "map": 0.32196085322000656,
+    "iou": 0.6710637211799622,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 35,
+    "modalidade": "histology",
+    "map": 0.22933306408811097,
+    "iou": 0.5840370655059814,
+    "count_error": 15
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 36,
+    "modalidade": "fluorescence",
+    "map": 0.48554971603663466,
+    "iou": 0.7951300740242004,
+    "count_error": 5
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 37,
+    "modalidade": "fluorescence",
+    "map": 0.4698488605335605,
+    "iou": 0.788456916809082,
+    "count_error": 11
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 38,
+    "modalidade": "histology",
+    "map": 0.3689626246343927,
+    "iou": 0.8545467853546143,
+    "count_error": 5
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 39,
+    "modalidade": "fluorescence",
+    "map": 0.36251124937978757,
+    "iou": 0.7924199104309082,
+    "count_error": 5
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 40,
+    "modalidade": "fluorescence",
+    "map": 0.6142906901527592,
+    "iou": 0.9042049050331116,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 41,
+    "modalidade": "histology",
+    "map": 0.17565875472996217,
+    "iou": 0.3978399634361267,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 42,
+    "modalidade": "fluorescence",
+    "map": 0.42050442586396625,
+    "iou": 0.7968842387199402,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 43,
+    "modalidade": "fluorescence",
+    "map": 0.4415541561983701,
+    "iou": 0.792575478553772,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 44,
+    "modalidade": "fluorescence",
+    "map": 0.2898591174906965,
+    "iou": 0.7134283781051636,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 45,
+    "modalidade": "fluorescence",
+    "map": 0.6057761497761497,
+    "iou": 0.9048706889152527,
+    "count_error": 6
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 46,
+    "modalidade": "fluorescence",
+    "map": 0.48510378510378505,
+    "iou": 0.7624821066856384,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 47,
+    "modalidade": "histology",
+    "map": 0.3121824462877094,
+    "iou": 0.7885920405387878,
+    "count_error": 10
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 48,
+    "modalidade": "fluorescence",
+    "map": 0.42333333333333334,
+    "iou": 0.751049816608429,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 49,
+    "modalidade": "brightfield",
+    "map": 0.017910248172616987,
+    "iou": 0.11785972863435745,
+    "count_error": 33
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 50,
+    "modalidade": "fluorescence",
+    "map": 0.6329587769479316,
+    "iou": 0.9158505797386169,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 51,
+    "modalidade": "fluorescence",
+    "map": 0.7898200130703878,
+    "iou": 0.9210273027420044,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 52,
+    "modalidade": "fluorescence",
+    "map": 0.4973626373626373,
+    "iou": 0.7841483950614929,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 53,
+    "modalidade": "fluorescence",
+    "map": 0.1936939498334474,
+    "iou": 0.6236749291419983,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 54,
+    "modalidade": "fluorescence",
+    "map": 0.4607459994556768,
+    "iou": 0.8813993334770203,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 55,
+    "modalidade": "fluorescence",
+    "map": 0.4299486461251167,
+    "iou": 0.8457804322242737,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 56,
+    "modalidade": "histology",
+    "map": 0.05772486772486772,
+    "iou": 0.5536870360374451,
+    "count_error": 5
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 57,
+    "modalidade": "fluorescence",
+    "map": 0.13641480047730048,
+    "iou": 0.6063464283943176,
+    "count_error": 14
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 58,
+    "modalidade": "fluorescence",
+    "map": 0.4423236336650932,
+    "iou": 0.7928382158279419,
+    "count_error": 12
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 59,
+    "modalidade": "fluorescence",
+    "map": 0.14938222807788026,
+    "iou": 0.6735442280769348,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 60,
+    "modalidade": "fluorescence",
+    "map": 0.12607398189294738,
+    "iou": 0.6557285785675049,
+    "count_error": 6
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 61,
+    "modalidade": "fluorescence",
+    "map": 0.14800757575757575,
+    "iou": 0.6206457018852234,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 62,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.23381662368774414,
+    "count_error": 370
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 63,
+    "modalidade": "fluorescence",
+    "map": 0.26904093567251464,
+    "iou": 0.6546687483787537,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 64,
+    "modalidade": "fluorescence",
+    "map": 0.259342333096037,
+    "iou": 0.7291185855865479,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 65,
+    "modalidade": "fluorescence",
+    "map": 0.3527133201633804,
+    "iou": 0.7528884410858154,
+    "count_error": 21
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 66,
+    "modalidade": "fluorescence",
+    "map": 0.5209856555462107,
+    "iou": 0.923225998878479,
+    "count_error": 6
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 67,
+    "modalidade": "fluorescence",
+    "map": 0.5026936026936026,
+    "iou": 0.890030026435852,
+    "count_error": 6
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 68,
+    "modalidade": "fluorescence",
+    "map": 0.4024621212121212,
+    "iou": 0.7065848112106323,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 69,
+    "modalidade": "histology",
+    "map": 0.40015253945184187,
+    "iou": 0.7896103858947754,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 70,
+    "modalidade": "fluorescence",
+    "map": 0.4669402673350042,
+    "iou": 0.7798577547073364,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 71,
+    "modalidade": "fluorescence",
+    "map": 0.5755537164360693,
+    "iou": 0.8955783247947693,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 72,
+    "modalidade": "fluorescence",
+    "map": 0.3584615384615385,
+    "iou": 0.6685279011726379,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 73,
+    "modalidade": "histology",
+    "map": 0.23245614035087714,
+    "iou": 0.7270859479904175,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 74,
+    "modalidade": "fluorescence",
+    "map": 0.5833333333333333,
+    "iou": 0.7932628989219666,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 75,
+    "modalidade": "histology",
+    "map": 0.2821578211422052,
+    "iou": 0.6995536088943481,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 76,
+    "modalidade": "fluorescence",
+    "map": 0.41532686279238007,
+    "iou": 0.8259955644607544,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 77,
+    "modalidade": "fluorescence",
+    "map": 0.16490863113291895,
+    "iou": 0.6572415828704834,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 78,
+    "modalidade": "fluorescence",
+    "map": 0.4521316526610645,
+    "iou": 0.7394312024116516,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 79,
+    "modalidade": "fluorescence",
+    "map": 0.2485390637838218,
+    "iou": 0.7706539034843445,
+    "count_error": 12
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 80,
+    "modalidade": "fluorescence",
+    "map": 0.27301587301587305,
+    "iou": 0.7197851538658142,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 81,
+    "modalidade": "fluorescence",
+    "map": 0.3056402594291968,
+    "iou": 0.7002608776092529,
+    "count_error": 15
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 82,
+    "modalidade": "fluorescence",
+    "map": 0.6916116050792614,
+    "iou": 0.9253275394439697,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 83,
+    "modalidade": "fluorescence",
+    "map": 0.23531502686142644,
+    "iou": 0.6733905673027039,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 84,
+    "modalidade": "fluorescence",
+    "map": 0.16648975481734102,
+    "iou": 0.7059519290924072,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 85,
+    "modalidade": "fluorescence",
+    "map": 0.34870079334583626,
+    "iou": 0.8819157481193542,
+    "count_error": 5
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 86,
+    "modalidade": "fluorescence",
+    "map": 0.5187322248938173,
+    "iou": 0.796440064907074,
+    "count_error": 5
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 87,
+    "modalidade": "fluorescence",
+    "map": 0.3199145299145299,
+    "iou": 0.6871569752693176,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 88,
+    "modalidade": "fluorescence",
+    "map": 0.4412056590167535,
+    "iou": 0.7478970885276794,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 89,
+    "modalidade": "fluorescence",
+    "map": 0.17795235497363157,
+    "iou": 0.6458937525749207,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 90,
+    "modalidade": "fluorescence",
+    "map": 0.40352147852147857,
+    "iou": 0.724044919013977,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 91,
+    "modalidade": "fluorescence",
+    "map": 0.270295584045584,
+    "iou": 0.6797094941139221,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 92,
+    "modalidade": "histology",
+    "map": 0.13496652031240924,
+    "iou": 0.6128105521202087,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 93,
+    "modalidade": "fluorescence",
+    "map": 0.5549130281483222,
+    "iou": 0.9111872911453247,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 94,
+    "modalidade": "fluorescence",
+    "map": 0.30365079365079367,
+    "iou": 0.6738853454589844,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 95,
+    "modalidade": "fluorescence",
+    "map": 0.44838235294117645,
+    "iou": 0.7313432693481445,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 96,
+    "modalidade": "fluorescence",
+    "map": 0.30467836257309944,
+    "iou": 0.6645161509513855,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 97,
+    "modalidade": "fluorescence",
+    "map": 0.32899644271970246,
+    "iou": 0.6670826077461243,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 98,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.2608921229839325,
+    "count_error": 65
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 99,
+    "modalidade": "fluorescence",
+    "map": 0.2819428249768807,
+    "iou": 0.8920219540596008,
+    "count_error": 5
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 100,
+    "modalidade": "fluorescence",
+    "map": 0.4521827658113174,
+    "iou": 0.7822844386100769,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:2.0",
+    "idx": 101,
+    "modalidade": "fluorescence",
+    "map": 0.5056834795321637,
+    "iou": 0.7524983882904053,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 0,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.36745092272758484,
+    "count_error": 6
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 1,
+    "modalidade": "fluorescence",
+    "map": 0.03833333333333333,
+    "iou": 0.4755513072013855,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 2,
+    "modalidade": "fluorescence",
+    "map": 0.0058273441770477314,
+    "iou": 0.06844496726989746,
+    "count_error": 261
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 3,
+    "modalidade": "fluorescence",
+    "map": 0.05999651114075395,
+    "iou": 0.4720367193222046,
+    "count_error": 15
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 4,
+    "modalidade": "histology",
+    "map": 0.07699762123910732,
+    "iou": 0.25617536902427673,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 5,
+    "modalidade": "fluorescence",
+    "map": 0.029069264069264068,
+    "iou": 0.4971330165863037,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 6,
+    "modalidade": "histology",
+    "map": 0.1044010067946238,
+    "iou": 0.6164448261260986,
+    "count_error": 17
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 7,
+    "modalidade": "histology",
+    "map": 0.26808130031496347,
+    "iou": 0.6074751019477844,
+    "count_error": 7
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 8,
+    "modalidade": "fluorescence",
+    "map": 0.4286334498834499,
+    "iou": 0.7769755125045776,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 9,
+    "modalidade": "fluorescence",
+    "map": 0.014159078021222618,
+    "iou": 0.15219324827194214,
+    "count_error": 117
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 10,
+    "modalidade": "brightfield",
+    "map": 0.0,
+    "iou": 0.1224617287516594,
+    "count_error": 30
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 11,
+    "modalidade": "brightfield",
+    "map": 0.000847457627118644,
+    "iou": 0.15893422067165375,
+    "count_error": 71
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 12,
+    "modalidade": "fluorescence",
+    "map": 0.036463436615242165,
+    "iou": 0.43072837591171265,
+    "count_error": 14
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 13,
+    "modalidade": "histology",
+    "map": 0.16739729225023342,
+    "iou": 0.33627909421920776,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 14,
+    "modalidade": "fluorescence",
+    "map": 0.02909090909090909,
+    "iou": 0.4825669527053833,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 15,
+    "modalidade": "fluorescence",
+    "map": 0.0789705886970669,
+    "iou": 0.5328885912895203,
+    "count_error": 23
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 16,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.398589551448822,
+    "count_error": 8
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 17,
+    "modalidade": "fluorescence",
+    "map": 0.17967705247905053,
+    "iou": 0.6811175346374512,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 18,
+    "modalidade": "histology",
+    "map": 0.06538040503557745,
+    "iou": 0.23966065049171448,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 19,
+    "modalidade": "fluorescence",
+    "map": 0.20459040349730895,
+    "iou": 0.7158523201942444,
+    "count_error": 6
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 20,
+    "modalidade": "fluorescence",
+    "map": 0.20631151670154227,
+    "iou": 0.5571746826171875,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 21,
+    "modalidade": "fluorescence",
+    "map": 0.01689545047064097,
+    "iou": 0.38657432794570923,
+    "count_error": 12
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 22,
+    "modalidade": "fluorescence",
+    "map": 0.01,
+    "iou": 0.44825834035873413,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 23,
+    "modalidade": "fluorescence",
+    "map": 0.19865973775959359,
+    "iou": 0.6413450837135315,
+    "count_error": 22
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 24,
+    "modalidade": "fluorescence",
+    "map": 0.010526315789473684,
+    "iou": 0.4179452955722809,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 25,
+    "modalidade": "histology",
+    "map": 0.07987856915815972,
+    "iou": 0.5612645745277405,
+    "count_error": 7
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 26,
+    "modalidade": "fluorescence",
+    "map": 0.5288543280926336,
+    "iou": 0.8074880242347717,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 27,
+    "modalidade": "fluorescence",
+    "map": 0.06731199702784715,
+    "iou": 0.4607701301574707,
+    "count_error": 6
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 28,
+    "modalidade": "histology",
+    "map": 0.2687688299357894,
+    "iou": 0.7391334176063538,
+    "count_error": 10
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 29,
+    "modalidade": "fluorescence",
+    "map": 0.04925834522023652,
+    "iou": 0.5264009237289429,
+    "count_error": 16
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 30,
+    "modalidade": "fluorescence",
+    "map": 0.10331220239308474,
+    "iou": 0.365474671125412,
+    "count_error": 22
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 31,
+    "modalidade": "fluorescence",
+    "map": 0.19251376318720106,
+    "iou": 0.6266594529151917,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 32,
+    "modalidade": "fluorescence",
+    "map": 0.0517834368306729,
+    "iou": 0.4696301221847534,
+    "count_error": 15
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 33,
+    "modalidade": "histology",
+    "map": 0.10934065934065933,
+    "iou": 0.4234805405139923,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 34,
+    "modalidade": "fluorescence",
+    "map": 0.04718181818181818,
+    "iou": 0.48776009678840637,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 35,
+    "modalidade": "histology",
+    "map": 0.0795563722456811,
+    "iou": 0.34338071942329407,
+    "count_error": 19
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 36,
+    "modalidade": "fluorescence",
+    "map": 0.15490391446433643,
+    "iou": 0.6547271013259888,
+    "count_error": 6
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 37,
+    "modalidade": "fluorescence",
+    "map": 0.1553114015146874,
+    "iou": 0.6423252820968628,
+    "count_error": 26
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 38,
+    "modalidade": "histology",
+    "map": 0.2173117359970808,
+    "iou": 0.7338211536407471,
+    "count_error": 7
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 39,
+    "modalidade": "fluorescence",
+    "map": 0.17613662304466668,
+    "iou": 0.6914385557174683,
+    "count_error": 8
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 40,
+    "modalidade": "fluorescence",
+    "map": 0.32815569758393026,
+    "iou": 0.7582783102989197,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 41,
+    "modalidade": "histology",
+    "map": 0.10409663865546218,
+    "iou": 0.2713482081890106,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 42,
+    "modalidade": "fluorescence",
+    "map": 0.2567815486910895,
+    "iou": 0.7150214910507202,
+    "count_error": 9
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 43,
+    "modalidade": "fluorescence",
+    "map": 0.3773150748203425,
+    "iou": 0.7883821129798889,
+    "count_error": 8
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 44,
+    "modalidade": "fluorescence",
+    "map": 0.07514705882352941,
+    "iou": 0.557117223739624,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 45,
+    "modalidade": "fluorescence",
+    "map": 0.4062005325385968,
+    "iou": 0.8050967454910278,
+    "count_error": 5
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 46,
+    "modalidade": "fluorescence",
+    "map": 0.18965556465556468,
+    "iou": 0.622170090675354,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 47,
+    "modalidade": "histology",
+    "map": 0.2787798933295883,
+    "iou": 0.551587700843811,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 48,
+    "modalidade": "fluorescence",
+    "map": 0.15512626262626264,
+    "iou": 0.564878523349762,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 49,
+    "modalidade": "brightfield",
+    "map": 0.0,
+    "iou": 0.0633217990398407,
+    "count_error": 56
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 50,
+    "modalidade": "fluorescence",
+    "map": 0.2736546378342044,
+    "iou": 0.7033452987670898,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 51,
+    "modalidade": "fluorescence",
+    "map": 0.4796146076146076,
+    "iou": 0.7756975293159485,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 52,
+    "modalidade": "fluorescence",
+    "map": 0.2623586558369167,
+    "iou": 0.6456047892570496,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 53,
+    "modalidade": "fluorescence",
+    "map": 0.03693725731166537,
+    "iou": 0.47701597213745117,
+    "count_error": 7
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 54,
+    "modalidade": "fluorescence",
+    "map": 0.19931451696157576,
+    "iou": 0.6617825627326965,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 55,
+    "modalidade": "fluorescence",
+    "map": 0.19105975723622784,
+    "iou": 0.6944623589515686,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 56,
+    "modalidade": "histology",
+    "map": 0.05757575757575757,
+    "iou": 0.3138386905193329,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 57,
+    "modalidade": "fluorescence",
+    "map": 0.008887311217245387,
+    "iou": 0.4561246335506439,
+    "count_error": 19
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 58,
+    "modalidade": "fluorescence",
+    "map": 0.14376050847195612,
+    "iou": 0.6393976211547852,
+    "count_error": 35
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 59,
+    "modalidade": "fluorescence",
+    "map": 0.004347826086956522,
+    "iou": 0.4335106313228607,
+    "count_error": 6
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 60,
+    "modalidade": "fluorescence",
+    "map": 0.013333333333333332,
+    "iou": 0.4145907461643219,
+    "count_error": 9
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 61,
+    "modalidade": "fluorescence",
+    "map": 0.00625,
+    "iou": 0.3428907096385956,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 62,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.11975891143083572,
+    "count_error": 375
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 63,
+    "modalidade": "fluorescence",
+    "map": 0.06669200364852537,
+    "iou": 0.4277966022491455,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 64,
+    "modalidade": "fluorescence",
+    "map": 0.08789803086902019,
+    "iou": 0.5696074962615967,
+    "count_error": 13
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 65,
+    "modalidade": "fluorescence",
+    "map": 0.026017863697900694,
+    "iou": 0.18779262900352478,
+    "count_error": 110
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 66,
+    "modalidade": "fluorescence",
+    "map": 0.2235825435825436,
+    "iou": 0.7332944869995117,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 67,
+    "modalidade": "fluorescence",
+    "map": 0.39959387959387954,
+    "iou": 0.8382495641708374,
+    "count_error": 5
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 68,
+    "modalidade": "fluorescence",
+    "map": 0.31797553710479404,
+    "iou": 0.6687853932380676,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 69,
+    "modalidade": "histology",
+    "map": 0.29244736824194384,
+    "iou": 0.7111316919326782,
+    "count_error": 13
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 70,
+    "modalidade": "fluorescence",
+    "map": 0.08899208806329548,
+    "iou": 0.5793429613113403,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 71,
+    "modalidade": "fluorescence",
+    "map": 0.16445719775136983,
+    "iou": 0.6918908953666687,
+    "count_error": 7
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 72,
+    "modalidade": "fluorescence",
+    "map": 0.04,
+    "iou": 0.4528885781764984,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 73,
+    "modalidade": "histology",
+    "map": 0.06110275689223057,
+    "iou": 0.3672865033149719,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 74,
+    "modalidade": "fluorescence",
+    "map": 0.19285714285714287,
+    "iou": 0.6065656542778015,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 75,
+    "modalidade": "histology",
+    "map": 0.20009787361320833,
+    "iou": 0.4551871418952942,
+    "count_error": 9
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 76,
+    "modalidade": "fluorescence",
+    "map": 0.2403884713626093,
+    "iou": 0.6851831078529358,
+    "count_error": 6
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 77,
+    "modalidade": "fluorescence",
+    "map": 0.040729037541270455,
+    "iou": 0.45007869601249695,
+    "count_error": 11
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 78,
+    "modalidade": "fluorescence",
+    "map": 0.044142857142857136,
+    "iou": 0.465974897146225,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 79,
+    "modalidade": "fluorescence",
+    "map": 0.07925831124119476,
+    "iou": 0.5920000076293945,
+    "count_error": 19
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 80,
+    "modalidade": "fluorescence",
+    "map": 0.06964285714285715,
+    "iou": 0.5129604339599609,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 81,
+    "modalidade": "fluorescence",
+    "map": 0.05328734471065542,
+    "iou": 0.48385509848594666,
+    "count_error": 21
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 82,
+    "modalidade": "fluorescence",
+    "map": 0.4384065934065934,
+    "iou": 0.7959578037261963,
+    "count_error": 4
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 83,
+    "modalidade": "fluorescence",
+    "map": 0.053240372725666854,
+    "iou": 0.4527229070663452,
+    "count_error": 6
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 84,
+    "modalidade": "fluorescence",
+    "map": 0.011846153846153847,
+    "iou": 0.42365172505378723,
+    "count_error": 7
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 85,
+    "modalidade": "fluorescence",
+    "map": 0.20365034799245327,
+    "iou": 0.5860306620597839,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 86,
+    "modalidade": "fluorescence",
+    "map": 0.1852689959178014,
+    "iou": 0.6426838040351868,
+    "count_error": 24
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 87,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.3668941855430603,
+    "count_error": 3
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 88,
+    "modalidade": "fluorescence",
+    "map": 0.12712555078669815,
+    "iou": 0.5704318284988403,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 89,
+    "modalidade": "fluorescence",
+    "map": 0.12139662104477641,
+    "iou": 0.5865100026130676,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 90,
+    "modalidade": "fluorescence",
+    "map": 0.10436385080347928,
+    "iou": 0.5326266884803772,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 91,
+    "modalidade": "fluorescence",
+    "map": 0.096002072002072,
+    "iou": 0.6042758226394653,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 92,
+    "modalidade": "histology",
+    "map": 0.06258830786208666,
+    "iou": 0.35699355602264404,
+    "count_error": 22
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 93,
+    "modalidade": "fluorescence",
+    "map": 0.20493432911561743,
+    "iou": 0.6877169013023376,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 94,
+    "modalidade": "fluorescence",
+    "map": 0.06499582289055975,
+    "iou": 0.492043673992157,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 95,
+    "modalidade": "fluorescence",
+    "map": 0.05676470588235294,
+    "iou": 0.4912736713886261,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 96,
+    "modalidade": "fluorescence",
+    "map": 0.052719298245614034,
+    "iou": 0.4236401617527008,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 97,
+    "modalidade": "fluorescence",
+    "map": 0.023544690603514135,
+    "iou": 0.4427885413169861,
+    "count_error": 0
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 98,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.23168909549713135,
+    "count_error": 67
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 99,
+    "modalidade": "fluorescence",
+    "map": 0.08500292384508121,
+    "iou": 0.583220362663269,
+    "count_error": 2
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 100,
+    "modalidade": "fluorescence",
+    "map": 0.41910018177752734,
+    "iou": 0.754487931728363,
+    "count_error": 1
+  },
+  {
+    "condicao": "borrao:4.0",
+    "idx": 101,
+    "modalidade": "fluorescence",
+    "map": 0.31524579425621646,
+    "iou": 0.6478777527809143,
+    "count_error": 1
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 0,
+    "modalidade": "fluorescence",
+    "map": 0.24106131962768593,
+    "iou": 0.8419294953346252,
+    "count_error": 44
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 1,
+    "modalidade": "fluorescence",
+    "map": 0.5944444444444443,
+    "iou": 0.9184466004371643,
+    "count_error": 2
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 2,
+    "modalidade": "fluorescence",
+    "map": 0.3539363847797266,
+    "iou": 0.7871297597885132,
+    "count_error": 9
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 3,
+    "modalidade": "fluorescence",
+    "map": 0.24662158370774084,
+    "iou": 0.7932761311531067,
+    "count_error": 59
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 4,
+    "modalidade": "histology",
+    "map": 0.061607140012969595,
+    "iou": 0.6937516927719116,
+    "count_error": 25
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 5,
+    "modalidade": "fluorescence",
+    "map": 0.5665987886382623,
+    "iou": 0.8458942770957947,
+    "count_error": 1
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 6,
+    "modalidade": "histology",
+    "map": 0.2630249683275612,
+    "iou": 0.7849749326705933,
+    "count_error": 5
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 7,
+    "modalidade": "histology",
+    "map": 0.3352476145941191,
+    "iou": 0.8348026871681213,
+    "count_error": 2
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 8,
+    "modalidade": "fluorescence",
+    "map": 0.054667350193665976,
+    "iou": 0.5364016890525818,
+    "count_error": 1
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 9,
+    "modalidade": "fluorescence",
+    "map": 0.4116697000813275,
+    "iou": 0.7735006213188171,
+    "count_error": 34
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 10,
+    "modalidade": "brightfield",
+    "map": 0.11075534565542289,
+    "iou": 0.20273588597774506,
+    "count_error": 11
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 11,
+    "modalidade": "brightfield",
+    "map": 0.1404768601769893,
+    "iou": 0.31975123286247253,
+    "count_error": 15
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 12,
+    "modalidade": "fluorescence",
+    "map": 0.195607375450915,
+    "iou": 0.7794182896614075,
+    "count_error": 68
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 13,
+    "modalidade": "histology",
+    "map": 0.2101529256493105,
+    "iou": 0.7425816059112549,
+    "count_error": 14
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 14,
+    "modalidade": "fluorescence",
+    "map": 0.07685532699470969,
+    "iou": 0.8001760840415955,
+    "count_error": 60
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 15,
+    "modalidade": "fluorescence",
+    "map": 0.31239970329959926,
+    "iou": 0.8096464276313782,
+    "count_error": 47
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 16,
+    "modalidade": "fluorescence",
+    "map": 0.11946829124496612,
+    "iou": 0.7384806871414185,
+    "count_error": 57
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 17,
+    "modalidade": "fluorescence",
+    "map": 0.18348692698188,
+    "iou": 0.6413918733596802,
+    "count_error": 19
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 18,
+    "modalidade": "histology",
+    "map": 0.12996163666700372,
+    "iou": 0.7161439061164856,
+    "count_error": 7
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 19,
+    "modalidade": "fluorescence",
+    "map": 0.03663613048261605,
+    "iou": 0.41205188632011414,
+    "count_error": 105
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 20,
+    "modalidade": "fluorescence",
+    "map": 0.13627450980392156,
+    "iou": 0.34118202328681946,
+    "count_error": 9
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 21,
+    "modalidade": "fluorescence",
+    "map": 0.3054968644171089,
+    "iou": 0.8223201036453247,
+    "count_error": 53
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 22,
+    "modalidade": "fluorescence",
+    "map": 0.6004753416518123,
+    "iou": 0.9399563074111938,
+    "count_error": 6
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 23,
+    "modalidade": "fluorescence",
+    "map": 0.5100338387466877,
+    "iou": 0.828341007232666,
+    "count_error": 16
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 24,
+    "modalidade": "fluorescence",
+    "map": 0.6532051282051281,
+    "iou": 0.8479613065719604,
+    "count_error": 1
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 25,
+    "modalidade": "histology",
+    "map": 0.2306916682037349,
+    "iou": 0.8082374334335327,
+    "count_error": 10
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 26,
+    "modalidade": "fluorescence",
+    "map": 0.07457679975775892,
+    "iou": 0.5335415005683899,
+    "count_error": 24
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 27,
+    "modalidade": "fluorescence",
+    "map": 0.26814702367467685,
+    "iou": 0.8029469847679138,
+    "count_error": 61
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 28,
+    "modalidade": "histology",
+    "map": 0.31504693666357264,
+    "iou": 0.7295911908149719,
+    "count_error": 12
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 29,
+    "modalidade": "fluorescence",
+    "map": 0.17066945357067742,
+    "iou": 0.740888774394989,
+    "count_error": 67
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 30,
+    "modalidade": "fluorescence",
+    "map": 0.2123495368828825,
+    "iou": 0.7435026168823242,
+    "count_error": 36
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 31,
+    "modalidade": "fluorescence",
+    "map": 0.31332850100320353,
+    "iou": 0.8079881072044373,
+    "count_error": 26
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 32,
+    "modalidade": "fluorescence",
+    "map": 0.2928406007679288,
+    "iou": 0.7912023663520813,
+    "count_error": 63
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 33,
+    "modalidade": "histology",
+    "map": 0.18749645864970943,
+    "iou": 0.6871345043182373,
+    "count_error": 11
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 34,
+    "modalidade": "fluorescence",
+    "map": 0.5482936507936509,
+    "iou": 0.9299798607826233,
+    "count_error": 7
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 35,
+    "modalidade": "histology",
+    "map": 0.3143252857777125,
+    "iou": 0.7251606583595276,
+    "count_error": 10
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 36,
+    "modalidade": "fluorescence",
+    "map": 0.2649918481381729,
+    "iou": 0.9106763601303101,
+    "count_error": 52
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 37,
+    "modalidade": "fluorescence",
+    "map": 0.550159873335296,
+    "iou": 0.8565351366996765,
+    "count_error": 6
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 38,
+    "modalidade": "histology",
+    "map": 0.3843767222185072,
+    "iou": 0.8633997440338135,
+    "count_error": 8
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 39,
+    "modalidade": "fluorescence",
+    "map": 0.27229059979520914,
+    "iou": 0.9158339500427246,
+    "count_error": 44
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 40,
+    "modalidade": "fluorescence",
+    "map": 0.12824409262078532,
+    "iou": 0.806712806224823,
+    "count_error": 46
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 41,
+    "modalidade": "histology",
+    "map": 0.04696309995592833,
+    "iou": 0.4661954641342163,
+    "count_error": 52
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 42,
+    "modalidade": "fluorescence",
+    "map": 0.0770595244044913,
+    "iou": 0.5941392183303833,
+    "count_error": 25
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 43,
+    "modalidade": "fluorescence",
+    "map": 0.09487721865032903,
+    "iou": 0.5732225775718689,
+    "count_error": 22
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 44,
+    "modalidade": "fluorescence",
+    "map": 0.11592493266435921,
+    "iou": 0.8673094511032104,
+    "count_error": 55
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 45,
+    "modalidade": "fluorescence",
+    "map": 0.039888011197674836,
+    "iou": 0.35922178626060486,
+    "count_error": 68
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 46,
+    "modalidade": "fluorescence",
+    "map": 0.2554580223880597,
+    "iou": 0.9209635853767395,
+    "count_error": 41
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 47,
+    "modalidade": "histology",
+    "map": 0.27116915605831926,
+    "iou": 0.7878556251525879,
+    "count_error": 11
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 48,
+    "modalidade": "fluorescence",
+    "map": 0.48761904761904756,
+    "iou": 0.8500772714614868,
+    "count_error": 2
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 49,
+    "modalidade": "brightfield",
+    "map": 0.18709913170519626,
+    "iou": 0.4787430763244629,
+    "count_error": 3
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 50,
+    "modalidade": "fluorescence",
+    "map": 0.07972105624211563,
+    "iou": 0.7022419571876526,
+    "count_error": 84
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 51,
+    "modalidade": "fluorescence",
+    "map": 0.04495486683060805,
+    "iou": 0.6177313327789307,
+    "count_error": 72
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 52,
+    "modalidade": "fluorescence",
+    "map": 0.19034503631961258,
+    "iou": 0.929759681224823,
+    "count_error": 43
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 53,
+    "modalidade": "fluorescence",
+    "map": 0.5412558413759698,
+    "iou": 0.8288862705230713,
+    "count_error": 9
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 54,
+    "modalidade": "fluorescence",
+    "map": 0.017719124657274564,
+    "iou": 0.43657103180885315,
+    "count_error": 91
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 55,
+    "modalidade": "fluorescence",
+    "map": 0.10177475381962364,
+    "iou": 0.8889337778091431,
+    "count_error": 66
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 56,
+    "modalidade": "histology",
+    "map": 0.05245303870428002,
+    "iou": 0.48423346877098083,
+    "count_error": 32
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 57,
+    "modalidade": "fluorescence",
+    "map": 0.4923684361740629,
+    "iou": 0.8135519623756409,
+    "count_error": 7
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 58,
+    "modalidade": "fluorescence",
+    "map": 0.6778146392543279,
+    "iou": 0.8875782489776611,
+    "count_error": 2
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 59,
+    "modalidade": "fluorescence",
+    "map": 0.1031919903366858,
+    "iou": 0.7991360425949097,
+    "count_error": 76
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 60,
+    "modalidade": "fluorescence",
+    "map": 0.0659538601771642,
+    "iou": 0.7007550001144409,
+    "count_error": 47
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 61,
+    "modalidade": "fluorescence",
+    "map": 0.1034734730054276,
+    "iou": 0.7762237787246704,
+    "count_error": 83
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 62,
+    "modalidade": "fluorescence",
+    "map": 0.02924801823584053,
+    "iou": 0.42562928795814514,
+    "count_error": 153
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 63,
+    "modalidade": "fluorescence",
+    "map": 0.10289220040895779,
+    "iou": 0.7503184676170349,
+    "count_error": 67
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 64,
+    "modalidade": "fluorescence",
+    "map": 0.1283226901064332,
+    "iou": 0.5839835405349731,
+    "count_error": 45
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 65,
+    "modalidade": "fluorescence",
+    "map": 0.46717715244465596,
+    "iou": 0.8550004363059998,
+    "count_error": 27
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 66,
+    "modalidade": "fluorescence",
+    "map": 0.03748884845463324,
+    "iou": 0.5152940154075623,
+    "count_error": 90
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 67,
+    "modalidade": "fluorescence",
+    "map": 0.05643254703550715,
+    "iou": 0.5748393535614014,
+    "count_error": 45
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 68,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.22062183916568756,
+    "count_error": 71
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 69,
+    "modalidade": "histology",
+    "map": 0.4456165799901156,
+    "iou": 0.8125946521759033,
+    "count_error": 0
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 70,
+    "modalidade": "fluorescence",
+    "map": 0.0959540929297027,
+    "iou": 0.8679911494255066,
+    "count_error": 61
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 71,
+    "modalidade": "fluorescence",
+    "map": 0.06493448003971479,
+    "iou": 0.5659764409065247,
+    "count_error": 64
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 72,
+    "modalidade": "fluorescence",
+    "map": 0.9125,
+    "iou": 0.9356984496116638,
+    "count_error": 0
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 73,
+    "modalidade": "histology",
+    "map": 0.2033104733468174,
+    "iou": 0.7679158449172974,
+    "count_error": 6
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 74,
+    "modalidade": "fluorescence",
+    "map": 0.6015873015873016,
+    "iou": 0.8474714756011963,
+    "count_error": 1
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 75,
+    "modalidade": "histology",
+    "map": 0.3295038901755754,
+    "iou": 0.7864798307418823,
+    "count_error": 6
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 76,
+    "modalidade": "fluorescence",
+    "map": 0.013297502693673533,
+    "iou": 0.2756362855434418,
+    "count_error": 56
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 77,
+    "modalidade": "fluorescence",
+    "map": 0.24883452796822167,
+    "iou": 0.840663731098175,
+    "count_error": 56
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 78,
+    "modalidade": "fluorescence",
+    "map": 0.7057022084195997,
+    "iou": 0.8402670621871948,
+    "count_error": 0
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 79,
+    "modalidade": "fluorescence",
+    "map": 0.30666461131874057,
+    "iou": 0.8751441836357117,
+    "count_error": 37
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 80,
+    "modalidade": "fluorescence",
+    "map": 0.25746753246753246,
+    "iou": 0.7784026861190796,
+    "count_error": 5
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 81,
+    "modalidade": "fluorescence",
+    "map": 0.34712542146510794,
+    "iou": 0.7990297079086304,
+    "count_error": 38
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 82,
+    "modalidade": "fluorescence",
+    "map": 0.07908497299384958,
+    "iou": 0.5880069136619568,
+    "count_error": 63
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 83,
+    "modalidade": "fluorescence",
+    "map": 0.12078377440363244,
+    "iou": 0.6885321140289307,
+    "count_error": 82
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 84,
+    "modalidade": "fluorescence",
+    "map": 0.08371627192857134,
+    "iou": 0.7711220383644104,
+    "count_error": 46
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 85,
+    "modalidade": "fluorescence",
+    "map": 0.012245855489521427,
+    "iou": 0.31271588802337646,
+    "count_error": 93
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 86,
+    "modalidade": "fluorescence",
+    "map": 0.64033935225048,
+    "iou": 0.8762633204460144,
+    "count_error": 7
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 87,
+    "modalidade": "fluorescence",
+    "map": 0.07923294097207141,
+    "iou": 0.7455012798309326,
+    "count_error": 58
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 88,
+    "modalidade": "fluorescence",
+    "map": 0.24069100209253663,
+    "iou": 0.8941211700439453,
+    "count_error": 48
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 89,
+    "modalidade": "fluorescence",
+    "map": 0.49204807692307695,
+    "iou": 0.8417255878448486,
+    "count_error": 8
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 90,
+    "modalidade": "fluorescence",
+    "map": 0.7381598793363497,
+    "iou": 0.868310272693634,
+    "count_error": 0
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 91,
+    "modalidade": "fluorescence",
+    "map": 0.3250928592105063,
+    "iou": 0.7856062650680542,
+    "count_error": 8
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 92,
+    "modalidade": "histology",
+    "map": 0.15144235641750056,
+    "iou": 0.7467197775840759,
+    "count_error": 23
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 93,
+    "modalidade": "fluorescence",
+    "map": 0.17924072474225786,
+    "iou": 0.772496223449707,
+    "count_error": 46
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 94,
+    "modalidade": "fluorescence",
+    "map": 0.6026262143653448,
+    "iou": 0.883512556552887,
+    "count_error": 2
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 95,
+    "modalidade": "fluorescence",
+    "map": 0.09961728817425021,
+    "iou": 0.8438516855239868,
+    "count_error": 64
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 96,
+    "modalidade": "fluorescence",
+    "map": 0.115182110435275,
+    "iou": 0.7740992903709412,
+    "count_error": 68
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 97,
+    "modalidade": "fluorescence",
+    "map": 0.6543569979716024,
+    "iou": 0.912331759929657,
+    "count_error": 6
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 98,
+    "modalidade": "fluorescence",
+    "map": 0.14384795311907533,
+    "iou": 0.5700598955154419,
+    "count_error": 12
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 99,
+    "modalidade": "fluorescence",
+    "map": 0.1646210366620235,
+    "iou": 0.7422753572463989,
+    "count_error": 29
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 100,
+    "modalidade": "fluorescence",
+    "map": 0.11350128478486687,
+    "iou": 0.5660628080368042,
+    "count_error": 7
+  },
+  {
+    "condicao": "ruido:0.02",
+    "idx": 101,
+    "modalidade": "fluorescence",
+    "map": 0.32861695447409733,
+    "iou": 0.9188401103019714,
+    "count_error": 28
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 0,
+    "modalidade": "fluorescence",
+    "map": 0.020709754347226557,
+    "iou": 0.4454706311225891,
+    "count_error": 809
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 1,
+    "modalidade": "fluorescence",
+    "map": 0.002688354634015551,
+    "iou": 0.5039322376251221,
+    "count_error": 324
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 2,
+    "modalidade": "fluorescence",
+    "map": 0.1031366988327834,
+    "iou": 0.6767135858535767,
+    "count_error": 562
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 3,
+    "modalidade": "fluorescence",
+    "map": 0.03326801480432889,
+    "iou": 0.5088940262794495,
+    "count_error": 777
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 4,
+    "modalidade": "histology",
+    "map": 0.028548415431962376,
+    "iou": 0.5948858261108398,
+    "count_error": 68
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 5,
+    "modalidade": "fluorescence",
+    "map": 0.012077577183485375,
+    "iou": 0.550462543964386,
+    "count_error": 305
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 6,
+    "modalidade": "histology",
+    "map": 0.1292796762620379,
+    "iou": 0.7572740316390991,
+    "count_error": 2
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 7,
+    "modalidade": "histology",
+    "map": 0.26895969655537005,
+    "iou": 0.799163818359375,
+    "count_error": 11
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 8,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.34491315484046936,
+    "count_error": 249
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 9,
+    "modalidade": "fluorescence",
+    "map": 0.06305483595654449,
+    "iou": 0.6065278649330139,
+    "count_error": 642
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 10,
+    "modalidade": "brightfield",
+    "map": 0.1013910966316726,
+    "iou": 0.23945578932762146,
+    "count_error": 7
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 11,
+    "modalidade": "brightfield",
+    "map": 0.11987493681262666,
+    "iou": 0.3205264210700989,
+    "count_error": 2
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 12,
+    "modalidade": "fluorescence",
+    "map": 0.027786352538844216,
+    "iou": 0.5652459859848022,
+    "count_error": 779
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 13,
+    "modalidade": "histology",
+    "map": 0.10359952104632955,
+    "iou": 0.7094306349754333,
+    "count_error": 28
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 14,
+    "modalidade": "fluorescence",
+    "map": 0.0026246328177051497,
+    "iou": 0.21706551313400269,
+    "count_error": 982
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 15,
+    "modalidade": "fluorescence",
+    "map": 0.052614575406440434,
+    "iou": 0.5893603563308716,
+    "count_error": 711
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 16,
+    "modalidade": "fluorescence",
+    "map": 0.010964664526904713,
+    "iou": 0.29470279812812805,
+    "count_error": 840
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 17,
+    "modalidade": "fluorescence",
+    "map": 0.0038318504210020457,
+    "iou": 0.38922518491744995,
+    "count_error": 267
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 18,
+    "modalidade": "histology",
+    "map": 0.01918259998330133,
+    "iou": 0.6087653040885925,
+    "count_error": 30
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 19,
+    "modalidade": "fluorescence",
+    "map": 0.0010652296374172561,
+    "iou": 0.1728689819574356,
+    "count_error": 769
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 20,
+    "modalidade": "fluorescence",
+    "map": 0.0004032258064516129,
+    "iou": 0.18257541954517365,
+    "count_error": 223
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 21,
+    "modalidade": "fluorescence",
+    "map": 0.03737795834856415,
+    "iou": 0.5156642198562622,
+    "count_error": 857
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 22,
+    "modalidade": "fluorescence",
+    "map": 0.016413064183974667,
+    "iou": 0.6239022612571716,
+    "count_error": 375
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 23,
+    "modalidade": "fluorescence",
+    "map": 0.026847137449184273,
+    "iou": 0.5440630316734314,
+    "count_error": 354
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 24,
+    "modalidade": "fluorescence",
+    "map": 0.006725013451012868,
+    "iou": 0.5590909123420715,
+    "count_error": 278
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 25,
+    "modalidade": "histology",
+    "map": 0.05454138204547494,
+    "iou": 0.6677485704421997,
+    "count_error": 55
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 26,
+    "modalidade": "fluorescence",
+    "map": 0.00045248868778280545,
+    "iou": 0.36661210656166077,
+    "count_error": 388
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 27,
+    "modalidade": "fluorescence",
+    "map": 0.0325016518754504,
+    "iou": 0.4920785427093506,
+    "count_error": 844
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 28,
+    "modalidade": "histology",
+    "map": 0.25424508158889864,
+    "iou": 0.7101123332977295,
+    "count_error": 26
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 29,
+    "modalidade": "fluorescence",
+    "map": 0.02191651656794339,
+    "iou": 0.4514707922935486,
+    "count_error": 906
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 30,
+    "modalidade": "fluorescence",
+    "map": 0.0036332177659630233,
+    "iou": 0.4821583926677704,
+    "count_error": 644
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 31,
+    "modalidade": "fluorescence",
+    "map": 0.0029846024798787464,
+    "iou": 0.6075271964073181,
+    "count_error": 597
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 32,
+    "modalidade": "fluorescence",
+    "map": 0.04842490431078123,
+    "iou": 0.5386151671409607,
+    "count_error": 752
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 33,
+    "modalidade": "histology",
+    "map": 0.03941299790356394,
+    "iou": 0.6261261105537415,
+    "count_error": 26
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 34,
+    "modalidade": "fluorescence",
+    "map": 0.021650803194490326,
+    "iou": 0.6060882806777954,
+    "count_error": 376
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 35,
+    "modalidade": "histology",
+    "map": 0.1735328318858261,
+    "iou": 0.6011084318161011,
+    "count_error": 2
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 36,
+    "modalidade": "fluorescence",
+    "map": 0.024209088461843768,
+    "iou": 0.7167291641235352,
+    "count_error": 802
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 37,
+    "modalidade": "fluorescence",
+    "map": 0.03172108976108402,
+    "iou": 0.5865128040313721,
+    "count_error": 331
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 38,
+    "modalidade": "histology",
+    "map": 0.10365625848595394,
+    "iou": 0.7606652975082397,
+    "count_error": 35
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 39,
+    "modalidade": "fluorescence",
+    "map": 0.023103632769251824,
+    "iou": 0.7571850419044495,
+    "count_error": 687
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 40,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.24234694242477417,
+    "count_error": 880
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 41,
+    "modalidade": "histology",
+    "map": 0.027087334136206315,
+    "iou": 0.3097693920135498,
+    "count_error": 82
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 42,
+    "modalidade": "fluorescence",
+    "map": 0.0001858736059479554,
+    "iou": 0.38962453603744507,
+    "count_error": 451
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 43,
+    "modalidade": "fluorescence",
+    "map": 0.00105510145943338,
+    "iou": 0.4205557107925415,
+    "count_error": 473
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 44,
+    "modalidade": "fluorescence",
+    "map": 0.004902828702513743,
+    "iou": 0.36725375056266785,
+    "count_error": 862
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 45,
+    "modalidade": "fluorescence",
+    "map": 0.00012391573729863693,
+    "iou": 0.16271601617336273,
+    "count_error": 758
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 46,
+    "modalidade": "fluorescence",
+    "map": 0.010465196612893874,
+    "iou": 0.6662502884864807,
+    "count_error": 811
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 47,
+    "modalidade": "histology",
+    "map": 0.058045592529952506,
+    "iou": 0.6480529308319092,
+    "count_error": 86
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 48,
+    "modalidade": "fluorescence",
+    "map": 0.006190092729510327,
+    "iou": 0.4367021322250366,
+    "count_error": 312
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 49,
+    "modalidade": "brightfield",
+    "map": 0.1557963562979509,
+    "iou": 0.43062466382980347,
+    "count_error": 4
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 50,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.24212965369224548,
+    "count_error": 930
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 51,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.20883534848690033,
+    "count_error": 842
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 52,
+    "modalidade": "fluorescence",
+    "map": 0.005638169246503633,
+    "iou": 0.5939410924911499,
+    "count_error": 797
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 53,
+    "modalidade": "fluorescence",
+    "map": 0.09298256252982076,
+    "iou": 0.7203336954116821,
+    "count_error": 319
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 54,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.1654617339372635,
+    "count_error": 793
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 55,
+    "modalidade": "fluorescence",
+    "map": 0.005545285487406135,
+    "iou": 0.38471177220344543,
+    "count_error": 976
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 56,
+    "modalidade": "histology",
+    "map": 0.017073810475809678,
+    "iou": 0.2910836637020111,
+    "count_error": 100
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 57,
+    "modalidade": "fluorescence",
+    "map": 0.06472181462027835,
+    "iou": 0.6932950019836426,
+    "count_error": 331
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 58,
+    "modalidade": "fluorescence",
+    "map": 0.06829450414916782,
+    "iou": 0.6569100022315979,
+    "count_error": 329
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 59,
+    "modalidade": "fluorescence",
+    "map": 0.008471285089323117,
+    "iou": 0.2867799401283264,
+    "count_error": 959
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 60,
+    "modalidade": "fluorescence",
+    "map": 0.0058567036679802575,
+    "iou": 0.2576903700828552,
+    "count_error": 857
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 61,
+    "modalidade": "fluorescence",
+    "map": 0.009938319324697922,
+    "iou": 0.3126935064792633,
+    "count_error": 901
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 62,
+    "modalidade": "fluorescence",
+    "map": 0.017249508725897096,
+    "iou": 0.2733001112937927,
+    "count_error": 345
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 63,
+    "modalidade": "fluorescence",
+    "map": 0.009079780518706317,
+    "iou": 0.27617496252059937,
+    "count_error": 916
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 64,
+    "modalidade": "fluorescence",
+    "map": 0.0007385524372230429,
+    "iou": 0.334643691778183,
+    "count_error": 580
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 65,
+    "modalidade": "fluorescence",
+    "map": 0.057058454612155765,
+    "iou": 0.6429495215415955,
+    "count_error": 733
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 66,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.20604510605335236,
+    "count_error": 804
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 67,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.21416151523590088,
+    "count_error": 706
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 68,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.15786953270435333,
+    "count_error": 574
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 69,
+    "modalidade": "histology",
+    "map": 0.36152746036299116,
+    "iou": 0.807612419128418,
+    "count_error": 2
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 70,
+    "modalidade": "fluorescence",
+    "map": 0.004577087090652079,
+    "iou": 0.36513546109199524,
+    "count_error": 901
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 71,
+    "modalidade": "fluorescence",
+    "map": 0.0009959542263774527,
+    "iou": 0.2316715568304062,
+    "count_error": 755
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 72,
+    "modalidade": "fluorescence",
+    "map": 0.014990324706446201,
+    "iou": 0.5707070827484131,
+    "count_error": 308
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 73,
+    "modalidade": "histology",
+    "map": 0.04937144554791615,
+    "iou": 0.6533792018890381,
+    "count_error": 19
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 74,
+    "modalidade": "fluorescence",
+    "map": 0.008265044634057053,
+    "iou": 0.5172212719917297,
+    "count_error": 259
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 75,
+    "modalidade": "histology",
+    "map": 0.2608608510997069,
+    "iou": 0.7781712412834167,
+    "count_error": 11
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 76,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.11747021228075027,
+    "count_error": 589
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 77,
+    "modalidade": "fluorescence",
+    "map": 0.024907176322812676,
+    "iou": 0.5067792534828186,
+    "count_error": 889
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 78,
+    "modalidade": "fluorescence",
+    "map": 0.03001048825579517,
+    "iou": 0.6391919255256653,
+    "count_error": 278
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 79,
+    "modalidade": "fluorescence",
+    "map": 0.030455283514989863,
+    "iou": 0.6291891932487488,
+    "count_error": 787
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 80,
+    "modalidade": "fluorescence",
+    "map": 0.003750783589886466,
+    "iou": 0.44082212448120117,
+    "count_error": 285
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 81,
+    "modalidade": "fluorescence",
+    "map": 0.06078666924437898,
+    "iou": 0.6002634167671204,
+    "count_error": 738
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 82,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.21768318116664886,
+    "count_error": 897
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 83,
+    "modalidade": "fluorescence",
+    "map": 0.0111147417642307,
+    "iou": 0.2931544780731201,
+    "count_error": 951
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 84,
+    "modalidade": "fluorescence",
+    "map": 0.004700369689670828,
+    "iou": 0.35639509558677673,
+    "count_error": 823
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 85,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.14481604099273682,
+    "count_error": 742
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 86,
+    "modalidade": "fluorescence",
+    "map": 0.03213872048268072,
+    "iou": 0.5876465439796448,
+    "count_error": 359
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 87,
+    "modalidade": "fluorescence",
+    "map": 0.005905118559204138,
+    "iou": 0.18178963661193848,
+    "count_error": 890
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 88,
+    "modalidade": "fluorescence",
+    "map": 0.009515360018509316,
+    "iou": 0.4796566665172577,
+    "count_error": 846
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 89,
+    "modalidade": "fluorescence",
+    "map": 0.009631504602886634,
+    "iou": 0.5930139422416687,
+    "count_error": 447
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 90,
+    "modalidade": "fluorescence",
+    "map": 0.012442286367631963,
+    "iou": 0.5840908885002136,
+    "count_error": 291
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 91,
+    "modalidade": "fluorescence",
+    "map": 0.007788172291389293,
+    "iou": 0.47566497325897217,
+    "count_error": 308
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 92,
+    "modalidade": "histology",
+    "map": 0.05330094907429135,
+    "iou": 0.6871187686920166,
+    "count_error": 72
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 93,
+    "modalidade": "fluorescence",
+    "map": 0.0004069175991861648,
+    "iou": 0.24073442816734314,
+    "count_error": 928
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 94,
+    "modalidade": "fluorescence",
+    "map": 0.01132688860828519,
+    "iou": 0.5518038868904114,
+    "count_error": 283
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 95,
+    "modalidade": "fluorescence",
+    "map": 0.004909969077525108,
+    "iou": 0.2986224591732025,
+    "count_error": 924
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 96,
+    "modalidade": "fluorescence",
+    "map": 0.010230164166292867,
+    "iou": 0.22862938046455383,
+    "count_error": 868
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 97,
+    "modalidade": "fluorescence",
+    "map": 0.025979605981200027,
+    "iou": 0.6624578833580017,
+    "count_error": 393
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 98,
+    "modalidade": "fluorescence",
+    "map": 0.039163314212188716,
+    "iou": 0.3523809611797333,
+    "count_error": 115
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 99,
+    "modalidade": "fluorescence",
+    "map": 0.0032418005200017287,
+    "iou": 0.2605016827583313,
+    "count_error": 695
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 100,
+    "modalidade": "fluorescence",
+    "map": 0.0009122042341220424,
+    "iou": 0.39867720007896423,
+    "count_error": 377
+  },
+  {
+    "condicao": "ruido:0.05",
+    "idx": 101,
+    "modalidade": "fluorescence",
+    "map": 0.010266025390831164,
+    "iou": 0.6502925157546997,
+    "count_error": 721
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 0,
+    "modalidade": "fluorescence",
+    "map": 0.010272906573432364,
+    "iou": 0.25467315316200256,
+    "count_error": 1487
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 1,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.09555085003376007,
+    "count_error": 1241
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 2,
+    "modalidade": "fluorescence",
+    "map": 0.020863335774203434,
+    "iou": 0.5248362421989441,
+    "count_error": 1404
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 3,
+    "modalidade": "fluorescence",
+    "map": 0.012196732223904081,
+    "iou": 0.29979604482650757,
+    "count_error": 1496
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 4,
+    "modalidade": "histology",
+    "map": 0.0,
+    "iou": 0.35699257254600525,
+    "count_error": 870
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 5,
+    "modalidade": "fluorescence",
+    "map": 0.000628930817610063,
+    "iou": 0.1609589010477066,
+    "count_error": 1249
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 6,
+    "modalidade": "histology",
+    "map": 0.005351477579196752,
+    "iou": 0.2693372070789337,
+    "count_error": 293
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 7,
+    "modalidade": "histology",
+    "map": 0.00853948950252475,
+    "iou": 0.46972087025642395,
+    "count_error": 256
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 8,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.1282597929239273,
+    "count_error": 1211
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 9,
+    "modalidade": "fluorescence",
+    "map": 0.0040678610039296985,
+    "iou": 0.35175085067749023,
+    "count_error": 1474
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 10,
+    "modalidade": "brightfield",
+    "map": 0.03253994230690929,
+    "iou": 0.215037003159523,
+    "count_error": 59
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 11,
+    "modalidade": "brightfield",
+    "map": 0.06353661786172822,
+    "iou": 0.3163668215274811,
+    "count_error": 105
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 12,
+    "modalidade": "fluorescence",
+    "map": 0.013008370264317995,
+    "iou": 0.38201454281806946,
+    "count_error": 1484
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 13,
+    "modalidade": "histology",
+    "map": 0.0,
+    "iou": 0.2957661747932434,
+    "count_error": 445
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 14,
+    "modalidade": "fluorescence",
+    "map": 0.0009768011133252019,
+    "iou": 0.10747034847736359,
+    "count_error": 1628
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 15,
+    "modalidade": "fluorescence",
+    "map": 0.01940762833465455,
+    "iou": 0.3807685673236847,
+    "count_error": 1435
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 16,
+    "modalidade": "fluorescence",
+    "map": 0.005455875749622448,
+    "iou": 0.14496643841266632,
+    "count_error": 1567
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 17,
+    "modalidade": "fluorescence",
+    "map": 0.00016556291390728477,
+    "iou": 0.19740821421146393,
+    "count_error": 1161
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 18,
+    "modalidade": "histology",
+    "map": 0.00022222222222222223,
+    "iou": 0.16000154614448547,
+    "count_error": 421
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 19,
+    "modalidade": "fluorescence",
+    "map": 0.00025526483726866624,
+    "iou": 0.17347586154937744,
+    "count_error": 1490
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 20,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.11154435575008392,
+    "count_error": 1125
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 21,
+    "modalidade": "fluorescence",
+    "map": 0.017950576836549874,
+    "iou": 0.33498892188072205,
+    "count_error": 1467
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 22,
+    "modalidade": "fluorescence",
+    "map": 0.001505571924214433,
+    "iou": 0.21602335572242737,
+    "count_error": 1310
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 23,
+    "modalidade": "fluorescence",
+    "map": 0.0014588973157378868,
+    "iou": 0.2840416729450226,
+    "count_error": 1161
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 24,
+    "modalidade": "fluorescence",
+    "map": 8.257638315441784e-05,
+    "iou": 0.15252918004989624,
+    "count_error": 1190
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 25,
+    "modalidade": "histology",
+    "map": 0.0,
+    "iou": 0.3084740936756134,
+    "count_error": 808
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 26,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.22342541813850403,
+    "count_error": 1282
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 27,
+    "modalidade": "fluorescence",
+    "map": 0.013679202863730543,
+    "iou": 0.31646254658699036,
+    "count_error": 1502
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 28,
+    "modalidade": "histology",
+    "map": 0.014947574394926912,
+    "iou": 0.5511960983276367,
+    "count_error": 352
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 29,
+    "modalidade": "fluorescence",
+    "map": 0.011102708631961434,
+    "iou": 0.29044944047927856,
+    "count_error": 1563
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 30,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.3250708281993866,
+    "count_error": 1491
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 31,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.38482150435447693,
+    "count_error": 1453
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 32,
+    "modalidade": "fluorescence",
+    "map": 0.023139671998799852,
+    "iou": 0.35413670539855957,
+    "count_error": 1456
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 33,
+    "modalidade": "histology",
+    "map": 0.0013284147322567353,
+    "iou": 0.18517951667308807,
+    "count_error": 423
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 34,
+    "modalidade": "fluorescence",
+    "map": 0.0004601226993865031,
+    "iou": 0.2427440583705902,
+    "count_error": 1279
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 35,
+    "modalidade": "histology",
+    "map": 0.0056406785623404855,
+    "iou": 0.13116346299648285,
+    "count_error": 267
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 36,
+    "modalidade": "fluorescence",
+    "map": 0.0023413713148528956,
+    "iou": 0.5185829997062683,
+    "count_error": 1599
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 37,
+    "modalidade": "fluorescence",
+    "map": 0.0004182157262285102,
+    "iou": 0.2969847619533539,
+    "count_error": 1199
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 38,
+    "modalidade": "histology",
+    "map": 0.00014044943820224718,
+    "iou": 0.24887244403362274,
+    "count_error": 683
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 39,
+    "modalidade": "fluorescence",
+    "map": 0.0012710044500614053,
+    "iou": 0.5188409090042114,
+    "count_error": 1560
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 40,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.19858315587043762,
+    "count_error": 1521
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 41,
+    "modalidade": "histology",
+    "map": 0.0,
+    "iou": 0.18764333426952362,
+    "count_error": 566
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 42,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.2609494924545288,
+    "count_error": 1330
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 43,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.2981380224227905,
+    "count_error": 1375
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 44,
+    "modalidade": "fluorescence",
+    "map": 0.0014535178331248856,
+    "iou": 0.18718501925468445,
+    "count_error": 1634
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 45,
+    "modalidade": "fluorescence",
+    "map": 0.0001299545159194282,
+    "iou": 0.15889675915241241,
+    "count_error": 1490
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 46,
+    "modalidade": "fluorescence",
+    "map": 0.00047316282861931775,
+    "iou": 0.39642393589019775,
+    "count_error": 1652
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 47,
+    "modalidade": "histology",
+    "map": 0.0003846153846153846,
+    "iou": 0.33395829796791077,
+    "count_error": 997
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 48,
+    "modalidade": "fluorescence",
+    "map": 0.00016012810248198557,
+    "iou": 0.11932376772165298,
+    "count_error": 1237
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 49,
+    "modalidade": "brightfield",
+    "map": 0.08468880665236997,
+    "iou": 0.390816330909729,
+    "count_error": 52
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 50,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.1867462396621704,
+    "count_error": 1579
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 51,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.18101686239242554,
+    "count_error": 1564
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 52,
+    "modalidade": "fluorescence",
+    "map": 0.00024783147459727387,
+    "iou": 0.3287481665611267,
+    "count_error": 1591
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 53,
+    "modalidade": "fluorescence",
+    "map": 0.005024016509482974,
+    "iou": 0.4527460038661957,
+    "count_error": 1297
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 54,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.15197725594043732,
+    "count_error": 1501
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 55,
+    "modalidade": "fluorescence",
+    "map": 0.00011614401858304297,
+    "iou": 0.18477222323417664,
+    "count_error": 1701
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 56,
+    "modalidade": "histology",
+    "map": 0.0,
+    "iou": 0.20991231501102448,
+    "count_error": 1146
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 57,
+    "modalidade": "fluorescence",
+    "map": 0.0038353735375624585,
+    "iou": 0.4382626712322235,
+    "count_error": 1274
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 58,
+    "modalidade": "fluorescence",
+    "map": 0.0006662228139076977,
+    "iou": 0.3431204557418823,
+    "count_error": 1210
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 59,
+    "modalidade": "fluorescence",
+    "map": 0.0028293686663388383,
+    "iou": 0.16191385686397552,
+    "count_error": 1637
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 60,
+    "modalidade": "fluorescence",
+    "map": 0.0016313544594601017,
+    "iou": 0.12527024745941162,
+    "count_error": 1559
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 61,
+    "modalidade": "fluorescence",
+    "map": 0.0046298818070339524,
+    "iou": 0.16469745337963104,
+    "count_error": 1595
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 62,
+    "modalidade": "fluorescence",
+    "map": 0.005026370688649337,
+    "iou": 0.1669316440820694,
+    "count_error": 1042
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 63,
+    "modalidade": "fluorescence",
+    "map": 0.004792452725201048,
+    "iou": 0.13784879446029663,
+    "count_error": 1608
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 64,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.18468399345874786,
+    "count_error": 1400
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 65,
+    "modalidade": "fluorescence",
+    "map": 0.0074590549817508695,
+    "iou": 0.412177711725235,
+    "count_error": 1582
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 66,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.1795375645160675,
+    "count_error": 1574
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 67,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.17180486023426056,
+    "count_error": 1435
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 68,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.1237303763628006,
+    "count_error": 1359
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 69,
+    "modalidade": "histology",
+    "map": 0.021024800974543133,
+    "iou": 0.6571401953697205,
+    "count_error": 309
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 70,
+    "modalidade": "fluorescence",
+    "map": 0.0009285628126848826,
+    "iou": 0.18811766803264618,
+    "count_error": 1596
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 71,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.17836503684520721,
+    "count_error": 1465
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 72,
+    "modalidade": "fluorescence",
+    "map": 0.0012325476622093326,
+    "iou": 0.1635313779115677,
+    "count_error": 1283
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 73,
+    "modalidade": "histology",
+    "map": 0.0005725190839694657,
+    "iou": 0.1242537721991539,
+    "count_error": 507
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 74,
+    "modalidade": "fluorescence",
+    "map": 8.257638315441784e-05,
+    "iou": 0.13262225687503815,
+    "count_error": 1202
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 75,
+    "modalidade": "histology",
+    "map": 0.007123703503513509,
+    "iou": 0.47187289595603943,
+    "count_error": 269
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 76,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.13252417743206024,
+    "count_error": 1353
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 77,
+    "modalidade": "fluorescence",
+    "map": 0.010941598046296434,
+    "iou": 0.3254593312740326,
+    "count_error": 1535
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 78,
+    "modalidade": "fluorescence",
+    "map": 0.0021006229710189405,
+    "iou": 0.21648408472537994,
+    "count_error": 1263
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 79,
+    "modalidade": "fluorescence",
+    "map": 0.008064658889107101,
+    "iou": 0.40503180027008057,
+    "count_error": 1543
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 80,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.08835513889789581,
+    "count_error": 1230
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 81,
+    "modalidade": "fluorescence",
+    "map": 0.02902183172136179,
+    "iou": 0.41600751876831055,
+    "count_error": 1364
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 82,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.16978542506694794,
+    "count_error": 1572
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 83,
+    "modalidade": "fluorescence",
+    "map": 0.004686447720510351,
+    "iou": 0.16080737113952637,
+    "count_error": 1632
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 84,
+    "modalidade": "fluorescence",
+    "map": 0.0014591155518692488,
+    "iou": 0.1402825117111206,
+    "count_error": 1615
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 85,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.15633560717105865,
+    "count_error": 1489
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 86,
+    "modalidade": "fluorescence",
+    "map": 0.0006344984534432723,
+    "iou": 0.3012964427471161,
+    "count_error": 1169
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 87,
+    "modalidade": "fluorescence",
+    "map": 0.0031906292042911226,
+    "iou": 0.07733050733804703,
+    "count_error": 1591
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 88,
+    "modalidade": "fluorescence",
+    "map": 0.0012114608552866838,
+    "iou": 0.23103339970111847,
+    "count_error": 1618
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 89,
+    "modalidade": "fluorescence",
+    "map": 0.001199917419690097,
+    "iou": 0.32199907302856445,
+    "count_error": 1362
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 90,
+    "modalidade": "fluorescence",
+    "map": 0.0005608332820102236,
+    "iou": 0.16181953251361847,
+    "count_error": 1230
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 91,
+    "modalidade": "fluorescence",
+    "map": 0.0003937007874015748,
+    "iou": 0.19077156484127045,
+    "count_error": 1241
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 92,
+    "modalidade": "histology",
+    "map": 9.140767824497258e-05,
+    "iou": 0.3854671120643616,
+    "count_error": 957
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 93,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.20811335742473602,
+    "count_error": 1581
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 94,
+    "modalidade": "fluorescence",
+    "map": 0.0001652892561983471,
+    "iou": 0.158110111951828,
+    "count_error": 1189
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 95,
+    "modalidade": "fluorescence",
+    "map": 0.001561273720888466,
+    "iou": 0.14374610781669617,
+    "count_error": 1651
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 96,
+    "modalidade": "fluorescence",
+    "map": 0.004637617995157264,
+    "iou": 0.10187054425477982,
+    "count_error": 1583
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 97,
+    "modalidade": "fluorescence",
+    "map": 0.0018082505896576998,
+    "iou": 0.2787048816680908,
+    "count_error": 1295
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 98,
+    "modalidade": "fluorescence",
+    "map": 0.0030159485018927345,
+    "iou": 0.07165644317865372,
+    "count_error": 1065
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 99,
+    "modalidade": "fluorescence",
+    "map": 0.00013315579227696407,
+    "iou": 0.1881420910358429,
+    "count_error": 1454
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 100,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.2481982707977295,
+    "count_error": 1284
+  },
+  {
+    "condicao": "ruido:0.1",
+    "idx": 101,
+    "modalidade": "fluorescence",
+    "map": 0.0001875,
+    "iou": 0.3672484755516052,
+    "count_error": 1563
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 0,
+    "modalidade": "fluorescence",
+    "map": 0.44868181551789477,
+    "iou": 0.8177570104598999,
+    "count_error": 5
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 1,
+    "modalidade": "fluorescence",
+    "map": 0.13633699633699634,
+    "iou": 0.6330645084381104,
+    "count_error": 4
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 2,
+    "modalidade": "fluorescence",
+    "map": 0.016134409445698557,
+    "iou": 0.1424100697040558,
+    "count_error": 128
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 3,
+    "modalidade": "fluorescence",
+    "map": 0.2860833374271472,
+    "iou": 0.6634036302566528,
+    "count_error": 0
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 4,
+    "modalidade": "histology",
+    "map": 0.08441498673047813,
+    "iou": 0.5103582143783569,
+    "count_error": 11
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 5,
+    "modalidade": "fluorescence",
+    "map": 0.24238227415858993,
+    "iou": 0.617241382598877,
+    "count_error": 1
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 6,
+    "modalidade": "histology",
+    "map": 0.2480319398342095,
+    "iou": 0.7779466509819031,
+    "count_error": 7
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 7,
+    "modalidade": "histology",
+    "map": 0.31660970210748934,
+    "iou": 0.773226797580719,
+    "count_error": 2
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 8,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.09248311072587967,
+    "count_error": 6
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 9,
+    "modalidade": "fluorescence",
+    "map": 0.04480539780923881,
+    "iou": 0.1806119680404663,
+    "count_error": 77
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 10,
+    "modalidade": "brightfield",
+    "map": 0.0393794031929688,
+    "iou": 0.1375190019607544,
+    "count_error": 13
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 11,
+    "modalidade": "brightfield",
+    "map": 0.10169086651536308,
+    "iou": 0.227937713265419,
+    "count_error": 38
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 12,
+    "modalidade": "fluorescence",
+    "map": 0.18904540405254391,
+    "iou": 0.5670102834701538,
+    "count_error": 12
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 13,
+    "modalidade": "histology",
+    "map": 0.13400993642372955,
+    "iou": 0.5396642684936523,
+    "count_error": 10
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 14,
+    "modalidade": "fluorescence",
+    "map": 0.4444444444444445,
+    "iou": 0.757544219493866,
+    "count_error": 1
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 15,
+    "modalidade": "fluorescence",
+    "map": 0.3548021888969564,
+    "iou": 0.7155699133872986,
+    "count_error": 3
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 16,
+    "modalidade": "fluorescence",
+    "map": 0.27579899410933895,
+    "iou": 0.7077028751373291,
+    "count_error": 3
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 17,
+    "modalidade": "fluorescence",
+    "map": 0.03866396761133603,
+    "iou": 0.19210733473300934,
+    "count_error": 7
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 18,
+    "modalidade": "histology",
+    "map": 0.11820756528417817,
+    "iou": 0.5525773167610168,
+    "count_error": 3
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 19,
+    "modalidade": "fluorescence",
+    "map": 0.0022222222222222222,
+    "iou": 0.004088110756129026,
+    "count_error": 32
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 20,
+    "modalidade": "fluorescence",
+    "map": 0.029411764705882353,
+    "iou": 0.061701614409685135,
+    "count_error": 8
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 21,
+    "modalidade": "fluorescence",
+    "map": 0.3597331891930433,
+    "iou": 0.6801610589027405,
+    "count_error": 7
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 22,
+    "modalidade": "fluorescence",
+    "map": 0.24593100398053958,
+    "iou": 0.6910704374313354,
+    "count_error": 3
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 23,
+    "modalidade": "fluorescence",
+    "map": 0.08661282211792494,
+    "iou": 0.36360788345336914,
+    "count_error": 16
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 24,
+    "modalidade": "fluorescence",
+    "map": 0.20650623885918,
+    "iou": 0.684022843837738,
+    "count_error": 1
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 25,
+    "modalidade": "histology",
+    "map": 0.19201620383857926,
+    "iou": 0.7431358695030212,
+    "count_error": 8
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 26,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.10531363636255264,
+    "count_error": 4
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 27,
+    "modalidade": "fluorescence",
+    "map": 0.4158122412765167,
+    "iou": 0.7388371825218201,
+    "count_error": 13
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 28,
+    "modalidade": "histology",
+    "map": 0.3417156465674271,
+    "iou": 0.7530698776245117,
+    "count_error": 3
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 29,
+    "modalidade": "fluorescence",
+    "map": 0.21124107182906798,
+    "iou": 0.5884329080581665,
+    "count_error": 6
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 30,
+    "modalidade": "fluorescence",
+    "map": 0.0104794251301162,
+    "iou": 0.08440833538770676,
+    "count_error": 16
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 31,
+    "modalidade": "fluorescence",
+    "map": 0.00807694517871509,
+    "iou": 0.12929955124855042,
+    "count_error": 2
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 32,
+    "modalidade": "fluorescence",
+    "map": 0.3730601974762865,
+    "iou": 0.7068020105361938,
+    "count_error": 0
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 33,
+    "modalidade": "histology",
+    "map": 0.3075377254324622,
+    "iou": 0.662514865398407,
+    "count_error": 0
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 34,
+    "modalidade": "fluorescence",
+    "map": 0.349283837613357,
+    "iou": 0.6513952612876892,
+    "count_error": 3
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 35,
+    "modalidade": "histology",
+    "map": 0.25371895661243077,
+    "iou": 0.644635021686554,
+    "count_error": 11
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 36,
+    "modalidade": "fluorescence",
+    "map": 0.1526615981007442,
+    "iou": 0.5093730092048645,
+    "count_error": 7
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 37,
+    "modalidade": "fluorescence",
+    "map": 0.10617350695405618,
+    "iou": 0.41527920961380005,
+    "count_error": 10
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 38,
+    "modalidade": "histology",
+    "map": 0.30895850824856913,
+    "iou": 0.8327404856681824,
+    "count_error": 8
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 39,
+    "modalidade": "fluorescence",
+    "map": 0.07093361278522367,
+    "iou": 0.3624385893344879,
+    "count_error": 15
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 40,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0006744487909600139,
+    "count_error": 21
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 41,
+    "modalidade": "histology",
+    "map": 0.11056166056166057,
+    "iou": 0.4155467450618744,
+    "count_error": 12
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 42,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.08326581120491028,
+    "count_error": 8
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 43,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.09671752899885178,
+    "count_error": 4
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 44,
+    "modalidade": "fluorescence",
+    "map": 0.3472180451127819,
+    "iou": 0.6755102276802063,
+    "count_error": 2
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 45,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 5.2383446018211544e-05,
+    "count_error": 24
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 46,
+    "modalidade": "fluorescence",
+    "map": 0.08049141663151874,
+    "iou": 0.40568089485168457,
+    "count_error": 6
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 47,
+    "modalidade": "histology",
+    "map": 0.22344878673497912,
+    "iou": 0.7837061285972595,
+    "count_error": 17
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 48,
+    "modalidade": "fluorescence",
+    "map": 0.042105263157894736,
+    "iou": 0.4526650607585907,
+    "count_error": 6
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 49,
+    "modalidade": "brightfield",
+    "map": 0.1359759279345402,
+    "iou": 0.40149161219596863,
+    "count_error": 8
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 50,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.005651580169796944,
+    "count_error": 13
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 51,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 22
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 52,
+    "modalidade": "fluorescence",
+    "map": 0.18280578117534638,
+    "iou": 0.47895190119743347,
+    "count_error": 3
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 53,
+    "modalidade": "fluorescence",
+    "map": 0.06569114288410785,
+    "iou": 0.35403725504875183,
+    "count_error": 5
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 54,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0001989752781810239,
+    "count_error": 20
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 55,
+    "modalidade": "fluorescence",
+    "map": 0.2368553814606446,
+    "iou": 0.6201716661453247,
+    "count_error": 5
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 56,
+    "modalidade": "histology",
+    "map": 0.02501063829787234,
+    "iou": 0.5437300801277161,
+    "count_error": 25
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 57,
+    "modalidade": "fluorescence",
+    "map": 0.07503477184633936,
+    "iou": 0.34760794043540955,
+    "count_error": 13
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 58,
+    "modalidade": "fluorescence",
+    "map": 0.139635536975439,
+    "iou": 0.44558030366897583,
+    "count_error": 13
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 59,
+    "modalidade": "fluorescence",
+    "map": 0.40486754422048543,
+    "iou": 0.6821516156196594,
+    "count_error": 3
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 60,
+    "modalidade": "fluorescence",
+    "map": 0.11569407088058452,
+    "iou": 0.493550568819046,
+    "count_error": 2
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 61,
+    "modalidade": "fluorescence",
+    "map": 0.3407054775519011,
+    "iou": 0.7578418850898743,
+    "count_error": 0
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 62,
+    "modalidade": "fluorescence",
+    "map": 0.0014388489208633092,
+    "iou": 0.10161527246236801,
+    "count_error": 332
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 63,
+    "modalidade": "fluorescence",
+    "map": 0.24028831737977163,
+    "iou": 0.6936376094818115,
+    "count_error": 2
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 64,
+    "modalidade": "fluorescence",
+    "map": 0.018551307847082497,
+    "iou": 0.09647847712039948,
+    "count_error": 26
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 65,
+    "modalidade": "fluorescence",
+    "map": 0.0575364201780707,
+    "iou": 0.2538100779056549,
+    "count_error": 54
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 66,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 24
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 67,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0031610673759132624,
+    "count_error": 21
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 68,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 12
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 69,
+    "modalidade": "histology",
+    "map": 0.3984795288040953,
+    "iou": 0.7944475412368774,
+    "count_error": 3
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 70,
+    "modalidade": "fluorescence",
+    "map": 0.1617659791189203,
+    "iou": 0.5041648149490356,
+    "count_error": 1
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 71,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0005767751717939973,
+    "count_error": 24
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 72,
+    "modalidade": "fluorescence",
+    "map": 0.3465458518090097,
+    "iou": 0.7407126426696777,
+    "count_error": 2
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 73,
+    "modalidade": "histology",
+    "map": 0.24173112706007444,
+    "iou": 0.7848339080810547,
+    "count_error": 5
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 74,
+    "modalidade": "fluorescence",
+    "map": 0.11393939393939392,
+    "iou": 0.4192212224006653,
+    "count_error": 2
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 75,
+    "modalidade": "histology",
+    "map": 0.33050698097148085,
+    "iou": 0.7038441300392151,
+    "count_error": 3
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 76,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.00034168566344305873,
+    "count_error": 21
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 77,
+    "modalidade": "fluorescence",
+    "map": 0.2559219977606192,
+    "iou": 0.5780528783798218,
+    "count_error": 16
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 78,
+    "modalidade": "fluorescence",
+    "map": 0.37579038281979454,
+    "iou": 0.6970481872558594,
+    "count_error": 0
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 79,
+    "modalidade": "fluorescence",
+    "map": 0.17753668601531156,
+    "iou": 0.5542619824409485,
+    "count_error": 3
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 80,
+    "modalidade": "fluorescence",
+    "map": 0.04444444444444444,
+    "iou": 0.33656173944473267,
+    "count_error": 0
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 81,
+    "modalidade": "fluorescence",
+    "map": 0.4294287446374366,
+    "iou": 0.7421268820762634,
+    "count_error": 5
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 82,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0008669267408549786,
+    "count_error": 19
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 83,
+    "modalidade": "fluorescence",
+    "map": 0.20112433018053374,
+    "iou": 0.5645161271095276,
+    "count_error": 4
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 84,
+    "modalidade": "fluorescence",
+    "map": 0.12410958606610781,
+    "iou": 0.275338739156723,
+    "count_error": 7
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 85,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.00010819583258125931,
+    "count_error": 23
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 86,
+    "modalidade": "fluorescence",
+    "map": 0.08581290010080225,
+    "iou": 0.4174947738647461,
+    "count_error": 11
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 87,
+    "modalidade": "fluorescence",
+    "map": 0.624965034965035,
+    "iou": 0.8247734308242798,
+    "count_error": 0
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 88,
+    "modalidade": "fluorescence",
+    "map": 0.3196929824561403,
+    "iou": 0.7114818692207336,
+    "count_error": 6
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 89,
+    "modalidade": "fluorescence",
+    "map": 0.04217541184770579,
+    "iou": 0.1700386106967926,
+    "count_error": 0
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 90,
+    "modalidade": "fluorescence",
+    "map": 0.10636788048552755,
+    "iou": 0.3806571662425995,
+    "count_error": 1
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 91,
+    "modalidade": "fluorescence",
+    "map": 0.037726050830889535,
+    "iou": 0.16672268509864807,
+    "count_error": 4
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 92,
+    "modalidade": "histology",
+    "map": 0.13869790916363262,
+    "iou": 0.7056055665016174,
+    "count_error": 1
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 93,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0005271713016554713,
+    "count_error": 26
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 94,
+    "modalidade": "fluorescence",
+    "map": 0.18926293005240374,
+    "iou": 0.5453979969024658,
+    "count_error": 3
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 95,
+    "modalidade": "fluorescence",
+    "map": 0.3523615127562496,
+    "iou": 0.7233259677886963,
+    "count_error": 4
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 96,
+    "modalidade": "fluorescence",
+    "map": 0.529953559082816,
+    "iou": 0.7724686861038208,
+    "count_error": 1
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 97,
+    "modalidade": "fluorescence",
+    "map": 0.27519739519739517,
+    "iou": 0.6108126044273376,
+    "count_error": 2
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 98,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.1551389843225479,
+    "count_error": 62
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 99,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.013580051250755787,
+    "count_error": 20
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 100,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.15287786722183228,
+    "count_error": 2
+  },
+  {
+    "condicao": "brilho_contraste:0.2",
+    "idx": 101,
+    "modalidade": "fluorescence",
+    "map": 0.08756996504750034,
+    "iou": 0.35223981738090515,
+    "count_error": 4
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 0,
+    "modalidade": "fluorescence",
+    "map": 0.07615122375818606,
+    "iou": 0.2641765773296356,
+    "count_error": 1
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 1,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 6
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 2,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.030777057632803917,
+    "count_error": 251
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 3,
+    "modalidade": "fluorescence",
+    "map": 0.03071871110707175,
+    "iou": 0.11180124431848526,
+    "count_error": 19
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 4,
+    "modalidade": "histology",
+    "map": 0.09581104844262738,
+    "iou": 0.2885796129703522,
+    "count_error": 2
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 5,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 12
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 6,
+    "modalidade": "histology",
+    "map": 0.20998700234746517,
+    "iou": 0.677195131778717,
+    "count_error": 12
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 7,
+    "modalidade": "histology",
+    "map": 0.22994208716137227,
+    "iou": 0.5780558586120605,
+    "count_error": 4
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 8,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0021052630618214607,
+    "count_error": 10
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 9,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.009241740219295025,
+    "count_error": 145
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 10,
+    "modalidade": "brightfield",
+    "map": 0.03004415564954574,
+    "iou": 0.15059523284435272,
+    "count_error": 14
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 11,
+    "modalidade": "brightfield",
+    "map": 0.02700467755774902,
+    "iou": 0.2297125905752182,
+    "count_error": 46
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 12,
+    "modalidade": "fluorescence",
+    "map": 0.05710499724025828,
+    "iou": 0.13971397280693054,
+    "count_error": 18
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 13,
+    "modalidade": "histology",
+    "map": 0.17812333864965446,
+    "iou": 0.3195330798625946,
+    "count_error": 3
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 14,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.02603231556713581,
+    "count_error": 0
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 15,
+    "modalidade": "fluorescence",
+    "map": 0.034580391117597954,
+    "iou": 0.12329266220331192,
+    "count_error": 41
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 16,
+    "modalidade": "fluorescence",
+    "map": 0.08656084656084655,
+    "iou": 0.23124569654464722,
+    "count_error": 8
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 17,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 24
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 18,
+    "modalidade": "histology",
+    "map": 0.041914529914529916,
+    "iou": 0.26524555683135986,
+    "count_error": 2
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 19,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 39
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 20,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 13
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 21,
+    "modalidade": "fluorescence",
+    "map": 0.11376494881194579,
+    "iou": 0.2797795534133911,
+    "count_error": 2
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 22,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.008389261551201344,
+    "count_error": 9
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 23,
+    "modalidade": "fluorescence",
+    "map": 0.0008928571428571428,
+    "iou": 0.0027350159361958504,
+    "count_error": 101
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 24,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 10
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 25,
+    "modalidade": "histology",
+    "map": 0.09813043848382196,
+    "iou": 0.5798848271369934,
+    "count_error": 12
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 26,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0012472416274249554,
+    "count_error": 27
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 27,
+    "modalidade": "fluorescence",
+    "map": 0.012539184952978058,
+    "iou": 0.10104688256978989,
+    "count_error": 4
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 28,
+    "modalidade": "histology",
+    "map": 0.30584343027841904,
+    "iou": 0.736001193523407,
+    "count_error": 7
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 29,
+    "modalidade": "fluorescence",
+    "map": 0.08444647320894796,
+    "iou": 0.2221476435661316,
+    "count_error": 4
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 30,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 52
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 31,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 54
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 32,
+    "modalidade": "fluorescence",
+    "map": 0.06873411366604074,
+    "iou": 0.20304372906684875,
+    "count_error": 20
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 33,
+    "modalidade": "histology",
+    "map": 0.1529682734354592,
+    "iou": 0.49311724305152893,
+    "count_error": 2
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 34,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 11
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 35,
+    "modalidade": "histology",
+    "map": 0.1596046236964505,
+    "iou": 0.4570830464363098,
+    "count_error": 17
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 36,
+    "modalidade": "fluorescence",
+    "map": 0.009433962264150943,
+    "iou": 0.04637516662478447,
+    "count_error": 18
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 37,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0011150757782161236,
+    "count_error": 116
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 38,
+    "modalidade": "histology",
+    "map": 0.2552596165009958,
+    "iou": 0.6831972599029541,
+    "count_error": 2
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 39,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.014751668088138103,
+    "count_error": 29
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 40,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 24
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 41,
+    "modalidade": "histology",
+    "map": 0.16428571428571428,
+    "iou": 0.30342528223991394,
+    "count_error": 3
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 42,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 44
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 43,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0010547993006184697,
+    "count_error": 45
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 44,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.004734848625957966,
+    "count_error": 5
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 45,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 25
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 46,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.002304459922015667,
+    "count_error": 15
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 47,
+    "modalidade": "histology",
+    "map": 0.227396527899901,
+    "iou": 0.6077101826667786,
+    "count_error": 5
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 48,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 7
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 49,
+    "modalidade": "brightfield",
+    "map": 0.05174124998756426,
+    "iou": 0.21122287213802338,
+    "count_error": 22
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 50,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 4.7076548071345314e-05,
+    "count_error": 24
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 51,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 22
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 52,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.02448979578912258,
+    "count_error": 11
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 53,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0037326489109545946,
+    "count_error": 57
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 54,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 21
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 55,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.009503239765763283,
+    "count_error": 7
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 56,
+    "modalidade": "histology",
+    "map": 0.013636363636363636,
+    "iou": 0.21077968180179596,
+    "count_error": 3
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 57,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.006178596522659063,
+    "count_error": 68
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 58,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 6.1345926951617e-05,
+    "count_error": 143
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 59,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.07504168897867203,
+    "count_error": 6
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 60,
+    "modalidade": "fluorescence",
+    "map": 0.036988416988417,
+    "iou": 0.1925170123577118,
+    "count_error": 2
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 61,
+    "modalidade": "fluorescence",
+    "map": 0.01,
+    "iou": 0.11871859431266785,
+    "count_error": 5
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 62,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0035256410483270884,
+    "count_error": 373
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 63,
+    "modalidade": "fluorescence",
+    "map": 0.04053513536272157,
+    "iou": 0.2713688015937805,
+    "count_error": 0
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 64,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 49
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 65,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.000548696843907237,
+    "count_error": 135
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 66,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 25
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 67,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 23
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 68,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 12
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 69,
+    "modalidade": "histology",
+    "map": 0.32528457150680223,
+    "iou": 0.7116919159889221,
+    "count_error": 7
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 70,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.03132415935397148,
+    "count_error": 6
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 71,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 25
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 72,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 9
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 73,
+    "modalidade": "histology",
+    "map": 0.1956127450980392,
+    "iou": 0.6665404438972473,
+    "count_error": 3
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 74,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 5
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 75,
+    "modalidade": "histology",
+    "map": 0.21372760773253385,
+    "iou": 0.5722299218177795,
+    "count_error": 7
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 76,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 22
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 77,
+    "modalidade": "fluorescence",
+    "map": 0.07279844906708158,
+    "iou": 0.1817992925643921,
+    "count_error": 6
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 78,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.00517866387963295,
+    "count_error": 11
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 79,
+    "modalidade": "fluorescence",
+    "map": 0.0388316737790422,
+    "iou": 0.04622555896639824,
+    "count_error": 33
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 80,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 5
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 81,
+    "modalidade": "fluorescence",
+    "map": 0.08430502831135445,
+    "iou": 0.2995336353778839,
+    "count_error": 19
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 82,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 22
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 83,
+    "modalidade": "fluorescence",
+    "map": 0.016073968705547653,
+    "iou": 0.09675810486078262,
+    "count_error": 5
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 84,
+    "modalidade": "fluorescence",
+    "map": 0.02857142857142857,
+    "iou": 0.029506437480449677,
+    "count_error": 12
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 85,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 24
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 86,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.004471847787499428,
+    "count_error": 124
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 87,
+    "modalidade": "fluorescence",
+    "map": 0.04395604395604395,
+    "iou": 0.2518089711666107,
+    "count_error": 1
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 88,
+    "modalidade": "fluorescence",
+    "map": 0.0125,
+    "iou": 0.036916039884090424,
+    "count_error": 11
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 89,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0018575851572677493,
+    "count_error": 27
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 90,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 10
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 91,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 15
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 92,
+    "modalidade": "histology",
+    "map": 0.09004168297070068,
+    "iou": 0.47940248250961304,
+    "count_error": 9
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 93,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 28
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 94,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 11
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 95,
+    "modalidade": "fluorescence",
+    "map": 0.007692307692307693,
+    "iou": 0.0536082461476326,
+    "count_error": 4
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 96,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.05456702411174774,
+    "count_error": 8
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 97,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0006814310327172279,
+    "count_error": 17
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 98,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 68
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 99,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 24
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 100,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 32
+  },
+  {
+    "condicao": "brilho_contraste:0.4",
+    "idx": 101,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0013793103862553835,
+    "count_error": 18
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 0,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.029308322817087173,
+    "count_error": 19
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 1,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 6
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 2,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0003010234795510769,
+    "count_error": 309
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 3,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.01515151560306549,
+    "count_error": 44
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 4,
+    "modalidade": "histology",
+    "map": 0.02608695652173913,
+    "iou": 0.05911167711019516,
+    "count_error": 18
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 5,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 12
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 6,
+    "modalidade": "histology",
+    "map": 0.04552823193067095,
+    "iou": 0.19823674857616425,
+    "count_error": 23
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 7,
+    "modalidade": "histology",
+    "map": 0.06850166394112663,
+    "iou": 0.2594687342643738,
+    "count_error": 14
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 8,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 11
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 9,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0005497526144608855,
+    "count_error": 153
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 10,
+    "modalidade": "brightfield",
+    "map": 0.0058823529411764705,
+    "iou": 0.14068099856376648,
+    "count_error": 40
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 11,
+    "modalidade": "brightfield",
+    "map": 0.011784308071012698,
+    "iou": 0.05709534510970116,
+    "count_error": 86
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 12,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.030868273228406906,
+    "count_error": 53
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 13,
+    "modalidade": "histology",
+    "map": 0.06153846153846154,
+    "iou": 0.12810994684696198,
+    "count_error": 6
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 14,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 6
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 15,
+    "modalidade": "fluorescence",
+    "map": 0.0073772959951821735,
+    "iou": 0.011980531737208366,
+    "count_error": 71
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 16,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.01976005733013153,
+    "count_error": 16
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 17,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 24
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 18,
+    "modalidade": "histology",
+    "map": 0.0,
+    "iou": 0.01938677206635475,
+    "count_error": 14
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 19,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 39
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 20,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 13
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 21,
+    "modalidade": "fluorescence",
+    "map": 0.008703703703703703,
+    "iou": 0.07902461290359497,
+    "count_error": 28
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 22,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 11
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 23,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 107
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 24,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 11
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 25,
+    "modalidade": "histology",
+    "map": 0.018386243386243385,
+    "iou": 0.10864570736885071,
+    "count_error": 17
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 26,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 28
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 27,
+    "modalidade": "fluorescence",
+    "map": 0.007272727272727273,
+    "iou": 0.010080124251544476,
+    "count_error": 38
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 28,
+    "modalidade": "histology",
+    "map": 0.1224201059100212,
+    "iou": 0.4562279284000397,
+    "count_error": 17
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 29,
+    "modalidade": "fluorescence",
+    "map": 0.006896551724137931,
+    "iou": 0.045118167996406555,
+    "count_error": 29
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 30,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 52
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 31,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 56
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 32,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0392819419503212,
+    "count_error": 56
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 33,
+    "modalidade": "histology",
+    "map": 0.030434782608695653,
+    "iou": 0.1532248854637146,
+    "count_error": 6
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 34,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 13
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 35,
+    "modalidade": "histology",
+    "map": 0.021492045485238902,
+    "iou": 0.0915442481637001,
+    "count_error": 30
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 36,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 34
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 37,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 119
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 38,
+    "modalidade": "histology",
+    "map": 0.1387487100103199,
+    "iou": 0.27735644578933716,
+    "count_error": 9
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 39,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 46
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 40,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 24
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 41,
+    "modalidade": "histology",
+    "map": 0.0,
+    "iou": 0.028457771986722946,
+    "count_error": 7
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 42,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 44
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 43,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 49
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 44,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 10
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 45,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 25
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 46,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 20
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 47,
+    "modalidade": "histology",
+    "map": 0.06394432026010972,
+    "iou": 0.1781662404537201,
+    "count_error": 5
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 48,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 7
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 49,
+    "modalidade": "brightfield",
+    "map": 0.0,
+    "iou": 0.012084592133760452,
+    "count_error": 61
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 50,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 25
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 51,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 22
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 52,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 12
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 53,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 65
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 54,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 21
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 55,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 11
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 56,
+    "modalidade": "histology",
+    "map": 0.0,
+    "iou": 0.023288972675800323,
+    "count_error": 10
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 57,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 74
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 58,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 147
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 59,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.00310366228222847,
+    "count_error": 13
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 60,
+    "modalidade": "fluorescence",
+    "map": 0.007407407407407407,
+    "iou": 0.04798172041773796,
+    "count_error": 12
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 61,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.008707300759851933,
+    "count_error": 15
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 62,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 375
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 63,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.04074585810303688,
+    "count_error": 8
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 64,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 49
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 65,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.00027527986094355583,
+    "count_error": 139
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 66,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 25
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 67,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 23
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 68,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 12
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 69,
+    "modalidade": "histology",
+    "map": 0.12900935834956634,
+    "iou": 0.40732142329216003,
+    "count_error": 27
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 70,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.00047801146865822375,
+    "count_error": 10
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 71,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 25
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 72,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 9
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 73,
+    "modalidade": "histology",
+    "map": 0.049999999999999996,
+    "iou": 0.18833601474761963,
+    "count_error": 5
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 74,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 5
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 75,
+    "modalidade": "histology",
+    "map": 0.045579452551864165,
+    "iou": 0.21645629405975342,
+    "count_error": 19
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 76,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 22
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 77,
+    "modalidade": "fluorescence",
+    "map": 0.0018518518518518517,
+    "iou": 0.025736911222338676,
+    "count_error": 33
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 78,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 13
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 79,
+    "modalidade": "fluorescence",
+    "map": 0.014863387978142076,
+    "iou": 0.017881518229842186,
+    "count_error": 50
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 80,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 5
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 81,
+    "modalidade": "fluorescence",
+    "map": 0.0009523809523809525,
+    "iou": 0.036193449050188065,
+    "count_error": 72
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 82,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 22
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 83,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.010614525526762009,
+    "count_error": 17
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 84,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.01297297328710556,
+    "count_error": 13
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 85,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 24
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 86,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 126
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 87,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 7
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 88,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.006272697355598211,
+    "count_error": 17
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 89,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 29
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 90,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 10
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 91,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 15
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 92,
+    "modalidade": "histology",
+    "map": 0.025084556129581048,
+    "iou": 0.09783636033535004,
+    "count_error": 46
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 93,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 28
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 94,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 11
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 95,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 9
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 96,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 11
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 97,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 18
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 98,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 68
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 99,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 25
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 100,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 32
+  },
+  {
+    "condicao": "brilho_contraste:0.6",
+    "idx": 101,
+    "modalidade": "fluorescence",
+    "map": 0.0,
+    "iou": 0.0,
+    "count_error": 19
+  }
+]

@@ -1,0 +1,150 @@
+{
+  "checkpoint": "outputs/p2/best.pth",
+  "imagens": 102,
+  "nota_augmentation": "o treino não usa augmentation (não há transform/flip/rotação em src/), então o modelo nunca viu estas corrupções; uma curva íngreme é o esperado.",
+  "map_limpo_esperado": 0.498414496670558,
+  "limpa": {
+    "map": 0.498414496670558,
+    "iou": 0.8192836173317012,
+    "count_error": 7.03921568627451,
+    "map_por_modalidade": {
+      "fluorescence": 0.5650302250652498,
+      "histology": 0.24036780368231697,
+      "brightfield": 0.1398491808156814
+    }
+  },
+  "familias": {
+    "borrao": {
+      "unidade": "σ do borrão (px)",
+      "niveis": [
+        {
+          "severidade": 1,
+          "intensidade": 1.0,
+          "rotulo": "σ=1 px",
+          "map": 0.46563552607272995,
+          "iou": 0.794692316914306,
+          "count_error": 7.901960784313726,
+          "map_por_modalidade": {
+            "fluorescence": 0.5260918829144906,
+            "histology": 0.24220588953655375,
+            "brightfield": 0.0792630461029354
+          }
+        },
+        {
+          "severidade": 2,
+          "intensidade": 2.0,
+          "rotulo": "σ=2 px",
+          "map": 0.3234480122037395,
+          "iou": 0.7021979483611444,
+          "count_error": 9.764705882352942,
+          "map_por_modalidade": {
+            "fluorescence": 0.3555878280905396,
+            "histology": 0.22310479733796335,
+            "brightfield": 0.013571262203934209
+          }
+        },
+        {
+          "severidade": 3,
+          "intensidade": 4.0,
+          "rotulo": "σ=4 px",
+          "map": 0.13407299696949465,
+          "iou": 0.51865317730927,
+          "count_error": 16.57843137254902,
+          "map_por_modalidade": {
+            "fluorescence": 0.13635116883877052,
+            "histology": 0.14669425814600903,
+            "brightfield": 0.0002824858757062147
+          }
+        }
+      ]
+    },
+    "ruido": {
+      "unidade": "σ do ruído (fração de [0,1])",
+      "niveis": [
+        {
+          "severidade": 1,
+          "intensidade": 0.02,
+          "rotulo": "σ=0,02",
+          "map": 0.25630967450063363,
+          "iou": 0.7273531556129456,
+          "count_error": 35.0,
+          "map_por_modalidade": {
+            "fluorescence": 0.265522750123345,
+            "histology": 0.23131705596545515,
+            "brightfield": 0.1461104458458695
+          }
+        },
+        {
+          "severidade": 2,
+          "intensidade": 0.05,
+          "rotulo": "σ=0,05",
+          "map": 0.036846913282217536,
+          "iou": 0.4645742188919993,
+          "count_error": 509.6470588235294,
+          "map_por_modalidade": {
+            "fluorescence": 0.016818254397906657,
+            "histology": 0.11777799437738781,
+            "brightfield": 0.12568746324741673
+          }
+        },
+        {
+          "severidade": 3,
+          "intensidade": 0.1,
+          "rotulo": "σ=0,10",
+          "map": 0.005122890021642528,
+          "iou": 0.2517743644615014,
+          "count_error": 1240.3333333333333,
+          "map_por_modalidade": {
+            "fluorescence": 0.0033707568576826063,
+            "histology": 0.0038451384150915637,
+            "brightfield": 0.06025512227366916
+          }
+        }
+      ]
+    },
+    "brilho_contraste": {
+      "unidade": "força (contraste 1−f, brilho f/2)",
+      "niveis": [
+        {
+          "severidade": 1,
+          "intensidade": 0.2,
+          "rotulo": "c=0,8 b=+0,10",
+          "map": 0.16065328679790342,
+          "iou": 0.4275697919355498,
+          "count_error": 14.627450980392156,
+          "map_por_modalidade": {
+            "fluorescence": 0.15043818601304793,
+            "histology": 0.22197987074549108,
+            "brightfield": 0.09234873254762403
+          }
+        },
+        {
+          "severidade": 2,
+          "intensidade": 0.4,
+          "rotulo": "c=0,6 b=+0,20",
+          "map": 0.039544508308828774,
+          "iou": 0.12597710528526102,
+          "count_error": 29.176470588235293,
+          "map_por_modalidade": {
+            "fluorescence": 0.011794880027619829,
+            "histology": 0.1739746824729912,
+            "brightfield": 0.03626336106495301
+          }
+        },
+        {
+          "severidade": 3,
+          "intensidade": 0.6,
+          "rotulo": "c=0,4 b=+0,30",
+          "map": 0.00901712604432707,
+          "iou": 0.0352296601851384,
+          "count_error": 37.6078431372549,
+          "map_por_modalidade": {
+            "fluorescence": 0.000674698864457724,
+            "histology": 0.04980911109550815,
+            "brightfield": 0.005888887004063055
+          }
+        }
+      ]
+    }
+  }
+}
