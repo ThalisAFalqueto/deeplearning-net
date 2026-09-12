@@ -25,9 +25,11 @@ model:
     pos_weight: 50.0
 
 train:
-  # 50 épocas para parear com default/segnet/resunet/pspnet: a ablação só mede o efeito
-  # do pyramid pooling se todos rodarem sob o mesmo orçamento de treino.
-  epochs: 50
+  # 20 épocas, pareadas com configs/baseline_20ep.yaml: a ablação só mede o efeito do
+  # pyramid pooling se os dois lados rodarem sob o mesmo orçamento de treino.
+  # O Eixo 1 (SegNet) está em 50 épocas — cada eixo compara dentro de si, e isso precisa
+  # ser dito na apresentação.
+  epochs: 20
   batch_size: 8            # > 1 obrigatório: o ramo de bin 1×1 do PPM tem BatchNorm
   lr: 0.005
   num_workers: 0
