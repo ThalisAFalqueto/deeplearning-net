@@ -25,17 +25,21 @@ make setup-cpu
 pytest tests/ -v
 python -m main --synthetic
 
-# Parte 1 — baseline no DSB2018 (treino + avaliação)
-python -m main --config configs/default.yaml
+# Parte 1 — baseline binário no DSB2018 (treino + avaliação)
+python -m main --config configs/p1_binario_dsb2018.yaml
 
 # Parte 2 — Trilha C no DSB2018
 python -m main --config configs/p2_dsb2018.yaml
 
-# Parte 3 — ablação (compara configs em múltiplas seeds)
-python -m main --ablation configs/p1_baseline.yaml configs/p2_dsb2018.yaml
+# Parte 3 — ablação (compara arquiteturas em múltiplas seeds)
+python -m main --ablation configs/default.yaml configs/segnet_dsb2018.yaml --ablation-seeds 0 42
 
 # Parte 4 — inferência em mosaico
 python -m main --mode mosaic --config configs/p2_dsb2018.yaml --checkpoint outputs/p2/best.pth
+
+# Parte 5 — galeria de falhas e a correção (antes/depois)
+python -m main --mode fails --config configs/p2_dsb2018.yaml --checkpoint outputs/p2/best.pth
+python -m main --mode fix   --config configs/p2_dsb2018.yaml --checkpoint outputs/p2/best.pth
 ```
 
 ### Modos de execução
@@ -43,8 +47,11 @@ python -m main --mode mosaic --config configs/p2_dsb2018.yaml --checkpoint outpu
 | Comando | O que faz |
 |---|---|
 | `python -m main` | Treino + avaliação em sequência |
-| `python -m main --train` | Apenas treino |
-| `python -m main --eval` | Apenas avaliação |
+| `python -m main --mode train` | Apenas treino |
+| `python -m main --mode eval` | Apenas avaliação |
+| `python -m main --mode mosaic` | Parte 4 — inferência em mosaico |
+| `python -m main --mode fails` | Parte 5 — galeria de falhas |
+| `python -m main --mode fix` | Parte 5 — correção, com antes/depois |
 | `python -m main --synthetic` | Atalho para `--config configs/synthetic.yaml` |
 | `python -m main --resume` | Retoma treino de `outputs/<dir>/last.pth` |
 
@@ -87,7 +94,7 @@ Sem `--mode`, executa treino e avaliação em sequência. `--synthetic` é atalh
 `--config configs/synthetic.yaml`:
 
 ```bash
-python -m main --synthetic          # treina eifica a Parte 0
+python -m main --synthetic          # treina e avalia a Parte 0
 ```
 
 ## Testes
@@ -107,18 +114,22 @@ configs/        hiperparâmetros por experimento (YAML)
 src/
 ├── core/       carregamento de configuração
 ├── data/       geração sintética (P0), DSB2018 (P1) e as factories
-├── models/     U-Net com out_channels configurável
+├── models/     backbones (unet, segnet, resunet, pspnet, unet_ppm) + cabeças
 ├── losses/     funções de perda
 ├── metrics/    IoU/Dice semânticos e mAP de instância (implementado à mão)
 ├── training/   loop de treino
 ├── evaluation/ avaliação e figuras
+├── ablation/   Parte 3 — várias configs × várias seeds
+├── mosaic/     Parte 4 — mosaico, tiles e costura
+├── fails/      Parte 5 — galeria de falhas e a correção
 └── utils/      pós-processamento: previsão -> objetos numerados
-tests/          testes das métricas e da decodificação
-outputs/        figuras e métricas (versionadas); checkpoints (fora do git)
+tests/          testes das métricas, da decodificação e de cada parte
+outputs/        figuras, métricas e checkpoints (tudo versionado)
 ```
 
-A mesma `UNet` serve as três Partes; muda apenas `out_channels`: 1 canal nas Partes 0 e 1
-(logit de foreground), `1 + D` na Parte 2 (foreground + embedding por pixel).
+O mesmo backbone `UNet` serve as três Partes; o que muda é a **cabeça**, escolhida pela perda
+(`src/models/factory.py`): 1 logit de foreground nas Partes 0 e 1 (`bce`), e três saídas na
+Parte 2 (`center_offset` — segmentação, heatmap de centros e offsets).
 
 ## Parte 0 — teste unitário sintético
 
@@ -222,8 +233,9 @@ simples deixaria entre 2 e 6 delas na validação conforme a seed; estratificand
 estratificar, parte do desvio seria a variação de composição do split, e não o efeito que se
 quer medir.
 
-Ativado por `stratify: true` em `configs/default.yaml`. A divisão é lógica: nenhum arquivo é
-movido, e a classificação de modalidade fica em cache (`.modality_cache.json`).
+A divisão é sempre estratificada — não há chave para desligar. Ela é lógica: nenhum arquivo é
+movido, e a classificação de modalidade fica em cache (`.modality_cache.json`). O config
+informa só `data_dir` e `val_fraction`; a seed decide o sorteio dentro de cada modalidade.
 
 ## Parte 4 — inferência em mosaico
 
@@ -242,15 +254,15 @@ de sobreposição (224, 416, 608 e 800 px).
 
 | estratégia | mAP | erro de contagem | recall dos núcleos na divisa |
 |---|---|---|---|
-| imagem inteira numa passada (referência) | 0,415 | 87,0 | 0,851 |
-| tiles decodificados um a um + parte interna (**antes**) | 0,352 | 126,7 | 0,761 |
-| correção A: fusão por IoU na faixa de sobreposição | 0,413 | 92,2 | 0,857 |
-| mapas densos pela parte interna, decodificados uma vez | 0,414 | 89,5 | 0,851 |
-| média simples dos mapas densos | 0,387 | 96,7 | 0,844 |
-| correção B: média dos mapas ponderada pelo interior | 0,417 | 87,8 | 0,850 |
+| imagem inteira numa passada (referência) | 0,410 | 86,5 | 0,851 |
+| tiles decodificados um a um + parte interna (**antes**) | 0,346 | 127,5 | 0,759 |
+| correção A: fusão por IoU na faixa de sobreposição | 0,407 | 91,5 | 0,857 |
+| mapas densos pela parte interna, decodificados uma vez | 0,409 | 89,0 | 0,851 |
+| média simples dos mapas densos | 0,383 | 96,5 | 0,843 |
+| correção B: média dos mapas ponderada pelo interior | 0,412 | 87,2 | 0,850 |
 
 Checkpoint `outputs/p2/best.pth` (Trilha C, 100 épocas), avaliado em CPU. São 6 mosaicos com
-3909 núcleos, dos quais 427 cruzam uma divisa. O IoU semântico fica entre 0,833 e 0,836 em
+3852 núcleos, dos quais 428 cruzam uma divisa. O IoU semântico fica entre 0,833 e 0,836 em
 todas as estratégias.
 
 - **Para a segmentação semântica, a receita do slide funciona.** A máscara de foreground
@@ -274,3 +286,78 @@ todas as estratégias igualmente:
 1. **O mAP é calculado por mosaico** (~650 núcleos), e não como média por imagem.
 2. **As emendas entre imagens criam bordas que não existem na imagem sozinha.** As mesmas 96
    imagens dão 0,512 avaliadas sozinhas e 0,458 recortadas do mosaico.
+
+## Parte 5 — galeria de falhas e correção
+
+```bash
+python -m main --mode fails --config configs/p2_dsb2018.yaml --checkpoint outputs/p2/best.pth
+python -m main --mode fix   --config configs/p2_dsb2018.yaml --checkpoint outputs/p2/best.pth
+```
+
+### Campo receptivo × tamanho dos objetos (item obrigatório)
+
+O campo receptivo teórico do encoder é **68 px**, pela recorrência dos slides 35-38 em
+`UNet.receptive_field()`. Nenhuma arquitetura do projeto usa atrous/dilated convolution, então
+a comparação "com e sem atrous" do enunciado não se aplica; o mecanismo equivalente que temos
+é o Pyramid Pooling Module (`pspnet`/`unet_ppm`).
+
+Comparando com os 4.233 núcleos da validação (`outputs/p5/p5_distribuicao.png`), o "tamanho"
+precisa ser definido, porque a conclusão muda com a definição:
+
+| medida | p50 | p95 | máx | acima do campo receptivo |
+|---|---|---|---|---|
+| maior extensão do núcleo | 13 px | 43 px | 117 px | **0,26%** (11 núcleos) |
+| diâmetro equivalente (círculo de mesma área) | 11 px | 35 px | 63 px | 0,00% |
+
+A extensão é a medida que importa para o argumento do enunciado — "o pixel central nunca
+enxerga as duas bordas". Pelo diâmetro equivalente nenhum núcleo alcança o campo receptivo;
+pela extensão, 11 alcançam. São os núcleos alongados, que o círculo de mesma área encolhe.
+
+### O diagnóstico
+
+Campo receptivo curto faz o modelo **fundir** objetos; ele nunca divide um objeto em vários.
+Por isso a galeria classifica o modo de falha antes de explicar, contando quantos rótulos a
+predição colocou dentro do maior aglomerado do gabarito. Nas 5 piores imagens:
+
+| falha | modalidade | gabarito → predição | modo | causa |
+|---|---|---|---|---|
+| idx 62 | fluorescência | 375 → 115 | fundiu | densidade: 375 núcleos, contra mediana de 24 |
+| idx 56 | histologia | 13 → 49 | **fragmentou** | picos espúrios no heatmap |
+| idx 41 | histologia | 9 → 39 | **fragmentou** | picos espúrios no heatmap |
+| idx 4 | histologia | 21 → 46 | **fragmentou** | picos espúrios no heatmap |
+| idx 10 | brightfield | 46 → 34 | fundiu | núcleos pequenos demais para separar |
+
+Três das cinco piores falhas são **super-segmentação em histologia**, e nelas o campo receptivo
+não explica nada: no idx 41 um aglomerado de 119 px — maior que os 68 px do campo receptivo —
+foi dividido em 13 rótulos para 2 núcleos, o oposto do que um campo receptivo curto produziria.
+A razão mediana predição/gabarito confirma o padrão: histologia 1,34 · fluorescência 1,00 ·
+brightfield 0,84.
+
+### A correção, com antes e depois
+
+O diagnóstico aponta para a decodificação, não para os pesos: a textura do tecido gera muitos
+máximos locais fracos no heatmap, e cada um vira um objeto. A correção aperta a seleção de
+picos — `peak_threshold`, `nms_kernel` e área mínima (`remove_small_objects`). O modelo é o
+mesmo; só a decodificação muda.
+
+| decodificação | mAP | erro de contagem |
+|---|---|---|
+| **antes** — pico 0,5, nms 3, sem filtro de área | 0,4984 | 7,04 |
+| **depois** — pico 0,6, nms 7, área ≥ 25 px | **0,5294** | 8,63 |
+| alternativa — pico 0,6, nms 7, sem filtro de área | 0,5142 | **6,96** |
+
+O mAP sobe **+0,0310** (+6,2%) e a fragmentação em histologia cai de 1,34 para 1,13 rótulos
+por núcleo real — exatamente o que o diagnóstico previa.
+
+**O que a correção custa.** O erro de contagem **piora** (7,04 → 8,63), porque o filtro de
+área também apaga núcleos pequenos verdadeiros. Em brightfield, que já sub-contava, a razão
+cai de 0,84 para 0,43. A correção conserta a falha diagnosticada e agrava a falha oposta. A
+linha "alternativa", sem filtro de área, melhora as duas métricas com um ganho de mAP menor —
+é a escolha defensável se a contagem importar tanto quanto o mAP.
+`outputs/p5/p5_antes_depois.png` mostra as duas coisas na mesma figura: a histologia
+desfragmenta e a imagem densa de fluorescência perde ainda mais núcleos.
+
+**Ressalva.** Os parâmetros foram escolhidos varrendo o mesmo conjunto de validação em que o
+resultado é reportado — o trabalho não tem conjunto de teste separado —, então o ganho medido
+é otimista. A varredura das 36 combinações está em `outputs/p5/p5_varredura.png` e em
+`outputs/p5/correcao.json`.

@@ -3,11 +3,20 @@
   "campo_receptivo": 68,
   "atrous_em_uso": false,
   "nota_atrous": "nenhuma arquitetura deste projeto usa atrous/dilated convolution; a comparação RF com/sem atrous não se aplica. O mecanismo equivalente já implementado para mais contexto sem perder resolução de saída é o Pyramid Pooling Module (pspnet/unet_ppm).",
-  "objetos_no_dataset": 4176,
-  "diametro_p50": 11.170383851240114,
-  "diametro_p95": 34.595450164018,
-  "diametro_max": 63.199307368310656,
-  "fracao_objetos_isolados_acima_do_rf": 0.0,
+  "objetos_no_dataset": 4233,
+  "mediana_nucleos_por_imagem": 24.0,
+  "extensao": {
+    "p50": 13.0,
+    "p95": 43.0,
+    "max": 117.0,
+    "acima_do_rf": 0.0025986298133711316
+  },
+  "diametro_equivalente": {
+    "p50": 11.11324596323283,
+    "p95": 34.5106967255621,
+    "max": 63.199307368310656,
+    "acima_do_rf": 0.0
+  },
   "piores": [
     {
       "idx": 62,
@@ -18,12 +27,15 @@
       "map": 0.013623424200785722,
       "iou": 0.4537651240825653,
       "count_error": 260,
+      "modo_falha": "fundiu",
       "diametro_max_objeto": 6.4820448144285745,
-      "diametro_medio_objeto": 3.068490697488817,
+      "extensao_max_objeto": 17.0,
       "diametro_maior_blob": 10.940041919714261,
+      "extensao_maior_blob": 17.0,
       "instancias_no_maior_blob": 5,
+      "pred_no_maior_blob": 5,
       "rf": 68,
-      "diagnostico": "campo receptivo (68 px) cobre até o maior objeto/blob desta imagem (11 px) — a falha não é de campo receptivo. Causa mais provável: 375 núcleos numa imagem só (densidade extrema) derrota a separação de picos no heatmap, não o alcance do encoder."
+      "diagnostico": "fusão: 375 núcleos viraram 115 rótulos, mas o maior blob desta imagem tem 17 px de extensão e o campo receptivo teórico do encoder é 68 px — a falha **não é de campo receptivo**. Causa provável: densidade: 375 núcleos numa imagem só, contra a mediana de 24 do conjunto; picos vizinhos se fundem num só e a decodificação perde os centros."
     },
     {
       "idx": 56,
@@ -34,12 +46,15 @@
       "map": 0.06066742659129433,
       "iou": 0.5440161228179932,
       "count_error": 36,
+      "modo_falha": "fragmentou",
       "diametro_max_objeto": 54.23267786434878,
-      "diametro_medio_objeto": 30.21297807782857,
+      "extensao_max_objeto": 80.0,
       "diametro_maior_blob": 54.23267786434878,
+      "extensao_maior_blob": 80.0,
       "instancias_no_maior_blob": 1,
+      "pred_no_maior_blob": 4,
       "rf": 68,
-      "diagnostico": "campo receptivo (68 px) cobre até o maior objeto/blob desta imagem (54 px) — a falha não é de campo receptivo. Causa mais provável: 13 núcleos numa imagem só (densidade extrema) derrota a separação de picos no heatmap, não o alcance do encoder."
+      "diagnostico": "super-segmentação: 13 núcleos viraram 49 rótulos (3.8×). Dentro do maior blob, 1 núcleo(s) viraram 4 rótulo(s). **Não é campo receptivo** — o maior blob desta imagem tem 80 px de extensão e o campo receptivo teórico do encoder é 68 px, mas campo receptivo curto funde objetos, nunca os divide. Causa provável: picos espúrios no heatmap sobre a textura de histology, e cada pico vira um objeto na decodificação."
     },
     {
       "idx": 41,
@@ -50,12 +65,15 @@
       "map": 0.0678003623351385,
       "iou": 0.495414674282074,
       "count_error": 30,
+      "modo_falha": "fragmentou",
       "diametro_max_objeto": 60.37619412133205,
-      "diametro_medio_objeto": 34.38637862671322,
+      "extensao_max_objeto": 85.0,
       "diametro_maior_blob": 73.82049343824855,
+      "extensao_maior_blob": 119.0,
       "instancias_no_maior_blob": 2,
+      "pred_no_maior_blob": 13,
       "rf": 68,
-      "diagnostico": "nenhum núcleo isolado passa do RF (68 px), mas 2 núcleos encostados formam um blob de 74 px — maior que o RF. Um pixel no meio do blob não enxerga nenhum dos centros vizinhos, e o offset não tem como escolher entre eles."
+      "diagnostico": "super-segmentação: 9 núcleos viraram 39 rótulos (4.3×). Dentro do maior blob, 2 núcleo(s) viraram 13 rótulo(s). **Não é campo receptivo** — o maior blob desta imagem tem 119 px de extensão e o campo receptivo teórico do encoder é 68 px, mas campo receptivo curto funde objetos, nunca os divide. Causa provável: picos espúrios no heatmap sobre a textura de histology, e cada pico vira um objeto na decodificação."
     },
     {
       "idx": 4,
@@ -66,12 +84,15 @@
       "map": 0.0700836999022483,
       "iou": 0.6470307111740112,
       "count_error": 25,
+      "modo_falha": "fragmentou",
       "diametro_max_objeto": 63.199307368310656,
-      "diametro_medio_objeto": 35.30332001267895,
+      "extensao_max_objeto": 77.0,
       "diametro_maior_blob": 100.50812180082156,
+      "extensao_maior_blob": 161.0,
       "instancias_no_maior_blob": 5,
+      "pred_no_maior_blob": 16,
       "rf": 68,
-      "diagnostico": "nenhum núcleo isolado passa do RF (68 px), mas 5 núcleos encostados formam um blob de 101 px — maior que o RF. Um pixel no meio do blob não enxerga nenhum dos centros vizinhos, e o offset não tem como escolher entre eles."
+      "diagnostico": "super-segmentação: 21 núcleos viraram 46 rótulos (2.2×). Dentro do maior blob, 5 núcleo(s) viraram 16 rótulo(s). **Não é campo receptivo** — o maior blob desta imagem tem 161 px de extensão e o campo receptivo teórico do encoder é 68 px, mas campo receptivo curto funde objetos, nunca os divide. Causa provável: picos espúrios no heatmap sobre a textura de histology, e cada pico vira um objeto na decodificação."
     },
     {
       "idx": 10,
@@ -82,12 +103,15 @@
       "map": 0.1098199548925047,
       "iou": 0.2043493241071701,
       "count_error": 12,
+      "modo_falha": "fundiu",
       "diametro_max_objeto": 7.046725639945928,
-      "diametro_medio_objeto": 4.208779524713306,
+      "extensao_max_objeto": 9.0,
       "diametro_maior_blob": 8.884866446580956,
+      "extensao_maior_blob": 12.0,
       "instancias_no_maior_blob": 4,
+      "pred_no_maior_blob": 1,
       "rf": 68,
-      "diagnostico": "campo receptivo (68 px) cobre até o maior objeto/blob desta imagem (9 px) — a falha não é de campo receptivo. Causa mais provável: 46 núcleos numa imagem só (densidade extrema) derrota a separação de picos no heatmap, não o alcance do encoder."
+      "diagnostico": "fusão: 46 núcleos viraram 34 rótulos, mas o maior blob desta imagem tem 12 px de extensão e o campo receptivo teórico do encoder é 68 px — a falha **não é de campo receptivo**. Causa provável: núcleos pequenos demais para o heatmap separar (maior objeto: 9 px); picos vizinhos se fundem num só e a decodificação perde os centros."
     }
   ]
 }

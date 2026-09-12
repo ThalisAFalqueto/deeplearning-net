@@ -28,9 +28,10 @@ def parse_arguments() -> argparse.Namespace:
     """
     parser = argparse.ArgumentParser(description="Deep Learning Net")
     parser.add_argument(
-        "--mode", choices=["train", "eval", "both", "mosaic", "fails"], default="both",
+        "--mode", choices=["train", "eval", "both", "mosaic", "fails", "fix"], default="both",
         help="executa treino, avaliação, ambos (padrão: both), a inferência em mosaico "
-             "da Parte 4 (mosaic) ou a galeria de falhas da Parte 5 (fails)",
+             "da Parte 4 (mosaic), a galeria de falhas da Parte 5 (fails) ou a correção "
+             "da Parte 5 com antes/depois (fix)",
     )
     parser.add_argument(
         "--config", default="configs/default.yaml",
@@ -74,7 +75,7 @@ def parse_arguments() -> argparse.Namespace:
     )
     parser.add_argument(
         "--fails-n", type=int, default=5,
-        help="--mode fails: quantas imagens piores mostrar (padrão: 5)",
+        help="--mode fails/fix: quantas imagens piores mostrar (padrão: 5)",
     )
     parser.add_argument(
         "--fails-indices", nargs="+", type=int, default=None,
@@ -83,7 +84,7 @@ def parse_arguments() -> argparse.Namespace:
     )
     parser.add_argument(
         "--fails-output", default="outputs/p5",
-        help="--mode fails: pasta de resultados e figuras (padrão: outputs/p5)",
+        help="--mode fails/fix: pasta de resultados e figuras (padrão: outputs/p5)",
     )
 
     return parser.parse_args()
@@ -124,6 +125,15 @@ def main():
         checkpoint = Path(args.checkpoint) if args.checkpoint else app_config.get_eval_config().output_dir / "best.pth"
         FailGalleryRunner(app_config, checkpoint, n=args.fails_n,
                            indices=args.fails_indices, saida=args.fails_output).run()
+        return
+
+    # ===== MODO CORREÇÃO DA PARTE 5 =====
+    # só avalia: varre os parâmetros de decodificação e mede o antes/depois, sem retreinar
+    if args.mode == "fix":
+        from src.fails.correcao import CorrecaoRunner
+        checkpoint = Path(args.checkpoint) if args.checkpoint else app_config.get_eval_config().output_dir / "best.pth"
+        CorrecaoRunner(app_config, checkpoint, saida=args.fails_output,
+                       n=args.fails_n).run()
         return
 
     # ===== MODO NORMAL =====

@@ -1,0 +1,757 @@
+{
+  "checkpoint": "outputs/p2/best.pth",
+  "diagnostico": "a pior falha do modelo é super-segmentação em histologia: a textura do tecido gera máximos locais fracos no heatmap e cada um vira um objeto. A correção aperta a seleção de picos na decodificação; os pesos não mudam.",
+  "ressalva": "os parâmetros foram escolhidos no mesmo conjunto de validação em que o resultado é reportado (o trabalho não tem conjunto de teste separado), então o ganho medido é otimista.",
+  "antes": {
+    "decode": {
+      "peak_threshold": 0.5,
+      "nms_kernel": 3,
+      "min_area": 0
+    },
+    "map": 0.498414496670558,
+    "count_error": 7.03921568627451,
+    "razao_pred_gt": {
+      "fluorescence": 1.0,
+      "histology": 1.34,
+      "brightfield": 0.8421052631578947
+    },
+    "imagens_por_modo": {
+      "contagem_proxima": 85,
+      "fragmentou": 14,
+      "fundiu": 3
+    }
+  },
+  "depois": {
+    "decode": {
+      "peak_threshold": 0.6,
+      "nms_kernel": 7,
+      "min_area": 25
+    },
+    "map": 0.529408317562496,
+    "count_error": 8.627450980392156,
+    "razao_pred_gt": {
+      "fluorescence": 0.9545454545454546,
+      "histology": 1.1304347826086956,
+      "brightfield": 0.43478260869565216
+    },
+    "imagens_por_modo": {
+      "contagem_proxima": 85,
+      "fragmentou": 5,
+      "fundiu": 12
+    }
+  },
+  "alternativa_sem_piorar_contagem": {
+    "decode": {
+      "peak_threshold": 0.6,
+      "nms_kernel": 7,
+      "min_area": 0
+    },
+    "map": 0.5141562961760161,
+    "count_error": 6.96078431372549,
+    "razao_pred_gt": {
+      "fluorescence": 1.0,
+      "histology": 1.173913043478261,
+      "brightfield": 0.7263157894736842
+    },
+    "imagens_por_modo": {
+      "contagem_proxima": 87,
+      "fragmentou": 10,
+      "fundiu": 5
+    }
+  },
+  "houve_mudanca": true,
+  "ganho_map": 0.030993820891937973,
+  "indices_da_galeria": [
+    62,
+    56,
+    41,
+    4,
+    10
+  ],
+  "varredura": [
+    {
+      "decode": {
+        "peak_threshold": 0.5,
+        "nms_kernel": 3,
+        "min_area": 0
+      },
+      "map": 0.498414496670558,
+      "count_error": 7.03921568627451,
+      "razao_pred_gt": {
+        "fluorescence": 1.0,
+        "histology": 1.34,
+        "brightfield": 0.8421052631578947
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 85,
+        "fragmentou": 14,
+        "fundiu": 3
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.6,
+        "nms_kernel": 3,
+        "min_area": 0
+      },
+      "map": 0.5039997759148431,
+      "count_error": 7.049019607843137,
+      "razao_pred_gt": {
+        "fluorescence": 1.0,
+        "histology": 1.3043478260869565,
+        "brightfield": 0.7473684210526316
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 85,
+        "fragmentou": 13,
+        "fundiu": 4
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.7,
+        "nms_kernel": 3,
+        "min_area": 0
+      },
+      "map": 0.513214725989978,
+      "count_error": 7.637254901960785,
+      "razao_pred_gt": {
+        "fluorescence": 0.9772727272727273,
+        "histology": 1.1111111111111112,
+        "brightfield": 0.6526315789473685
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 83,
+        "fragmentou": 10,
+        "fundiu": 9
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.8,
+        "nms_kernel": 3,
+        "min_area": 0
+      },
+      "map": 0.49692805615155244,
+      "count_error": 11.647058823529411,
+      "razao_pred_gt": {
+        "fluorescence": 0.903125,
+        "histology": 0.918918918918919,
+        "brightfield": 0.3157894736842105
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 67,
+        "fundiu": 32,
+        "fragmentou": 3
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.5,
+        "nms_kernel": 5,
+        "min_area": 0
+      },
+      "map": 0.5069006970415583,
+      "count_error": 6.735294117647059,
+      "razao_pred_gt": {
+        "fluorescence": 1.0,
+        "histology": 1.2222222222222223,
+        "brightfield": 0.8315789473684211
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 86,
+        "fragmentou": 12,
+        "fundiu": 4
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.6,
+        "nms_kernel": 5,
+        "min_area": 0
+      },
+      "map": 0.5109937764811672,
+      "count_error": 6.803921568627451,
+      "razao_pred_gt": {
+        "fluorescence": 1.0,
+        "histology": 1.173913043478261,
+        "brightfield": 0.7473684210526316
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 86,
+        "fragmentou": 11,
+        "fundiu": 5
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.7,
+        "nms_kernel": 5,
+        "min_area": 0
+      },
+      "map": 0.5173400185849722,
+      "count_error": 7.578431372549019,
+      "razao_pred_gt": {
+        "fluorescence": 0.9750309214594929,
+        "histology": 1.0869565217391304,
+        "brightfield": 0.6526315789473685
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 86,
+        "fragmentou": 7,
+        "fundiu": 9
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.8,
+        "nms_kernel": 5,
+        "min_area": 0
+      },
+      "map": 0.498740623610842,
+      "count_error": 11.617647058823529,
+      "razao_pred_gt": {
+        "fluorescence": 0.903125,
+        "histology": 0.90625,
+        "brightfield": 0.3157894736842105
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 67,
+        "fundiu": 32,
+        "fragmentou": 3
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.5,
+        "nms_kernel": 7,
+        "min_area": 0
+      },
+      "map": 0.511056157846922,
+      "count_error": 6.852941176470588,
+      "razao_pred_gt": {
+        "fluorescence": 1.0,
+        "histology": 1.2222222222222223,
+        "brightfield": 0.8105263157894737
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 86,
+        "fragmentou": 12,
+        "fundiu": 4
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.6,
+        "nms_kernel": 7,
+        "min_area": 0
+      },
+      "map": 0.5141562961760161,
+      "count_error": 6.96078431372549,
+      "razao_pred_gt": {
+        "fluorescence": 1.0,
+        "histology": 1.173913043478261,
+        "brightfield": 0.7263157894736842
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 87,
+        "fragmentou": 10,
+        "fundiu": 5
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.7,
+        "nms_kernel": 7,
+        "min_area": 0
+      },
+      "map": 0.51897310024313,
+      "count_error": 7.696078431372549,
+      "razao_pred_gt": {
+        "fluorescence": 0.9618181818181818,
+        "histology": 1.0869565217391304,
+        "brightfield": 0.6421052631578947
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 87,
+        "fragmentou": 6,
+        "fundiu": 9
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.8,
+        "nms_kernel": 7,
+        "min_area": 0
+      },
+      "map": 0.49940762039127634,
+      "count_error": 11.617647058823529,
+      "razao_pred_gt": {
+        "fluorescence": 0.903125,
+        "histology": 0.90625,
+        "brightfield": 0.3157894736842105
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 66,
+        "fundiu": 33,
+        "fragmentou": 3
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.5,
+        "nms_kernel": 3,
+        "min_area": 10
+      },
+      "map": 0.5150997906846251,
+      "count_error": 7.53921568627451,
+      "razao_pred_gt": {
+        "fluorescence": 1.0,
+        "histology": 1.3,
+        "brightfield": 0.7052631578947368
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 82,
+        "fragmentou": 12,
+        "fundiu": 8
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.6,
+        "nms_kernel": 3,
+        "min_area": 10
+      },
+      "map": 0.5180204247332374,
+      "count_error": 7.382352941176471,
+      "razao_pred_gt": {
+        "fluorescence": 0.996031746031746,
+        "histology": 1.2608695652173914,
+        "brightfield": 0.6736842105263158
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 84,
+        "fragmentou": 10,
+        "fundiu": 8
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.7,
+        "nms_kernel": 3,
+        "min_area": 10
+      },
+      "map": 0.5210142243033566,
+      "count_error": 7.8431372549019605,
+      "razao_pred_gt": {
+        "fluorescence": 0.965561224489796,
+        "histology": 1.1111111111111112,
+        "brightfield": 0.631578947368421
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 83,
+        "fragmentou": 7,
+        "fundiu": 12
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.8,
+        "nms_kernel": 3,
+        "min_area": 10
+      },
+      "map": 0.49692805615155244,
+      "count_error": 11.647058823529411,
+      "razao_pred_gt": {
+        "fluorescence": 0.903125,
+        "histology": 0.918918918918919,
+        "brightfield": 0.3157894736842105
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 67,
+        "fundiu": 32,
+        "fragmentou": 3
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.5,
+        "nms_kernel": 5,
+        "min_area": 10
+      },
+      "map": 0.521545036414404,
+      "count_error": 7.1568627450980395,
+      "razao_pred_gt": {
+        "fluorescence": 1.0,
+        "histology": 1.2222222222222223,
+        "brightfield": 0.7052631578947368
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 84,
+        "fragmentou": 10,
+        "fundiu": 8
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.6,
+        "nms_kernel": 5,
+        "min_area": 10
+      },
+      "map": 0.5234998659108376,
+      "count_error": 7.1568627450980395,
+      "razao_pred_gt": {
+        "fluorescence": 1.0,
+        "histology": 1.1304347826086956,
+        "brightfield": 0.6736842105263158
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 87,
+        "fragmentou": 7,
+        "fundiu": 8
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.7,
+        "nms_kernel": 5,
+        "min_area": 10
+      },
+      "map": 0.5247962240920604,
+      "count_error": 7.745098039215686,
+      "razao_pred_gt": {
+        "fluorescence": 0.9640151515151516,
+        "histology": 1.0666666666666667,
+        "brightfield": 0.631578947368421
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 86,
+        "fundiu": 12,
+        "fragmentou": 4
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.8,
+        "nms_kernel": 5,
+        "min_area": 10
+      },
+      "map": 0.498740623610842,
+      "count_error": 11.617647058823529,
+      "razao_pred_gt": {
+        "fluorescence": 0.903125,
+        "histology": 0.90625,
+        "brightfield": 0.3157894736842105
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 67,
+        "fundiu": 32,
+        "fragmentou": 3
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.5,
+        "nms_kernel": 7,
+        "min_area": 10
+      },
+      "map": 0.5252353630867611,
+      "count_error": 7.264705882352941,
+      "razao_pred_gt": {
+        "fluorescence": 1.0,
+        "histology": 1.2,
+        "brightfield": 0.6842105263157895
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 85,
+        "fragmentou": 9,
+        "fundiu": 8
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.6,
+        "nms_kernel": 7,
+        "min_area": 10
+      },
+      "map": 0.5262775636935676,
+      "count_error": 7.323529411764706,
+      "razao_pred_gt": {
+        "fluorescence": 0.9924242424242424,
+        "histology": 1.1304347826086956,
+        "brightfield": 0.6526315789473685
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 87,
+        "fragmentou": 7,
+        "fundiu": 8
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.7,
+        "nms_kernel": 7,
+        "min_area": 10
+      },
+      "map": 0.5263801460907597,
+      "count_error": 7.852941176470588,
+      "razao_pred_gt": {
+        "fluorescence": 0.9522727272727273,
+        "histology": 1.0666666666666667,
+        "brightfield": 0.6210526315789474
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 87,
+        "fundiu": 12,
+        "fragmentou": 3
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.8,
+        "nms_kernel": 7,
+        "min_area": 10
+      },
+      "map": 0.49940762039127634,
+      "count_error": 11.617647058823529,
+      "razao_pred_gt": {
+        "fluorescence": 0.903125,
+        "histology": 0.90625,
+        "brightfield": 0.3157894736842105
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 66,
+        "fundiu": 33,
+        "fragmentou": 3
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.5,
+        "nms_kernel": 3,
+        "min_area": 25
+      },
+      "map": 0.5203817146036561,
+      "count_error": 8.843137254901961,
+      "razao_pred_gt": {
+        "fluorescence": 0.9685019841269842,
+        "histology": 1.2608695652173914,
+        "brightfield": 0.43478260869565216
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 81,
+        "fragmentou": 10,
+        "fundiu": 11
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.6,
+        "nms_kernel": 3,
+        "min_area": 25
+      },
+      "map": 0.5217446176681422,
+      "count_error": 8.72549019607843,
+      "razao_pred_gt": {
+        "fluorescence": 0.9685019841269842,
+        "histology": 1.2608695652173914,
+        "brightfield": 0.43478260869565216
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 82,
+        "fragmentou": 9,
+        "fundiu": 11
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.7,
+        "nms_kernel": 3,
+        "min_area": 25
+      },
+      "map": 0.5217193725704293,
+      "count_error": 8.745098039215685,
+      "razao_pred_gt": {
+        "fluorescence": 0.9466571834992887,
+        "histology": 1.1111111111111112,
+        "brightfield": 0.41304347826086957
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 81,
+        "fragmentou": 7,
+        "fundiu": 14
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.8,
+        "nms_kernel": 3,
+        "min_area": 25
+      },
+      "map": 0.4962431407758021,
+      "count_error": 11.77450980392157,
+      "razao_pred_gt": {
+        "fluorescence": 0.903125,
+        "histology": 0.918918918918919,
+        "brightfield": 0.2698412698412698
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 67,
+        "fundiu": 32,
+        "fragmentou": 3
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.5,
+        "nms_kernel": 5,
+        "min_area": 25
+      },
+      "map": 0.5259217496646289,
+      "count_error": 8.53921568627451,
+      "razao_pred_gt": {
+        "fluorescence": 0.963718820861678,
+        "histology": 1.1333333333333333,
+        "brightfield": 0.43478260869565216
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 83,
+        "fragmentou": 8,
+        "fundiu": 11
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.6,
+        "nms_kernel": 5,
+        "min_area": 25
+      },
+      "map": 0.5265612862774927,
+      "count_error": 8.529411764705882,
+      "razao_pred_gt": {
+        "fluorescence": 0.9568645640074211,
+        "histology": 1.1304347826086956,
+        "brightfield": 0.43478260869565216
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 84,
+        "fragmentou": 6,
+        "fundiu": 12
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.7,
+        "nms_kernel": 5,
+        "min_area": 25
+      },
+      "map": 0.5255668226299769,
+      "count_error": 8.705882352941176,
+      "razao_pred_gt": {
+        "fluorescence": 0.9430719656283566,
+        "histology": 1.0666666666666667,
+        "brightfield": 0.41304347826086957
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 84,
+        "fundiu": 14,
+        "fragmentou": 4
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.8,
+        "nms_kernel": 5,
+        "min_area": 25
+      },
+      "map": 0.4980557082350917,
+      "count_error": 11.745098039215685,
+      "razao_pred_gt": {
+        "fluorescence": 0.903125,
+        "histology": 0.90625,
+        "brightfield": 0.2698412698412698
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 67,
+        "fundiu": 32,
+        "fragmentou": 3
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.5,
+        "nms_kernel": 7,
+        "min_area": 25
+      },
+      "map": 0.529353082688427,
+      "count_error": 8.656862745098039,
+      "razao_pred_gt": {
+        "fluorescence": 0.9568645640074211,
+        "histology": 1.1304347826086956,
+        "brightfield": 0.43478260869565216
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 84,
+        "fragmentou": 7,
+        "fundiu": 11
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.6,
+        "nms_kernel": 7,
+        "min_area": 25
+      },
+      "map": 0.529408317562496,
+      "count_error": 8.627450980392156,
+      "razao_pred_gt": {
+        "fluorescence": 0.9545454545454546,
+        "histology": 1.1304347826086956,
+        "brightfield": 0.43478260869565216
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 85,
+        "fragmentou": 5,
+        "fundiu": 12
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.7,
+        "nms_kernel": 7,
+        "min_area": 25
+      },
+      "map": 0.527089774670282,
+      "count_error": 8.784313725490197,
+      "razao_pred_gt": {
+        "fluorescence": 0.9430719656283566,
+        "histology": 1.0666666666666667,
+        "brightfield": 0.41304347826086957
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 85,
+        "fundiu": 14,
+        "fragmentou": 3
+      }
+    },
+    {
+      "decode": {
+        "peak_threshold": 0.8,
+        "nms_kernel": 7,
+        "min_area": 25
+      },
+      "map": 0.49872270501552607,
+      "count_error": 11.745098039215685,
+      "razao_pred_gt": {
+        "fluorescence": 0.903125,
+        "histology": 0.90625,
+        "brightfield": 0.2698412698412698
+      },
+      "imagens_por_modo": {
+        "contagem_proxima": 66,
+        "fundiu": 33,
+        "fragmentou": 3
+      }
+    }
+  ]
+}
