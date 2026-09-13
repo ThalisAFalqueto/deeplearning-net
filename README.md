@@ -99,6 +99,35 @@ Tabela com o comando "sem uv" (`.venv` ativado); com `uv` é o mesmo comando pre
 | `python -m main --synthetic` | Atalho para `--config configs/synthetic.yaml` |
 | `python -m main --resume` | Retoma treino de `outputs/<dir>/last.pth` |
 
+### Rodar tudo de uma vez, do zero
+
+```bash
+make run-all
+```
+
+Roda `scripts/pipeline_completo.sh`: Partes 0 a 6 em sequência, num comando só — testes,
+sintético, Parte 1, Parte 2 (modelo final e regime pareado), as duas ablações da Parte 3,
+mosaico, galeria de falhas + correção e teste de estresse. Não usa `--resume` em nenhuma
+etapa: cada treino começa do zero e **sobrescreve** os artefatos do seu `output_dir`, mesmo
+os checkpoints já versionados no git — se quiser preservar os resultados atuais, dê
+`git stash` (ou copie `outputs/` para outro lugar) antes de rodar.
+
+É demorado: são ~480 épocas de treino somadas (Parte 1 + Parte 2 final + Parte 2 pareada +
+2 eixos de ablação × 2 configs × 2 seeds), fora as etapas só-de-avaliação. Pela média já
+medida neste projeto (~55-100s/época), a soma fica entre 8 e 13 horas; em CPU sem GPU pode
+ser bem mais lento. Rode em background e acompanhe com `scripts/progresso.sh`:
+
+```bash
+nohup make run-all > pipeline.log 2>&1 &
+tail -f pipeline.log
+```
+
+`configs/p2_final.yaml` existe só para isso: `configs/p2_dsb2018.yaml` foi alterado depois
+que o modelo final foi treinado (hoje tem 30 épocas e grava em `outputs/p2_pareado/`), então
+não sobrava nenhum config que reconstruísse `outputs/p2/best.pth` do zero. `p2_final.yaml`
+tem os hiperparâmetros extraídos de dentro do próprio checkpoint (epochs 100, lr 0,006,
+`output_dir: outputs/p2`), para o pipeline completo não depender de nenhum peso já commitado.
+
 ## Ambiente
 
 **Com uv:**
@@ -234,7 +263,8 @@ src/
 └── utils/      pós-processamento: previsão -> objetos numerados
 tests/          testes das métricas, da decodificação e de cada parte (175)
 notebooks/      inferencia.ipynb — o entregável que roda sem retreinar
-scripts/        treinar_tudo.sh (os treinos em série) e progresso.sh
+scripts/        pipeline_completo.sh (Partes 0-6 do zero, um comando só via `make run-all`),
+                treinar_tudo.sh (Partes 1/2/ablação Eixo 3 em série) e progresso.sh
 outputs/        figuras, métricas e checkpoints (tudo versionado)
 ```
 

@@ -25,4 +25,10 @@ setup-cpu-pip:
 	.venv/bin/pip install -r requirements.txt
 	.venv/bin/pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 
-.PHONY: setup setup-cpu setup-pip setup-cpu-pip
+# Roda o assignment inteiro do zero: Partes 0 a 6, em sequência (scripts/pipeline_completo.sh).
+# Não usa --resume: sobrescreve os artefatos de cada output_dir, mesmo os já commitados no
+# git. Demorado (horas) — ver o cabeçalho do script para a estimativa e para rodar em background.
+run-all:
+	bash scripts/pipeline_completo.sh
+
+.PHONY: setup setup-cpu setup-pip setup-cpu-pip run-all

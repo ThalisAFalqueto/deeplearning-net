@@ -40,6 +40,8 @@ decode:
   peak_threshold: 0.5
   nms_kernel: 3
 
-# Com 10 épocas, grava em pasta própria: outputs/p2 guarda o treino de 100 épocas de 06/09
-# (mAP 0,496), que é o modelo final e o usado na Parte 4 — não gravar em cima dele.
+# Grava em pasta própria: outputs/p2 guarda o treino de 100 épocas de 06/09 (mAP 0,496),
+# que é o modelo final e o usado nas Partes 4/5/6 — não gravar em cima dele. Este arquivo já
+# não reproduz aquele checkpoint (mudou para 30 épocas depois); quem faz isso é
+# configs/p2_final.yaml, usado em scripts/pipeline_completo.sh (`make run-all`).
 output_dir: outputs/p2_pareado

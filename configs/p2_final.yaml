@@ -1,0 +1,41 @@
+# Parte 2 (Trilha C) — reproduz outputs/p2/best.pth DO ZERO.
+#
+# configs/p2_dsb2018.yaml já foi alterado depois que o modelo final foi treinado (hoje tem
+# 30 épocas e grava em outputs/p2_pareado/, não outputs/p2/) — então não sobrava nenhum
+# config que reconstruísse o checkpoint que as Partes 4, 5 e 6 usam. Este arquivo é esses
+# hiperparâmetros extraídos de dentro do próprio outputs/p2/best.pth (campo "config" do
+# checkpoint), para que `scripts/pipeline_completo.sh` regenere tudo sem depender de nenhum
+# peso já commitado.
+name: p2_final
+seed: 0
+
+data:
+  kind: dsb2018
+  size: 256
+  data_dir: src/data/datasets/dsb2018
+  val_fraction: 0.15
+
+model:
+  name: unet_improved
+  base: 16
+  depth: 3
+  loss:
+    name: center_offset
+    w_seg: 1.0
+    w_heatmap: 1.0
+    w_offset: 0.1
+    pos_weight: 50.0
+
+train:
+  epochs: 100
+  batch_size: 8
+  lr: 0.006
+  num_workers: 0
+  save_every: 5
+
+decode:
+  threshold: 0.5
+  peak_threshold: 0.5
+  nms_kernel: 3
+
+output_dir: outputs/p2
